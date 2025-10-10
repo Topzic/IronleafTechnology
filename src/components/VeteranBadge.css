@@ -1,0 +1,29 @@
+.veteran-badge {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #4a7c59 0%, #2d5016 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.badge-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.badge-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.local-highlight {
+  margin-top: 2rem;
+}
+
+.local-highlight h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.local-highlight p {
+  font-size: 1rem;
+}
