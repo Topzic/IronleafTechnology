@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h3>Ironleaf Technologies</h3>
+          <h3>Ironleaf Technology</h3>
           <p>Veteran-owned technology solutions in Peterborough, Ontario.</p>
           <p>957 Webber Ave, Peterborough, ON</p>
           <p>(705) 768-2636</p>
@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2025 Ironleaf Technologies. All rights reserved.</p>
+        <p>&copy; 2025 Ironleaf Technology. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -8,6 +8,38 @@ const Pricing = () => {
 
   const packages = [
     {
+      name: 'Website Optimization Tune-Up',
+      description: 'Comprehensive website audit and optimization to boost performance, security, and SEO',
+      price: billingCycle === 'one-time' ? 750 : 50,
+      originalPrice: billingCycle === 'one-time' ? null : 75,
+      features: [
+        'Full SEO audit and recommendations',
+        'Security vulnerability assessment',
+        'Performance optimization',
+        'Mobile responsiveness check',
+        'Content and usability review',
+        'Actionable improvement report'
+      ],
+      popular: false,
+      category: 'optimization'
+    },
+    {
+      name: 'Hourly Development Services',
+      description: 'Flexible hourly development and consulting services for custom projects, maintenance, and ongoing support.',
+      price: billingCycle === 'one-time' ? 0 : 75,
+      originalPrice: billingCycle === 'one-time' ? null : 100,
+      features: [
+        'Custom development work',
+        'Technical consulting',
+        'Website maintenance',
+        'Priority support',
+        'Flexible scheduling',
+        'Billed at $75 per hour'
+      ],
+      popular: false,
+      category: 'optimization'
+    },
+    {
       name: 'One-Page Website',
       description: 'Simple, effective single-page website for businesses needing a strong online presence',
       price: billingCycle === 'one-time' ? 1500 : 100,
@@ -84,52 +116,55 @@ const Pricing = () => {
       popular: false,
       category: 'optimization'
     },
-    {
-      name: 'Security Camera Bronze',
-      description: 'Essential surveillance for small businesses and homes',
-      price: billingCycle === 'one-time' ? 2000 : 100,
-      originalPrice: billingCycle === 'one-time' ? null : 125,
-      features: [
-        '4 high-definition cameras',
-        'Cloud storage (30 days)',
-        'Mobile app access',
-        'Motion detection alerts',
-        'Professional installation'
-      ],
-      popular: false,
-      category: 'security'
-    },
-    {
-      name: 'Security Camera Silver',
-      description: 'Advanced security with AI features and extended monitoring',
-      price: billingCycle === 'one-time' ? 4500 : 225,
-      originalPrice: billingCycle === 'one-time' ? null : 300,
-      features: [
-        'Everything in Bronze, plus:',
-        '8 cameras with AI detection',
-        '90-day cloud storage',
-        'Advanced analytics',
-        '24/7 monitoring option',
-        'Smart home integration'
-      ],
-      popular: false,
-      category: 'security'
-    },
-    {
-      name: 'Power BI Analytics Starter',
-      description: 'Transform your data into actionable business insights',
-      price: billingCycle === 'one-time' ? 3000 : 200,
-      originalPrice: billingCycle === 'one-time' ? null : 250,
-      features: [
-        'Data source integration',
-        'Custom dashboard design',
-        'Basic reporting templates',
-        'Training session included',
-        '3 months support'
-      ],
-      popular: false,
-      category: 'analytics'
-    }
+    // {
+    //   name: 'Security Camera Bronze',
+    //   description: 'Essential surveillance for small businesses and homes',
+    // {
+    //   name: 'Security Camera Bronze',
+    //   description: 'Essential surveillance for small businesses and homes',
+    //   price: billingCycle === 'one-time' ? 2000 : 100,
+    //   originalPrice: billingCycle === 'one-time' ? null : 125,
+    //   features: [
+    //     '4 high-definition cameras',
+    //     'Cloud storage (30 days)',
+    //     'Mobile app access',
+    //     'Motion detection alerts',
+    //     'Professional installation'
+    //   ],
+    //   popular: false,
+    //   category: 'security'
+    // },
+    // {
+    //   name: 'Security Camera Silver',
+    //   description: 'Advanced security with AI features and extended monitoring',
+    //   price: billingCycle === 'one-time' ? 4500 : 225,
+    //   originalPrice: billingCycle === 'one-time' ? null : 300,
+    //   features: [
+    //     'Everything in Bronze, plus:',
+    //     '8 cameras with AI detection',
+    //     '90-day cloud storage',
+    //     'Advanced analytics',
+    //     '24/7 monitoring option',
+    //     'Smart home integration'
+    //   ],
+    //   popular: false,
+    //   category: 'security'
+    // },
+    // {
+    //   name: 'Power BI Analytics Starter',
+    //   description: 'Transform your data into actionable business insights',
+    //   price: billingCycle === 'one-time' ? 3000 : 200,
+    //   originalPrice: billingCycle === 'one-time' ? null : 250,
+    //   features: [
+    //     'Data source integration',
+    //     'Custom dashboard design',
+    //     'Basic reporting templates',
+    //     'Training session included',
+    //     '3 months support'
+    //   ],
+    //   popular: false,
+    //   category: 'analytics'
+    // }
   ];
 
   const addOns = [
@@ -199,6 +234,9 @@ const Pricing = () => {
           <span className="circle circle10"></span>
           <span className="circle circle11"></span>
           <span className="circle circle12"></span>
+          <span className="circle circle13"></span>
+          <span className="circle circle14"></span>
+          <span className="circle circle15"></span>
         </div>
         <h1>Services & Pricing</h1>
         <p>Comprehensive technology solutions with transparent pricing for your business needs.</p>

@@ -175,7 +175,7 @@ const Contact = () => {
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
-              title="Ironleaf Technologies Location"
+              title="Ironleaf Technology Location"
             ></iframe>
           </div>
         </div>

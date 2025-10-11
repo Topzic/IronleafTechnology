@@ -4,6 +4,15 @@ import './Portfolio.css';
 const Portfolio = () => {
   const projects = [
     {
+      title: 'United Property Experts Website',
+      description: 'Professional real estate website featuring property listings, agent profiles, and comprehensive contact systems for a leading property management company.',
+      technologies: ['WordPress', 'Plugins', 'SEO Optimization', 'Google Analytics'],
+      outcomes: 'Responsive design, fast performance, mobile-optimized, enhanced lead generation',
+      image: '/projects/united-property-experts.png',
+      quote: '"Outstanding website that perfectly represents our brand and drives business." - United Property Experts Team'
+    },
+
+    {
       title: 'NatureGo Mobile App',
       description: 'A cross-platform mobile app for discovering and sharing nature points of interest. Features include species identification, geospatial markers, and gamification.',
       technologies: ['React Native', 'Supabase', 'PostGIS', 'Google Maps API'],
@@ -17,9 +26,18 @@ const Portfolio = () => {
       description: 'Full-stack e-commerce and inventory management system for marine retail.',
       technologies: ['React', 'Node.js', 'Supabase', 'Barcode Integration'],
       outcomes: 'Automated checkout, real-time inventory, customer order management',
-      image: '/projects/marine.avif',
+      image: '/projects/marine.png',
       quote: '"Revolutionized our operations." - Business Owner'
     },
+    
+    // {
+    //   title: 'Namanta Enterprises Website',
+    //   description: 'Professional website for Namanta, showcasing their services, portfolio, and contact information with modern design and responsive layout.',
+    //   technologies: ['React', 'Node.js', 'Supabase', 'SEO Optimization'],
+    //   outcomes: 'Clean design, fast loading, mobile-responsive, improved online presence',
+    //   image: '/projects/namanta.png',
+    //   quote: '"Excellent website that captures our brand perfectly." - Namanta Team'
+    // },
 
     {
       title: 'Restaurant Website Template',
@@ -35,7 +53,7 @@ const Portfolio = () => {
       description: 'Custom SharePoint sites and Power BI dashboards for provincial park operations.',
       technologies: ['SharePoint Online', 'Power BI', 'Power Automate'],
       outcomes: 'Streamlined operations, improved data accuracy by 20,000 records',
-      image: '/projects/ontario-parks-logo.jpg',
+      image: '/projects/ontario-parks-logo.png',
       quote: '"Enhanced our reporting reliability significantly." - Ontario Parks Team'
     },
 

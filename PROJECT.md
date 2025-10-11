@@ -1,6 +1,6 @@
 # Company Outline and 90-Day Project Plan
 
-Company: Ironleaf Technologies
+Company: Ironleaf Technology
 
 Founder: Ian Cunningham (Veteran | Nature-focused | Honors Software Engineer)
 

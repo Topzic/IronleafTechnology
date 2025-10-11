@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
           <span className="logo-text">Ironleaf</span>
-          <span className="logo-accent">Technologies</span>
+          <span className="logo-accent">Technology</span>
         </Link>
         <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>
           <Link

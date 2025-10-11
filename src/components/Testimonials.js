@@ -6,7 +6,7 @@ const Testimonials = () => {
     {
       name: 'John Doe',
       company: 'Local Business Owner',
-      text: 'Ironleaf Technologies transformed our operations with their custom software. Highly recommend!'
+      text: 'Ironleaf Technology transformed our operations with their custom software. Highly recommend!'
     },
     {
       name: 'Jane Smith',

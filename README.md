@@ -1,10 +1,10 @@
-# Ironleaf Technologies Website
+# Ironleaf Technology Website
 
-A professional, nature-inspired website for Ironleaf Technologies, a veteran-owned technology company based in Peterborough, Ontario.
+A professional, nature-inspired website for Ironleaf Technology, a veteran-owned technology company based in Peterborough, Ontario.
 
 ## About
 
-Ironleaf Technologies provides comprehensive IT solutions including:
+Ironleaf Technology provides comprehensive IT solutions including:
 - Full-stack web development
 - Microsoft 365 optimization
 - Power BI analytics
