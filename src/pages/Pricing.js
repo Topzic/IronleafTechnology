@@ -8,6 +8,22 @@ const Pricing = () => {
 
   const packages = [
     {
+      name: 'Hourly Development Services',
+      description: 'Flexible hourly development and consulting services for custom projects, maintenance, and ongoing support.',
+      price: billingCycle === 'one-time' ? 75 : 0,
+      originalPrice: billingCycle === 'one-time' ? null : 100,
+      features: [
+        'Custom development work',
+        'Technical consulting',
+        'Website maintenance',
+        'Priority support',
+        'Flexible scheduling',
+        'Billed at $75 per hour'
+      ],
+      popular: false,
+      category: 'optimization'
+    },
+    {
       name: 'Website Optimization Tune-Up',
       description: 'Comprehensive website audit and optimization to boost performance, security, and SEO',
       price: billingCycle === 'one-time' ? 750 : 50,
@@ -19,22 +35,6 @@ const Pricing = () => {
         'Mobile responsiveness check',
         'Content and usability review',
         'Actionable improvement report'
-      ],
-      popular: false,
-      category: 'optimization'
-    },
-    {
-      name: 'Hourly Development Services',
-      description: 'Flexible hourly development and consulting services for custom projects, maintenance, and ongoing support.',
-      price: billingCycle === 'one-time' ? 0 : 75,
-      originalPrice: billingCycle === 'one-time' ? null : 100,
-      features: [
-        'Custom development work',
-        'Technical consulting',
-        'Website maintenance',
-        'Priority support',
-        'Flexible scheduling',
-        'Billed at $75 per hour'
       ],
       popular: false,
       category: 'optimization'
@@ -211,7 +211,7 @@ const Pricing = () => {
 
   const filteredPackages = packages.filter(pkg => {
     if (billingCycle === 'one-time') return true;
-    return pkg.category !== 'web' || pkg.name.includes('Starter') || pkg.name.includes('Growth');
+    return (pkg.category !== 'web' || pkg.name.includes('Starter') || pkg.name.includes('Growth')) && pkg.name !== 'Hourly Development Services';
   });
 
   const handleBookCall = () => {
@@ -284,7 +284,7 @@ const Pricing = () => {
             <div className="pricing-section">
               <div className="price">
                 ${pkg.price.toLocaleString()}
-                <span className="period">/{billingCycle === 'one-time' ? 'project' : 'month'}</span>
+                <span className="period">/{pkg.name === 'Hourly Development Services' ? 'hour' : billingCycle === 'one-time' ? 'project' : 'month'}</span>
               </div>
               {pkg.originalPrice && (
                 <div className="original-price">
