@@ -23,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "critical": "critical public/index.html --base public --inline --minify --dest public/index.html",
+    "critical": "critical public/index.html --base public --inline --dest public/index.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
