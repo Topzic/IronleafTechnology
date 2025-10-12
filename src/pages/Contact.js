@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { createClient } from '@supabase/supabase-js';
 import './Contact.css';
+
+const supabase = createClient(
+  process.env.REACT_APP_SUPABASE_URL,
+  process.env.REACT_APP_SUPABASE_ANON_KEY
+);
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -35,10 +41,33 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+      if (error) {
+        console.error('Error submitting form:', error);
+        alert('Failed to submit form. Please try again.');
+      } else {
+        console.log('Form submitted successfully:', data);
+        alert('Thank you! Your message has been sent.');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          goals: '',
+          constraints: '',
+          message: ''
+        });
+      }
+    } catch (err) {
+      console.error('Error:', err);
+      alert('An error occurred. Please try again.');
+    }
   };
 
   return (
