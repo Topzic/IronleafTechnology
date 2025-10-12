@@ -261,6 +261,9 @@
 }
 
 @media (max-width: 768px) {
+  .hero-overlay {
+    background: url('/public/projects/background-mobile.webp') center/cover;
+  }
   .hero-content h1 {
     font-size: 2.5rem;
   }

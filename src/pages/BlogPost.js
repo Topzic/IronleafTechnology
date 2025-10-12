@@ -170,6 +170,43 @@ const BlogPost = () => {
         <h3>Conclusion</h3>
         <p>Peterborough's technology landscape is dynamic and promising. By staying informed about these trends, businesses and individuals can position themselves for success in our evolving digital economy.</p>
       `
+    },
+    {
+      id: 5,
+      title: 'Why PageSpeed Scores Matter: Making Your Website Lightning Fast',
+      excerpt: 'Learn how good PageSpeed scores can improve user experience, SEO, and business success.',
+      date: 'October 12, 2025',
+      readTime: '6 min read',
+      fullContent: `
+        <h3>Introduction</h3>
+        <p>Have you ever visited a website that took forever to load? Frustrating, right? In today's fast-paced world, people expect websites to load quickly. That's where PageSpeed Insights comes in. This free tool from Google helps you understand how fast your website is and gives tips on how to make it faster. But why should you care about your PageSpeed score? Let's break it down in simple terms.</p>
+
+        <h3>What is PageSpeed Insights?</h3>
+        <p>PageSpeed Insights is like a speedometer for your website. You enter your website's address, and it gives you a score from 0 to 100. A high score means your site is fast and user-friendly. It also provides suggestions on what you can do to improve.</p>
+
+        <h3>Why Speed Matters</h3>
+        <p>Imagine you're hungry and decide to order pizza. You call the restaurant, and they say it'll take 30 minutes. That's fine. But what if they said 2 hours? You'd probably hang up and order from somewhere else. The same thing happens with websites. If a site takes too long to load, visitors leave and go to your competitors.</p>
+
+        <h3>Better User Experience</h3>
+        <p>A fast website makes visitors happy. They can quickly find what they're looking for, read your content, or make a purchase. Slow sites cause frustration and can make people give up. Studies show that even a 1-second delay can reduce customer satisfaction by 16%.</p>
+
+        <h3>Improved Search Rankings</h3>
+        <p>Google loves fast websites. Since 2010, page speed has been a factor in how Google ranks websites in search results. A higher PageSpeed score can help your site appear higher in searches, meaning more people will find you.</p>
+
+        <h3>Higher Conversions and Sales</h3>
+        <p>If you run an online store or have a contact form, speed directly affects your bottom line. Faster sites convert more visitors into customers. For example, Walmart found that for every 1 second of improvement, they saw a 2% increase in conversions.</p>
+
+        <h3>Mobile Friendliness</h3>
+        <p>More people browse the internet on their phones than ever before. PageSpeed Insights checks how your site performs on mobile devices. A good score ensures your site works well on all screens, which is important since Google prioritizes mobile-friendly sites.</p>
+
+        <h3>How to Improve Your Score</h3>
+        <p>Don't worry if your score isn't perfect. PageSpeed Insights gives specific recommendations, like compressing images, using browser caching, or minimizing code. You don't need to be a tech expert – many improvements are straightforward.</p>
+
+        <h3>Conclusion</h3>
+        <p>Your website's speed isn't just a technical detail – it's crucial for success. A good PageSpeed score means happier visitors, better search rankings, and more business. Start by checking your site's score today and see how you can make it faster.</p>
+
+        <p>Ready to optimize your website for better performance? <a href="/contact" class="cta-link">Contact us</a> to book a call or fill out our lead form. We'll help you achieve those lightning-fast speeds!</p>
+      `
     }
   ];
 

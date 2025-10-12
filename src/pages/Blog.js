@@ -31,6 +31,13 @@ const Blog = () => {
       excerpt: 'What\'s happening in our community\'s technology landscape.',
       date: 'September 20, 2025',
       readTime: '4 min read'
+    },
+    {
+      id: 5,
+      title: 'Why PageSpeed Scores Matter: Making Your Website Lightning Fast',
+      excerpt: 'Learn how good PageSpeed scores can improve user experience, SEO, and business success.',
+      date: 'October 12, 2025',
+      readTime: '6 min read'
     }
   ];
 

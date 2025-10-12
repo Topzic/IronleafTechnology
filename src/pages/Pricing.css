@@ -847,6 +847,7 @@
   background: linear-gradient(135deg, #4a7c59 0%, #2d5016 100%);
   color: #fff;
   text-align: center;
+  justify-items: center;
 }
 
 .cta-section h2 {
@@ -988,6 +989,7 @@
   .cta-buttons {
     flex-direction: column;
     gap: 1rem;
+    justify-content: center;
   }
 
   .primary-cta, .secondary-cta {
