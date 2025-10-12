@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Pricing.css';
 
 const Pricing = () => {
   const navigate = useNavigate();
   const [billingCycle, setBillingCycle] = useState('one-time');
+
+  // Theme configuration
+  const isHalloweenTheme = false;
 
   const packages = [
     {
@@ -21,11 +24,12 @@ const Pricing = () => {
         'Billed at $75 per hour'
       ],
       popular: false,
-      category: 'optimization'
+      category: 'optimization',
+      icon: 'fas fa-clock'
     },
     {
       name: 'Website Optimization Tune-Up',
-      description: 'Comprehensive website audit and optimization to boost performance, security, and SEO',
+      description: billingCycle === 'one-time' ? 'Comprehensive website audit and optimization to boost performance, security, and SEO' : 'Ongoing website optimization and maintenance services',
       price: billingCycle === 'one-time' ? 750 : 50,
       originalPrice: billingCycle === 'one-time' ? null : 75,
       features: [
@@ -37,11 +41,12 @@ const Pricing = () => {
         'Actionable improvement report'
       ],
       popular: false,
-      category: 'optimization'
+      category: 'optimization',
+      icon: 'fas fa-cogs'
     },
     {
       name: 'One-Page Website',
-      description: 'Simple, effective single-page website for businesses needing a strong online presence',
+      description: billingCycle === 'one-time' ? 'Simple, effective single-page website for businesses needing a strong online presence' : 'Ongoing maintenance and support for single-page websites',
       price: billingCycle === 'one-time' ? 1500 : 100,
       originalPrice: billingCycle === 'one-time' ? null : 125,
       features: [
@@ -52,11 +57,12 @@ const Pricing = () => {
         '1 year hosting & support'
       ],
       popular: false,
-      category: 'web'
+      category: 'web',
+      icon: 'fas fa-file-alt'
     },
     {
       name: 'Web Development Starter',
-      description: 'Perfect for small businesses launching their first professional website',
+      description: billingCycle === 'one-time' ? 'Perfect for small businesses launching their first professional website' : 'Ongoing maintenance and support for starter websites',
       price: billingCycle === 'one-time' ? 2500 : 150,
       originalPrice: billingCycle === 'one-time' ? null : 200,
       features: [
@@ -67,11 +73,12 @@ const Pricing = () => {
         '1 year hosting & support'
       ],
       popular: true,
-      category: 'web'
+      category: 'web',
+      icon: 'fas fa-rocket'
     },
     {
       name: 'Web Development Growth',
-      description: 'Advanced solutions for growing businesses with complex needs',
+      description: billingCycle === 'one-time' ? 'Advanced solutions for growing businesses with complex needs' : 'Ongoing maintenance and support for advanced websites',
       price: billingCycle === 'one-time' ? 7500 : 400,
       originalPrice: billingCycle === 'one-time' ? null : 500,
       features: [
@@ -83,11 +90,12 @@ const Pricing = () => {
         '2 years hosting & priority support'
       ],
       popular: false,
-      category: 'web'
+      category: 'web',
+      icon: 'fas fa-chart-line'
     },
     {
       name: 'Web Development Enterprise',
-      description: 'Full-scale solutions for established businesses and organizations',
+      description: billingCycle === 'one-time' ? 'Full-scale solutions for established businesses and organizations' : 'Ongoing maintenance and support for enterprise websites',
       price: billingCycle === 'one-time' ? 15000 : 750,
       originalPrice: billingCycle === 'one-time' ? null : 1000,
       features: [
@@ -99,11 +107,12 @@ const Pricing = () => {
         '3 years hosting & dedicated support'
       ],
       popular: false,
-      category: 'web'
+      category: 'web',
+      icon: 'fas fa-building'
     },
     {
       name: 'Microsoft 365 Optimization',
-      description: 'Streamline your business processes with Power Platform tools',
+      description: billingCycle === 'one-time' ? 'Streamline your business processes with Power Platform tools' : 'Ongoing Microsoft 365 optimization and support services',
       price: billingCycle === 'one-time' ? 3000 : 200,
       originalPrice: billingCycle === 'one-time' ? null : 250,
       features: [
@@ -114,7 +123,8 @@ const Pricing = () => {
         'Training & documentation'
       ],
       popular: false,
-      category: 'optimization'
+      category: 'optimization',
+      icon: 'fas fa-windows'
     },
     // {
     //   name: 'Security Camera Bronze',
@@ -205,7 +215,19 @@ const Pricing = () => {
     },
     {
       question: 'Are there any hidden fees?',
-      answer: 'No hidden fees! Our pricing is transparent. We clearly outline all costs upfront, including any optional add-ons or ongoing support.'
+      answer: 'No hidden fees! Our pricing is transparent. We clearly outline all costs upfront, including any optional add-ons or ongoing support!'
+    },
+    {
+      question: 'What\'s the difference between One-Time Setup and Monthly Care Plans?',
+      answer: 'One-Time Setup is a single payment for the initial website development or optimization. Monthly Care Plans provide ongoing support, updates, and maintenance with recurring payments.'
+    },
+    {
+      question: 'Can I switch from one-time to monthly later?',
+      answer: 'Yes, you can upgrade to a monthly care plan at any time. Contact our team to discuss options.'
+    },
+    {
+      question: 'Are monthly plans the same as add-on care plans?',
+      answer: 'Monthly plans include integrated care and support. Add-on care plans are optional extras for additional services beyond the main package.'
     }
   ];
 
@@ -217,6 +239,148 @@ const Pricing = () => {
   const handleBookCall = () => {
     navigate('/contact');
   };
+
+  useEffect(() => {
+    const allCirclesContainers = document.querySelectorAll('.card-circles');
+    const cleanupFunctions = [];
+
+    allCirclesContainers.forEach(container => {
+      if (!container) return;
+      const rect = container.getBoundingClientRect();
+      const circles = Array.from(container.querySelectorAll('.card-circle'));
+      
+      // Store circle data
+      const circleData = circles.map(circle => ({
+        element: circle,
+        x: parseFloat(circle.style.left) / 100 * rect.width,
+        y: parseFloat(circle.style.top) / 100 * rect.height,
+        vx: (Math.random() > 0.5 ? 1 : -1) * 3,
+        vy: (Math.random() > 0.5 ? 1 : -1) * 3,
+        radius: circle.offsetWidth / 2
+      }));
+
+      // Mouse interaction
+      let mouseX = null;
+      let mouseY = null;
+      const handleMouseMove = (e) => {
+        const containerRect = container.getBoundingClientRect();
+        mouseX = e.clientX - containerRect.left;
+        mouseY = e.clientY - containerRect.top;
+      };
+      const handleMouseLeave = () => {
+        mouseX = null;
+        mouseY = null;
+      };
+      container.addEventListener('mousemove', handleMouseMove);
+      container.addEventListener('mouseleave', handleMouseLeave);
+
+      let animationId;
+      const animate = () => {
+        // Update circle positions and handle wall collisions
+        circleData.forEach(circle => {
+          circle.x += circle.vx;
+          circle.y += circle.vy;
+
+          // Wall collisions
+          if (circle.x <= circle.radius || circle.x >= rect.width - circle.radius) {
+            circle.vx = -circle.vx;
+            circle.x = Math.max(circle.radius, Math.min(rect.width - circle.radius, circle.x));
+          }
+          if (circle.y <= circle.radius || circle.y >= rect.height - circle.radius) {
+            circle.vy = -circle.vy;
+            circle.y = Math.max(circle.radius, Math.min(rect.height - circle.radius, circle.y));
+          }
+        });
+
+        // Circle-to-circle collisions
+        for (let i = 0; i < circleData.length; i++) {
+          for (let j = i + 1; j < circleData.length; j++) {
+            const c1 = circleData[i];
+            const c2 = circleData[j];
+            const dx = c2.x - c1.x;
+            const dy = c2.y - c1.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            const minDistance = c1.radius + c2.radius;
+
+            if (distance < minDistance) {
+              // Collision detected - simple elastic collision
+              const angle = Math.atan2(dy, dx);
+              const sin = Math.sin(angle);
+              const cos = Math.cos(angle);
+
+              // Rotate velocities
+              const v1x = c1.vx * cos + c1.vy * sin;
+              const v1y = c1.vy * cos - c1.vx * sin;
+              const v2x = c2.vx * cos + c2.vy * sin;
+              const v2y = c2.vy * cos - c2.vx * sin;
+
+              // Swap the x velocities (elastic collision)
+              const temp = v1x;
+              c1.vx = v2x * cos - v1y * sin;
+              c1.vy = v1y * cos + v2x * sin;
+              c2.vx = temp * cos - v2y * sin;
+              c2.vy = v2y * cos + temp * sin;
+
+              // Separate overlapping circles
+              const overlap = minDistance - distance;
+              const separationX = (dx / distance) * overlap * 0.5;
+              const separationY = (dy / distance) * overlap * 0.5;
+              c1.x -= separationX;
+              c1.y -= separationY;
+              c2.x += separationX;
+              c2.y += separationY;
+            }
+          }
+        }
+
+        // Mouse interaction
+        if (mouseX !== null && mouseY !== null) {
+          circleData.forEach(circle => {
+            const dx = mouseX - circle.x;
+            const dy = mouseY - circle.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            const maxDistance = 50; // Interaction radius
+
+            if (distance < maxDistance) {
+              const force = (maxDistance - distance) / maxDistance;
+              const angle = Math.atan2(dy, dx);
+              circle.vx -= Math.cos(angle) * force * 0.5;
+              circle.vy -= Math.sin(angle) * force * 0.5;
+            }
+          });
+        }
+
+        // Apply friction to prevent infinite acceleration
+        circleData.forEach(circle => {
+          circle.vx *= 0.999;
+          circle.vy *= 0.999;
+        });
+
+        // Update DOM positions
+        circleData.forEach(circle => {
+          circle.element.style.left = `${(circle.x / rect.width) * 100}%`;
+          circle.element.style.top = `${(circle.y / rect.height) * 100}%`;
+        });
+
+        animationId = requestAnimationFrame(animate);
+      };
+      animate();
+
+      // Store cleanup function
+      cleanupFunctions.push(() => {
+        container.removeEventListener('mousemove', handleMouseMove);
+        container.removeEventListener('mouseleave', handleMouseLeave);
+        if (animationId) {
+          cancelAnimationFrame(animationId);
+        }
+      });
+    });
+
+    // Return cleanup function
+    return () => {
+      cleanupFunctions.forEach(cleanup => cleanup());
+    };
+  }, [billingCycle]);
 
   return (
     <div className="pricing-page">
@@ -258,58 +422,193 @@ const Pricing = () => {
 
         <div className="pricing-highlights">
           <div className="highlight">
-            <span className="icon">🛡️</span>
+            <span className="icon"><i className="fas fa-shield-alt"></i></span>
             <span>Veteran-Owned & Operated</span>
           </div>
           <div className="highlight">
-            <span className="icon">⭐</span>
+            <span className="icon"><i className="fas fa-star"></i></span>
             <span>Committed to Your Success</span>
           </div>
           <div className="highlight">
-            <span className="icon">🎯</span>
+            <span className="icon"><i className="fas fa-bullseye"></i></span>
             <span>Local Peterborough Service</span>
           </div>
         </div>
       </section>
 
+      <section className="service-explanation">
+        <div className="container">
+          <p>One-time setup fees cover complete implementation, testing, training, and initial support. Monthly care plans provide ongoing maintenance, updates, and support services.</p>
+        </div>
+      </section>
+
       <section className="pricing-cards">
-        {filteredPackages.map((pkg, index) => (
-          <div key={index} className={`pricing-card ${pkg.popular ? 'popular' : ''}`}>
-            {pkg.popular && <span className="popular-badge">Most Popular</span>}
-            <div className="card-header">
-              <h3>{pkg.name}</h3>
-              <p className="description">{pkg.description}</p>
-            </div>
-
-            <div className="pricing-section">
-              <div className="price">
-                ${pkg.price.toLocaleString()}
-                <span className="period">/{pkg.name === 'Hourly Development Services' ? 'hour' : billingCycle === 'one-time' ? 'project' : 'month'}</span>
+        <h2>Web Development Packages</h2>
+        <div className="web-packages">
+          {filteredPackages.filter(pkg => pkg.category === 'web').map((pkg, index) => (
+            <div key={index} className={`pricing-card ${pkg.popular ? 'popular' : ''} ${pkg.name === 'Web Development Enterprise' ? 'color-3' : `color-${index % 3}`}`}>
+              {pkg.popular && <span className="popular-badge">Most Popular</span>}
+              <div className="card-top">
+              <div className="card-circles">
+                {Array.from({ length: 3 + Math.floor(Math.random() * 3) }, (_, i) => {
+                  if (isHalloweenTheme) {
+                    const emojis = ['👻', '🦇', '🎃', '🦃'];
+                    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+                    return (
+                      <span
+                        key={i}
+                        className="card-circle"
+                        style={{
+                          top: `${20 + Math.random() * 40}%`,
+                          left: `${20 + Math.random() * 40}%`,
+                          width: `${30 + Math.random() * 30}px`,
+                          height: `${30 + Math.random() * 30}px`,
+                          fontSize: `${30 + Math.random() * 30}px`,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          backgroundColor: 'transparent'
+                        }}
+                      >
+                        {randomEmoji}
+                      </span>
+                    );
+                  } else {
+                    return (
+                      <span
+                        key={i}
+                        className="card-circle"
+                        style={{
+                          top: `${20 + Math.random() * 40}%`,
+                          left: `${20 + Math.random() * 40}%`,
+                          width: `${30 + Math.random() * 30}px`,
+                          height: `${30 + Math.random() * 30}px`,
+                          borderRadius: '50%',
+                          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)'
+                        }}
+                      ></span>
+                    );
+                  }
+                })}
               </div>
-              {pkg.originalPrice && (
-                <div className="original-price">
-                  Originally ${pkg.originalPrice}/month
+                <i className={`${pkg.icon} card-icon`}></i>
+                <h3 className="plan-name">{pkg.name}</h3>
+                <div className="price-block">
+                  <span className="currency">$</span>
+                  {pkg.price.toLocaleString()}
+                  <span className="period">/{pkg.name === 'Hourly Development Services' ? 'hour' : billingCycle === 'one-time' ? 'project' : 'month'}</span>
                 </div>
-              )}
+                {pkg.originalPrice && (
+                  <div className="original-price">
+                    Originally ${pkg.originalPrice}/month
+                  </div>
+                )}
+                <p className="card-description">{pkg.description}</p>
+              </div>
+
+              <div className="card-bottom">
+                <ul className="features-list">
+                  {pkg.features.map((feature, i) => (
+                    <li key={i}>
+                      <span className="checkmark">✓</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <button className="cta-button" onClick={handleBookCall}>Get Started</button>
+              </div>
             </div>
+          ))}
+        </div>
+      </section>
 
-            <ul className="features-list">
-              {pkg.features.map((feature, i) => (
-                <li key={i}>
-                  <span className="checkmark">✓</span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
+      <section className="pricing-cards">
+        <h2>Optimization Services</h2>
+        <div className="optimization-packages">
+          {filteredPackages.filter(pkg => pkg.category === 'optimization').map((pkg, index) => (
+            <div key={index} className={`pricing-card ${pkg.popular ? 'popular' : ''} ${pkg.name === 'Web Development Enterprise' ? 'color-3' : `color-${index % 3}`}`}>
+              {pkg.popular && <span className="popular-badge">Most Popular</span>}
+              <div className="card-top">
+              <div className="card-circles">
+                {Array.from({ length: 3 + Math.floor(Math.random() * 3) }, (_, i) => {
+                  if (isHalloweenTheme) {
+                    const emojis = ['👻', '🦇', '🎃'];
+                    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+                    return (
+                      <span
+                        key={i}
+                        className="card-circle"
+                        style={{
+                          top: `${20 + Math.random() * 40}%`,
+                          left: `${20 + Math.random() * 40}%`,
+                          width: `${30 + Math.random() * 30}px`,
+                          height: `${30 + Math.random() * 30}px`,
+                          fontSize: `${30 + Math.random() * 30}px`,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          backgroundColor: 'transparent'
+                        }}
+                      >
+                        {randomEmoji}
+                      </span>
+                    );
+                  } else {
+                    return (
+                      <span
+                        key={i}
+                        className="card-circle"
+                        style={{
+                          top: `${20 + Math.random() * 40}%`,
+                          left: `${20 + Math.random() * 40}%`,
+                          width: `${30 + Math.random() * 30}px`,
+                          height: `${30 + Math.random() * 30}px`,
+                          borderRadius: '50%',
+                          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)'
+                        }}
+                      ></span>
+                    );
+                  }
+                })}
+              </div>
+                <i className={`${pkg.icon} card-icon`}></i>
+                <h3 className="plan-name">{pkg.name}</h3>
+                <div className="price-block">
+                  <span className="currency">$</span>
+                  {pkg.price.toLocaleString()}
+                  <span className="period">/{pkg.name === 'Hourly Development Services' ? 'hour' : billingCycle === 'one-time' ? 'project' : 'month'}</span>
+                </div>
+                {pkg.originalPrice && (
+                  <div className="original-price">
+                    Originally ${pkg.originalPrice}/month
+                  </div>
+                )}
+                <p className="card-description">{pkg.description}</p>
+              </div>
 
-            <button className="cta-button" onClick={handleBookCall}>Get Started</button>
-          </div>
-        ))}
+              <div className="card-bottom">
+                <ul className="features-list">
+                  {pkg.features.map((feature, i) => (
+                    <li key={i}>
+                      <span className="checkmark">✓</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <button className="cta-button" onClick={handleBookCall}>Get Started</button>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="add-ons-section">
         <h2>Add-On Services & Support</h2>
-        <p>Enhance your solution with ongoing support and additional features</p>
+        <p>Enhance your solution with ongoing support and additional features. These add-on services are separate from our monthly care plans and provide flexible, à la carte support options for businesses that prefer customized, pay-as-you-go assistance rather than comprehensive monthly packages.</p>
 
         <div className="add-ons-grid">
           {addOns.map((addOn, index) => (
@@ -379,6 +678,7 @@ const Pricing = () => {
           <button className="primary-cta" onClick={handleBookCall}>Book a Discovery Call</button>
           <button className="secondary-cta">View Our Portfolio</button>
         </div>
+        <p className="terms-link">By proceeding, you agree to our <a href="/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a>.</p>
       </section>
     </div>
   );

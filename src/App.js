@@ -10,6 +10,7 @@ import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Terms from './pages/Terms';
 // import Support from './pages/Support';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/terms" element={<Terms />} />
           {/* <Route path="/support" element={<Support />} /> */}
         </Routes>
         <Footer />
