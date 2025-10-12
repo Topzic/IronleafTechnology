@@ -12,6 +12,12 @@ const HeroSection = () => {
   return (
     <section className="hero">
       <div className="hero-overlay"></div>
+      <img 
+        src="projects/background.webp" 
+        fetchPriority="high" 
+        alt="Hero background" 
+        style={{ display: 'none' }}
+      />
       <div className="animated-circles">
         <span className="circle circle1"></span>
         <span className="circle circle2"></span>

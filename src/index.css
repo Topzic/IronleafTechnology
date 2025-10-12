@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Override Font Awesome font-display for better performance */
+@font-face {
+  font-family: 'Font Awesome 6 Solid';
+  src: url('~@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2') format('woff2');
+  font-display: swap;
+}
