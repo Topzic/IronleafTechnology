@@ -553,7 +553,7 @@ const Pricing = () => {
       </section>
 
       <section className="pricing-cards">
-        <h2>Web Development Packages</h2>
+        <h2>Web Development Packages (2 revisions included)</h2>
         <div className="web-packages">
           {filteredPackages
             .filter((pkg) => pkg.category === "web")

@@ -42,10 +42,11 @@ const HeroSection = () => {
       <div className="hero-content">
         <h1>Empowering Businesses with Veteran-Driven Technology</h1>
         <p>
-          Full-stack web development, Microsoft 365 optimization, Power BI
-          analytics, security solutions, and custom software for small
-          businesses, public sector, and outdoor organizations in Peterborough
-          and beyond.
+          Veteran-driven technology solutions designed for performance and
+          growth. At Ironleaf Technology, we build custom websites, software,
+          and digital systems—integrating analytics, automation, and SEO
+          optimization to help you attract clients, streamline workflows, and
+          scale with confidence.
         </p>
         <button className="cta-button" onClick={handleBookCall}>
           Book a Discovery Call
