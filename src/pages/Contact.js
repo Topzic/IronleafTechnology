@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
+import { Helmet } from "react-helmet-async";
 import "./Contact.css";
 import ReactGA4 from "react-ga4";
 
@@ -126,6 +127,17 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
+      <Helmet>
+        <title>Contact Us - Ironleaf Technology | Get in Touch</title>
+        <meta
+          name="description"
+          content="Contact Ironleaf Technology for IT solutions in Peterborough, Ontario. Reach out for web development, Microsoft 365 support, Power BI analytics, and custom software services."
+        />
+        <meta
+          name="keywords"
+          content="contact Ironleaf Technology, IT support Peterborough, web development contact, Microsoft 365 help"
+        />
+      </Helmet>
       <section className="hero-section">
         <div className="animated-circles">
           <span className="circle circle1"></span>

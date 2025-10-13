@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import "./Pricing.css";
 import ReactGA4 from "react-ga4";
 
@@ -8,14 +9,7 @@ const Pricing = () => {
   const [billingCycle, setBillingCycle] = useState("one-time");
 
   // Theme configuration
-  const isHalloweenTheme = false;
-
-  const formatPrice = (price) => {
-    if (typeof price === "number") {
-      return price.toLocaleString();
-    }
-    return price;
-  };
+  const isHalloweenTheme = false; // Set to true for Halloween theme
 
   const packages = [
     {
@@ -480,6 +474,17 @@ const Pricing = () => {
 
   return (
     <div className="pricing-page">
+      <Helmet>
+        <title>Pricing - Ironleaf Technology | IT Services Packages</title>
+        <meta
+          name="description"
+          content="Explore Ironleaf Technology's pricing for IT services including web development, Microsoft 365, Power BI, and custom software solutions in Peterborough, Ontario."
+        />
+        <meta
+          name="keywords"
+          content="IT pricing, web development costs, Microsoft 365 pricing, Power BI analytics pricing, custom software pricing"
+        />
+      </Helmet>
       <section className="pricing-hero">
         <div className="animated-circles">
           <span className="circle circle1"></span>
