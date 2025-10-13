@@ -88,7 +88,8 @@ window.addEventListener("beforeunload", function () {
 ```
 
 - **Where to Implement**:
-  - Button click tracking: Added to `HeroSection.js` on the "Book a Discovery Call" button.
+  - Call button tracking: Added to `HeroSection.js` on the "Book a Discovery Call" button.
+- Custom quote button tracking: Added to `Pricing.js` on the "Get a Custom Quote" button.
   - Form start/abandon tracking: Added to `Contact.js` on the lead form (start on name input focus, abandon on page unload if not submitted).
   - Ensure scripts load after DOM elements (e.g., at end of `<body>` or use `DOMContentLoaded`).
 
@@ -119,3 +120,4 @@ If using a framework like React, integrate via `react-ga4` npm package instead o
 - `react-ga4` installed and initialized in `src/index.js`.
 - Call button tracking added to `src/components/HeroSection.js`.
 - Form tracking added to `src/pages/Contact.js`.
+- Custom quote button tracking added to `src/pages/Pricing.js`.

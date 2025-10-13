@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Pricing.css";
+import ReactGA4 from "react-ga4";
 
 const Pricing = () => {
   const navigate = useNavigate();
@@ -8,6 +9,13 @@ const Pricing = () => {
 
   // Theme configuration
   const isHalloweenTheme = false;
+
+  const formatPrice = (price) => {
+    if (typeof price === "number") {
+      return price.toLocaleString();
+    }
+    return price;
+  };
 
   const packages = [
     {
@@ -34,7 +42,7 @@ const Pricing = () => {
         billingCycle === "one-time"
           ? "Comprehensive website audit and optimization to boost performance, security, and SEO"
           : "Ongoing website optimization and maintenance services",
-      price: billingCycle === "one-time" ? 750 : 50,
+      price: billingCycle === "one-time" ? 500 : 50,
       originalPrice: billingCycle === "one-time" ? null : 75,
       features: [
         "Full SEO audit and recommendations",
@@ -54,7 +62,7 @@ const Pricing = () => {
         billingCycle === "one-time"
           ? "Simple, effective single-page website for businesses needing a strong online presence"
           : "Ongoing maintenance and support for single-page websites",
-      price: billingCycle === "one-time" ? 1500 : 100,
+      price: billingCycle === "one-time" ? "500-1500" : 100,
       originalPrice: billingCycle === "one-time" ? null : 125,
       features: [
         "Responsive design for all devices",
@@ -73,7 +81,7 @@ const Pricing = () => {
         billingCycle === "one-time"
           ? "Perfect for small businesses launching their first professional website"
           : "Ongoing maintenance and support for starter websites",
-      price: billingCycle === "one-time" ? 2500 : 150,
+      price: billingCycle === "one-time" ? "1500-2500" : 150,
       originalPrice: billingCycle === "one-time" ? null : 200,
       features: [
         "Responsive design for all devices",
@@ -92,7 +100,7 @@ const Pricing = () => {
         billingCycle === "one-time"
           ? "Advanced solutions for growing businesses with complex needs"
           : "Ongoing maintenance and support for advanced websites",
-      price: billingCycle === "one-time" ? 7500 : 400,
+      price: billingCycle === "one-time" ? "5000-7500" : 400,
       originalPrice: billingCycle === "one-time" ? null : 500,
       features: [
         "Everything in Starter, plus:",
@@ -112,7 +120,7 @@ const Pricing = () => {
         billingCycle === "one-time"
           ? "Full-scale solutions for established businesses and organizations"
           : "Ongoing maintenance and support for enterprise websites",
-      price: billingCycle === "one-time" ? 15000 : 750,
+      price: billingCycle === "one-time" ? "8000-15000" : 750,
       originalPrice: billingCycle === "one-time" ? null : 1000,
       features: [
         "Everything in Growth, plus:",
@@ -299,6 +307,20 @@ const Pricing = () => {
   });
 
   const handleBookCall = () => {
+    ReactGA4.event({
+      category: "engagement",
+      action: "click",
+      label: "book_call_pricing",
+    });
+    navigate("/contact");
+  };
+
+  const handleCustomQuote = () => {
+    ReactGA4.event({
+      category: "engagement",
+      action: "click",
+      label: "custom_quote_pricing",
+    });
     navigate("/contact");
   };
 
@@ -479,7 +501,8 @@ const Pricing = () => {
         <h1>Services & Pricing</h1>
         <p>
           Comprehensive technology solutions with transparent pricing for your
-          business needs.
+          business needs. All prices are starting points—contact us for a custom
+          quote tailored to your project.
         </p>
 
         <div className="billing-toggle">
@@ -598,7 +621,9 @@ const Pricing = () => {
                   <h3 className="plan-name">{pkg.name}</h3>
                   <div className="price-block">
                     <span className="currency">$</span>
-                    {pkg.price.toLocaleString()}
+                    {typeof pkg.price === "number"
+                      ? pkg.price.toLocaleString()
+                      : pkg.price}
                     <span className="period">
                       /
                       {pkg.name === "Hourly Development Services"
@@ -704,7 +729,9 @@ const Pricing = () => {
                   <h3 className="plan-name">{pkg.name}</h3>
                   <div className="price-block">
                     <span className="currency">$</span>
-                    {pkg.price.toLocaleString()}
+                    {typeof pkg.price === "number"
+                      ? pkg.price.toLocaleString()
+                      : pkg.price}
                     <span className="period">
                       /
                       {pkg.name === "Hourly Development Services"
@@ -830,6 +857,9 @@ const Pricing = () => {
         <div className="cta-buttons">
           <button className="primary-cta" onClick={handleBookCall}>
             Book a Discovery Call
+          </button>
+          <button className="secondary-cta" onClick={handleCustomQuote}>
+            Get a Custom Quote
           </button>
           <button className="secondary-cta">View Our Portfolio</button>
         </div>
