@@ -49,6 +49,32 @@
   color: #333;
 }
 
+.form-group label .hint-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #4a7c59;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 16px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  vertical-align: middle;
+}
+
+.form-group label .hint-icon:hover {
+  background: #2d5016;
+  transform: scale(1.1);
+}
+
+.form-group label .hint-icon:active {
+  transform: scale(0.95);
+}
+
 .form-group input,
 .form-group textarea {
   width: 100%;
@@ -348,5 +374,47 @@
 @media (max-width: 768px) {
   .contact-content {
     grid-template-columns: 1fr;
+    padding: 3rem 1rem;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 2rem 0;
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .contact-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .contact-info {
+    gap: 1.5rem;
+  }
+
+  .info-card, .booking-calendar, .map-embed {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .form-group label .hint-icon {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    margin-left: 0.25rem;
   }
 }

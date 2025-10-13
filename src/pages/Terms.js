@@ -68,7 +68,7 @@ const Terms = () => {
           <p>We may update these Terms at any time. Continued use of services constitutes acceptance of changes.</p>
 
           <h2>15. Contact Information</h2>
-          <p>For questions about these Terms, contact me at Ian_Cunningham@live.com or (705) 768-2636.</p>
+          <p>For questions about these Terms, contact me at support@ironleaftechnology.com or (705) 768-2636.</p>
 
           <p><strong>Last updated: October 12, 2025</strong></p>
         </div>

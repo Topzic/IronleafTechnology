@@ -24,24 +24,24 @@ const About = () => {
       </section>
 
       <section className="founder-bio">
-        <h2>Meet Our Founder</h2>
+        <h2>About Me</h2>
         <div className="bio-content">
           <img src="/projects/profile.jpg" alt="Ian Cunningham" />
           <div className="bio-text">
             <h3>Ian Cunningham</h3>
             <p>Veteran, Software Engineer, Entrepreneur</p>
-            <p>Ian brings over a decade of experience in technology and military service. As a former infantry specialist with the Canadian Armed Forces, he understands discipline, teamwork, and mission-critical operations. His background in software engineering, combined with his passion for nature and community, drives Ironleaf Technology' commitment to sustainable, reliable tech solutions.</p>
+            <p>Ian brings over a decade of experience in technology and military service. As a former infantry specialist with the Canadian Armed Forces, he understands discipline, teamwork, and mission-critical operations. His background in software engineering, combined with his passion for nature and community, drives my commitment to sustainable, reliable tech solutions.</p>
             <p>Based in Peterborough, Ontario, Ian is dedicated to supporting local businesses and organizations with technology that empowers growth and efficiency.</p>
           </div>
         </div>
       </section>
 
       <section className="mission-values">
-        <h2>Our Mission, Vision & Values</h2>
+        <h2>My Mission, Vision & Values</h2>
         <div className="values-grid">
           <div className="value-card">
             <h3>Integrity</h3>
-            <p>Honest, ethical practices in all our dealings.</p>
+            <p>Honest, ethical practices in all my dealings.</p>
           </div>
           <div className="value-card">
             <h3>Reliability</h3>
@@ -67,8 +67,8 @@ const About = () => {
       </section>
 
       <section className="community-commitment">
-        <h2>Community & Environmental Commitment</h2>
-        <p>At Ironleaf Technology, we believe in giving back to our community and protecting our environment. We support local initiatives, offer discounts to veterans and nonprofits, and strive to minimize our environmental impact through sustainable practices.</p>
+        <h2>My Community & Environmental Commitment</h2>
+        <p>At Ironleaf Technology, I believe in giving back to my community and protecting our environment. I support local initiatives, offer discounts to veterans and nonprofits, and strive to minimize my environmental impact through sustainable practices.</p>
       </section>
     </div>
   );

@@ -220,7 +220,7 @@ const Pricing = () => {
     },
     {
       name: "Support Retainers",
-      description: "Priority access to our team",
+      description: "Direct priority access to the owner",
       options: [
         {
           name: "5 Hours/Month",
@@ -248,27 +248,27 @@ const Pricing = () => {
     {
       question: "What's included in the one-time setup fee?",
       answer:
-        "Our one-time fees cover complete implementation, testing, training, and initial support. This includes all development work, integrations, and getting your solution fully operational.",
+        "My one-time fees cover complete implementation, testing, training, and initial support. This includes all development work, integrations, and getting your solution fully operational.",
     },
     {
       question: "Can I upgrade or modify my package later?",
       answer:
-        "Absolutely! We offer flexible upgrade paths. Contact us to discuss adding features or scaling your solution as your business grows.",
+        "Absolutely! I offer flexible upgrade paths. Contact us to discuss adding features or scaling your solution as your business grows.",
     },
     {
       question: "Do you offer payment plans?",
       answer:
-        "Yes, we offer flexible payment terms for larger projects. Monthly care plans and retainers can also help spread costs over time.",
+        "Yes, I offer flexible payment terms for larger projects. Monthly care plans and retainers can also help spread costs over time.",
     },
     {
       question: "What kind of support do you provide?",
       answer:
-        "We provide comprehensive support including technical assistance, training, updates, and optimization. Care plans include proactive monitoring and maintenance.",
+        "I provide comprehensive support including technical assistance, training, updates, and optimization. Care plans include proactive monitoring and maintenance.",
     },
     {
       question: "Are there any hidden fees?",
       answer:
-        "No hidden fees! Our pricing is transparent. We clearly outline all costs upfront, including any optional add-ons or ongoing support!",
+        "No hidden fees! My pricing is transparent. I clearly outline all costs upfront, including any optional add-ons or ongoing support!",
     },
     {
       question:
@@ -279,7 +279,7 @@ const Pricing = () => {
     {
       question: "Can I switch from one-time to monthly later?",
       answer:
-        "Yes, you can upgrade to a monthly care plan at any time. Contact our team to discuss options.",
+        "Yes, you can upgrade to a monthly care plan at any time. Contact me to discuss options.",
     },
     {
       question: "Are monthly plans the same as add-on care plans?",
@@ -785,7 +785,7 @@ const Pricing = () => {
               <div className="discount-badge">20% OFF</div>
               <h3>Veterans & First Responders</h3>
               <p>
-                Thank you for your service. We offer special pricing for
+                Thank you for your service. I offer special pricing for
                 veterans, military families, and first responders.
               </p>
             </div>

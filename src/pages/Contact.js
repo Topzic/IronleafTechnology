@@ -18,6 +18,29 @@ const Contact = () => {
     message: ''
   });
 
+  const formatPhoneNumber = (value) => {
+    const phoneNumber = value.replace(/\D/g, '');
+    if (phoneNumber.length <= 3) {
+      return phoneNumber;
+    } else if (phoneNumber.length <= 6) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+    } else {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+    }
+  };
+
+  const handlePhoneChange = (e) => {
+    const formatted = formatPhoneNumber(e.target.value);
+    setFormData({
+      ...formData,
+      phone: formatted
+    });
+  };
+
+  const showHint = (hintText) => {
+    alert(hintText);
+  };
+
   useEffect(() => {
     // Load Calendly widget script
     const script = document.createElement('script');
@@ -96,7 +119,7 @@ const Contact = () => {
           <h2>Lead Form</h2>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Name *</label>
+              <label htmlFor="name">Name * <span className="hint-icon" title="Please enter your full name as it appears on official documents" onClick={() => showHint("Please enter your full name as it appears on official documents")}>?</span></label>
               <input
                 type="text"
                 id="name"
@@ -107,7 +130,7 @@ const Contact = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email *</label>
+              <label htmlFor="email">Email * <span className="hint-icon" title="Please provide a valid email address where we can reach you for project updates and communications" onClick={() => showHint("Please provide a valid email address where we can reach you for project updates and communications")}>?</span></label>
               <input
                 type="email"
                 id="email"
@@ -118,17 +141,17 @@ const Contact = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="phone">Phone</label>
+              <label htmlFor="phone">Phone <span className="hint-icon" title="Please enter your phone number - it will automatically format as you type (e.g., (705) 123-4567)" onClick={() => showHint("Please enter your phone number - it will automatically format as you type (e.g., (705) 123-4567)")}>?</span></label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
                 value={formData.phone}
-                onChange={handleChange}
+                onChange={handlePhoneChange}
               />
             </div>
             <div className="form-group">
-              <label htmlFor="company">Company/Organization</label>
+              <label htmlFor="company">Company/Organization <span className="hint-icon" title="Please enter your company or organization name, or 'Individual' if this is a personal project" onClick={() => showHint("Please enter your company or organization name, or 'Individual' if this is a personal project")}>?</span></label>
               <input
                 type="text"
                 id="company"
@@ -138,7 +161,7 @@ const Contact = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="goals">Project Goals</label>
+              <label htmlFor="goals">Project Goals <span className="hint-icon" title="Please describe your project objectives, target audience, key features, and any specific requirements" onClick={() => showHint("Please describe your project objectives, target audience, key features, and any specific requirements")}>?</span></label>
               <textarea
                 id="goals"
                 name="goals"
@@ -148,7 +171,7 @@ const Contact = () => {
               ></textarea>
             </div>
             <div className="form-group">
-              <label htmlFor="constraints">Timeline/Budget Constraints</label>
+              <label htmlFor="constraints">Timeline/Budget Constraints <span className="hint-icon" title="Please share your preferred timeline for completion and any budget considerations or limitations" onClick={() => showHint("Please share your preferred timeline for completion and any budget considerations or limitations")}>?</span></label>
               <textarea
                 id="constraints"
                 name="constraints"
@@ -158,7 +181,7 @@ const Contact = () => {
               ></textarea>
             </div>
             <div className="form-group">
-              <label htmlFor="message">Additional Message</label>
+              <label htmlFor="message">Additional Message <span className="hint-icon" title="Any other details, questions, or specific requirements you'd like to share about your project" onClick={() => showHint("Any other details, questions, or specific requirements you'd like to share about your project")}>?</span></label>
               <textarea
                 id="message"
                 name="message"
@@ -175,9 +198,8 @@ const Contact = () => {
           <div className="info-card">
             <h3>Contact Information</h3>
             <p><strong>Ian Cunningham</strong></p>
-            <p>957 Webber Ave, Peterborough, ON</p>
             <p>(705) 768-2636</p>
-            <p>Ian_Cunningham@live.com</p>
+            <p>support@ironleaftechnology.com</p>
             <p>https://iancunningham.dev/</p>
           </div>
 

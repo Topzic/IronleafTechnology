@@ -172,40 +172,121 @@ const BlogPost = () => {
       `
     },
     {
-      id: 5,
-      title: 'Why PageSpeed Scores Matter: Making Your Website Lightning Fast',
-      excerpt: 'Learn how good PageSpeed scores can improve user experience, SEO, and business success.',
-      date: 'October 12, 2025',
-      readTime: '6 min read',
+      id: 6,
+      title: 'Why Professional Website Development Beats DIY: Save Time, Avoid Headaches, and Grow Your Business',
+      excerpt: 'Discover why hiring a professional developer like me can save you countless hours and deliver results that DIY website builders simply can\'t match.',
+      date: 'October 15, 2025',
+      readTime: '8 min read',
       fullContent: `
-        <h3>Introduction</h3>
-        <p>Have you ever visited a website that took forever to load? Frustrating, right? In today's fast-paced world, people expect websites to load quickly. That's where PageSpeed Insights comes in. This free tool from Google helps you understand how fast your website is and gives tips on how to make it faster. But why should you care about your PageSpeed score? Let's break it down in simple terms.</p>
+        <h3>The Hidden Costs of "Easy" Website Builders</h3>
+        <p>Picture this: You're a busy business owner with a million things on your plate. You need a website, and you've heard that platforms like Wix, Squarespace, or WordPress make it "easy" to build one yourself. Sounds perfect, right? You can just drag and drop elements, choose a template, and boom – you're online!</p>
 
-        <h3>What is PageSpeed Insights?</h3>
-        <p>PageSpeed Insights is like a speedometer for your website. You enter your website's address, and it gives you a score from 0 to 100. A high score means your site is fast and user-friendly. It also provides suggestions on what you can do to improve.</p>
+        <p>But here's the reality I've seen time and time again: what starts as a simple project often turns into a frustrating, time-consuming nightmare that costs more than hiring a professional from the start.</p>
 
-        <h3>Why Speed Matters</h3>
-        <p>Imagine you're hungry and decide to order pizza. You call the restaurant, and they say it'll take 30 minutes. That's fine. But what if they said 2 hours? You'd probably hang up and order from somewhere else. The same thing happens with websites. If a site takes too long to load, visitors leave and go to your competitors.</p>
+        <h3>The Time Trap: Your Most Valuable Asset</h3>
+        <p>Let's talk about time – the one resource you can never get back. When you choose a DIY website builder, you're essentially volunteering to become a web designer, developer, and IT specialist all at once.</p>
 
-        <h3>Better User Experience</h3>
-        <p>A fast website makes visitors happy. They can quickly find what they're looking for, read your content, or make a purchase. Slow sites cause frustration and can make people give up. Studies show that even a 1-second delay can reduce customer satisfaction by 16%.</p>
+        <p>Consider Sarah, a local Peterborough restaurant owner. She spent 3 months trying to customize a Wix template for her new café. What should have taken a few hours turned into endless nights of frustration:</p>
 
-        <h3>Improved Search Rankings</h3>
-        <p>Google loves fast websites. Since 2010, page speed has been a factor in how Google ranks websites in search results. A higher PageSpeed score can help your site appear higher in searches, meaning more people will find you.</p>
+        <ul>
+          <li>Struggling with mobile responsiveness that "looked fine" on desktop</li>
+          <li>Fighting with plugins that conflicted with each other</li>
+          <li>Dealing with broken forms that never sent customer inquiries</li>
+          <li>Constantly tweaking layouts that looked different in every browser</li>
+        </ul>
 
-        <h3>Higher Conversions and Sales</h3>
-        <p>If you run an online store or have a contact form, speed directly affects your bottom line. Faster sites convert more visitors into customers. For example, Walmart found that for every 1 second of improvement, they saw a 2% increase in conversions.</p>
+        <p>By the time she reached out to me, she had invested 120+ hours of her valuable time – time she could have spent perfecting her menu, training staff, or connecting with customers.</p>
 
-        <h3>Mobile Friendliness</h3>
-        <p>More people browse the internet on their phones than ever before. PageSpeed Insights checks how your site performs on mobile devices. A good score ensures your site works well on all screens, which is important since Google prioritizes mobile-friendly sites.</p>
+        <h3>The Overcomplication Myth</h3>
+        <p>Website builders market themselves as "simple" and "intuitive," but the reality is far more complex. WordPress, for example, powers 40% of websites worldwide, but that doesn't mean it's easy. Behind the scenes, you're dealing with:</p>
 
-        <h3>How to Improve Your Score</h3>
-        <p>Don't worry if your score isn't perfect. PageSpeed Insights gives specific recommendations, like compressing images, using browser caching, or minimizing code. You don't need to be a tech expert – many improvements are straightforward.</p>
+        <ul>
+          <li><strong>Theme Customization:</strong> CSS, PHP, and JavaScript conflicts that break your design</li>
+          <li><strong>Plugin Management:</strong> 50,000+ plugins to choose from, many of which are outdated or incompatible</li>
+          <li><strong>Security Updates:</strong> Constantly patching vulnerabilities you don't understand</li>
+          <li><strong>Performance Optimization:</strong> Complicated caching, image compression, and database tuning</li>
+        </ul>
 
-        <h3>Conclusion</h3>
-        <p>Your website's speed isn't just a technical detail – it's crucial for success. A good PageSpeed score means happier visitors, better search rankings, and more business. Start by checking your site's score today and see how you can make it faster.</p>
+        <p>And don't get me started on Wix's limitations. Sure, it's drag-and-drop, but try customizing anything beyond the basics. Want a specific layout? Custom functionality? Advanced SEO? You're out of luck without expensive add-ons or workarounds that break with the next update.</p>
 
-        <p>Ready to optimize your website for better performance? <a href="/contact" class="cta-link">Contact us</a> to book a call or fill out our lead form. We'll help you achieve those lightning-fast speeds!</p>
+        <h3>The Optimization Nightmare</h3>
+        <p>Website optimization isn't just about making things "look nice" – it's about making your site work for your business. This includes:</p>
+
+        <ul>
+          <li><strong>SEO:</strong> Proper meta tags, schema markup, and content structure</li>
+          <li><strong>Performance:</strong> Fast loading times, optimized images, and efficient code</li>
+          <li><strong>Accessibility:</strong> WCAG compliance for all users</li>
+          <li><strong>Security:</strong> SSL certificates, secure forms, and data protection</li>
+          <li><strong>Mobile Experience:</strong> Perfect functionality across all devices</li>
+        </ul>
+
+        <p>Take Mike, a Peterborough contractor who built his site on WordPress. He spent weeks trying to optimize his PageSpeed score, only to discover that his theme was loading 2MB of unnecessary CSS and his plugins were conflicting with each other. The result? A site that looked professional but performed poorly, costing him potential customers who bounced due to slow loading times.</p>
+
+        <h3>My Technology Background: Your Guarantee of Success</h3>
+        <p>As a former Canadian Armed Forces infantry specialist with over a decade in software engineering, I've tackled complex technical challenges that most people never encounter. My background has prepared me for any technical project, from simple business websites to complex web applications.</p>
+
+        <p>Here's what that means for you:</p>
+
+        <ul>
+          <li><strong>Problem-Solving Expertise:</strong> Military training taught me to break down complex problems and find efficient solutions</li>
+          <li><strong>Technical Proficiency:</strong> Full-stack development skills in React, Node.js, databases, and cloud platforms</li>
+          <li><strong>Quality Assurance:</strong> Rigorous testing and attention to detail ensure your site works flawlessly</li>
+          <li><strong>Ongoing Support:</strong> I'm here after launch to handle updates, fixes, and improvements</li>
+        </ul>
+
+        <h3>Real Results from Real Clients</h3>
+        <p>Let me share a few success stories from Peterborough businesses:</p>
+
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <h4>United Property Experts</h4>
+          <p>"Ian transformed our online presence completely. Our new website increased qualified leads by 40% in just two months. What impressed me most was how he handled our complex property listing system – something I couldn't have done with any website builder."</p>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <h4>Cottage Country Marine</h4>
+          <p>"Our old site was built on Wix, but it couldn't handle our inventory system or e-commerce needs. Ian built us a custom solution that reduced errors by 60% and increased online sales. The investment paid for itself in the first month."</p>
+        </div>
+
+        <h3>The Smart Investment</h3>
+        <p>Here's the math that often surprises business owners: spending $2,000-$5,000 on professional development saves you $10,000+ in lost opportunities, wasted time, and future fixes.</p>
+
+        <p>Consider the hidden costs of DIY:</p>
+        <ul>
+          <li><strong>Your Time:</strong> $50-$200/hour when you factor in your expertise</li>
+          <li><strong>Learning Curve:</strong> Hours spent researching and troubleshooting</li>
+          <li><strong>Suboptimal Results:</strong> Lost customers due to poor performance or functionality</li>
+          <li><strong>Future Maintenance:</strong> Ongoing issues you'll need to fix or pay someone to fix</li>
+        </ul>
+
+        <h3>Ready to Stop Struggling and Start Succeeding?</h3>
+        <p>If you're tired of wrestling with website builders, spending nights fixing broken forms, or watching potential customers bounce due to slow loading times, it's time for a better solution.</p>
+
+        <p>My technology background has prepared me for any technical project, so if you have doubts or would like a solution, please reach out. Let's discuss your vision and create a website that actually works for your business.</p>
+
+        <div style="background: #2d5016; color: white; padding: 30px; border-radius: 8px; text-align: center; margin: 30px 0;">
+          <h3 style="color: white; margin-bottom: 15px;">Ready to Get Started?</h3>
+          <p style="color: white; margin-bottom: 20px;">Book a free discovery call to discuss your project. No pressure, just honest advice about the best path forward for your business.</p>
+          <a href="/contact" style="background: #4a7c59; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block;">Book Your Free Call</a>
+        </div>
+
+        <h3>Common Questions About Professional Development</h3>
+
+        <h4>Will I be able to update my own content?</h4>
+        <p>Absolutely! I build websites with user-friendly content management systems so you can easily update text, images, and blog posts without technical knowledge.</p>
+
+        <h4>How long does development take?</h4>
+        <p>Most websites are completed in 2-6 weeks, depending on complexity. I'll give you realistic timelines upfront and keep you updated throughout the process.</p>
+
+        <h4>What if I need changes after launch?</h4>
+        <p>I offer ongoing support packages for maintenance, updates, and improvements. Think of me as your technology partner, not just a one-time vendor.</p>
+
+        <h4>Can you work with my existing branding?</h4>
+        <p>Definitely! I work closely with you to ensure your website perfectly reflects your brand identity and business goals.</p>
+
+        <h3>Don't Let Technology Hold Your Business Back</h3>
+        <p>In today's digital world, your website is often the first impression customers have of your business. Don't settle for "good enough" when you can have a website that actually drives results.</p>
+
+        <p>If you're ready to stop struggling with complicated website builders and start getting the results you deserve, <a href="/contact" class="cta-link">reach out today</a>. Let's create something amazing together.</p>
       `
     }
   ];

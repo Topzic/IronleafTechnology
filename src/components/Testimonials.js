@@ -4,26 +4,23 @@ import './Testimonials.css';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'John Doe',
-      company: 'Local Business Owner',
-      text: 'Ironleaf Technology transformed our operations with their custom software. Highly recommend!'
+      company: 'United Property Experts',
+      text: 'Ian completely transformed our online presence with a professional real estate website. The property listings, agent profiles, and contact systems work flawlessly. We\'ve seen a 40% increase in qualified leads since launch. His attention to detail and local SEO expertise made all the difference.'
     },
     {
-      name: 'Jane Smith',
-      company: 'Public Sector',
-      text: 'Their Power BI dashboards have given us incredible insights. Professional and reliable.'
+      company: 'Cottage Country Marine',
+      text: 'Ian\'s POS system and inventory management solution streamlined our entire retail operation. The barcode integration, automated checkout, and real-time inventory tracking have reduced errors by 60%. What impressed me most was how he understood our specific needs in the marine retail space.'
     }
   ];
 
   return (
     <section className="testimonials">
       <div className="container">
-        <h2>What Our Clients Say</h2>
+        <h2>Client Success Stories</h2>
         <div className="testimonials-grid">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="testimonial-card">
               <p>"{testimonial.text}"</p>
-              <h3>{testimonial.name}</h3>
               <span>{testimonial.company}</span>
             </div>
           ))}

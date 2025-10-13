@@ -15,9 +15,8 @@ const Footer = () => {
             <h3>Ironleaf Technology</h3>
           </div>
           <p>Veteran-owned technology solutions in Peterborough, Ontario.</p>
-          <p>957 Webber Ave, Peterborough, ON</p>
           <p>(705) 768-2636</p>
-          <p>Ian_Cunningham@live.com</p>
+          <p>support@ironleaftechnology.com</p>
         </div>
         <div className="footer-section">
           <h4>Services</h4>
@@ -25,7 +24,7 @@ const Footer = () => {
             <li>Web Development</li>
             <li>Microsoft 365 Optimization</li>
             <li>Power BI Analytics</li>
-            <li>Security Cameras</li>
+            {/* <li>Security Cameras</li> */}
             <li>Custom Software</li>
           </ul>
         </div>
@@ -33,13 +32,25 @@ const Footer = () => {
           <h4>Quick Links</h4>
           <ul>
             <li>
-              <a href="/about">About Us</a>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="/pricing">Services & Pricing</a>
             </li>
             <li>
               <a href="/portfolio">Portfolio</a>
             </li>
             <li>
               <a href="/contact">Contact</a>
+            </li>
+            <li>
+              <a href="/blog">Blog</a>
+            </li>
+            <li>
+              <a href="/terms">Terms of Service</a>
             </li>
             {/* <li><a href="/support">Support</a></li> */}
           </ul>

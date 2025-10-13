@@ -38,8 +38,22 @@ const Blog = () => {
       excerpt: 'Learn how good PageSpeed scores can improve user experience, SEO, and business success.',
       date: 'October 12, 2025',
       readTime: '6 min read'
+    },
+    {
+      id: 6,
+      title: 'Why Professional Website Development Beats DIY: Save Time, Avoid Headaches, and Grow Your Business',
+      excerpt: 'Discover why hiring a professional developer like me can save you countless hours and deliver results that DIY website builders simply can\'t match.',
+      date: 'October 15, 2025',
+      readTime: '8 min read'
     }
   ];
+
+  // Sort articles by date (most recent first)
+  const sortedArticles = articles.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA; // Descending order (newest first)
+  });
 
   return (
     <div className="blog-page">
@@ -64,7 +78,7 @@ const Blog = () => {
 
       <section className="blog-content">
         <div className="articles-grid">
-          {articles.map((article) => (
+          {sortedArticles.map((article) => (
             <article key={article.id} className="article-card">
               <h2>{article.title}</h2>
               <p>{article.excerpt}</p>

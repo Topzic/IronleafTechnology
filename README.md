@@ -8,7 +8,7 @@ Ironleaf Technology provides comprehensive IT solutions including:
 - Full-stack web development
 - Microsoft 365 optimization
 - Power BI analytics
-- Security camera installations
+<!-- - Security camera installations -->
 - Custom software solutions
 
 ## Features
@@ -88,7 +88,7 @@ This app can be deployed to:
 ## Contact
 
 Ian Cunningham
-- Email: Ian_Cunningham@live.com
+- Email: support@ironleaftechnology.com
 - Phone: (705) 768-2636
 - Website: https://iancunningham.dev/
 
