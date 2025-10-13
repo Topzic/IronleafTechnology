@@ -18,6 +18,18 @@
   margin-bottom: 1rem;
 }
 
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.footer-logo-img {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+
 .footer-section ul {
   list-style: none;
   padding: 0;

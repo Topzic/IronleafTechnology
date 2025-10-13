@@ -1,12 +1,19 @@
-import React from 'react';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h3>Ironleaf Technology</h3>
+          <div className="footer-logo">
+            <img
+              src={process.env.PUBLIC_URL + "/logo.webp"}
+              alt="Ironleaf Technology Logo"
+              className="footer-logo-img"
+            />
+            <h3>Ironleaf Technology</h3>
+          </div>
           <p>Veteran-owned technology solutions in Peterborough, Ontario.</p>
           <p>957 Webber Ave, Peterborough, ON</p>
           <p>(705) 768-2636</p>
@@ -25,9 +32,15 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/portfolio">Portfolio</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li>
+              <a href="/about">About Us</a>
+            </li>
+            <li>
+              <a href="/portfolio">Portfolio</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
             {/* <li><a href="/support">Support</a></li> */}
           </ul>
         </div>
