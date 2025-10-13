@@ -1,12 +1,18 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './HeroSection.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./HeroSection.css";
+import ReactGA4 from "react-ga4";
 
 const HeroSection = () => {
   const navigate = useNavigate();
 
   const handleBookCall = () => {
-    navigate('/contact');
+    ReactGA4.event({
+      category: "engagement",
+      action: "click",
+      label: "call_button",
+    });
+    navigate("/contact");
   };
 
   return (
@@ -35,8 +41,15 @@ const HeroSection = () => {
       </div>
       <div className="hero-content">
         <h1>Empowering Businesses with Veteran-Driven Technology</h1>
-        <p>Full-stack web development, Microsoft 365 optimization, Power BI analytics, security solutions, and custom software for small businesses, public sector, and outdoor organizations in Peterborough and beyond.</p>
-        <button className="cta-button" onClick={handleBookCall}>Book a Discovery Call</button>
+        <p>
+          Full-stack web development, Microsoft 365 optimization, Power BI
+          analytics, security solutions, and custom software for small
+          businesses, public sector, and outdoor organizations in Peterborough
+          and beyond.
+        </p>
+        <button className="cta-button" onClick={handleBookCall}>
+          Book a Discovery Call
+        </button>
       </div>
     </section>
   );

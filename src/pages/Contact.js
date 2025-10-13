@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { createClient } from '@supabase/supabase-js';
-import './Contact.css';
+import React, { useState, useEffect } from "react";
+import { createClient } from "@supabase/supabase-js";
+import "./Contact.css";
+import ReactGA4 from "react-ga4";
 
 const supabase = createClient(
   process.env.REACT_APP_SUPABASE_URL,
@@ -9,23 +10,28 @@ const supabase = createClient(
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    goals: '',
-    constraints: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    goals: "",
+    constraints: "",
+    message: "",
   });
+  const [formStarted, setFormStarted] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const formatPhoneNumber = (value) => {
-    const phoneNumber = value.replace(/\D/g, '');
+    const phoneNumber = value.replace(/\D/g, "");
     if (phoneNumber.length <= 3) {
       return phoneNumber;
     } else if (phoneNumber.length <= 6) {
       return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
     } else {
-      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(
+        3,
+        6
+      )}-${phoneNumber.slice(6, 10)}`;
     }
   };
 
@@ -33,7 +39,7 @@ const Contact = () => {
     const formatted = formatPhoneNumber(e.target.value);
     setFormData({
       ...formData,
-      phone: formatted
+      phone: formatted,
     });
   };
 
@@ -43,53 +49,78 @@ const Contact = () => {
 
   useEffect(() => {
     // Load Calendly widget script
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
     document.body.appendChild(script);
 
     return () => {
       // Cleanup script when component unmounts
-      const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+      const existingScript = document.querySelector(
+        'script[src="https://assets.calendly.com/assets/external/widget.js"]'
+      );
       if (existingScript) {
         document.body.removeChild(existingScript);
       }
     };
   }, []);
 
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      if (formStarted && !formSubmitted) {
+        ReactGA4.event({
+          category: "lead_form",
+          action: "form_abandon",
+        });
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [formStarted, formSubmitted]);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData
-      });
+      const { data, error } = await supabase.functions.invoke(
+        "send-contact-email",
+        {
+          body: formData,
+        }
+      );
       if (error) {
-        console.error('Error submitting form:', error);
-        alert('Failed to submit form. Please try again.');
+        console.error("Error submitting form:", error);
+        alert("Failed to submit form. Please try again.");
       } else {
-        console.log('Form submitted successfully:', data);
-        alert('Thank you! Your message has been sent.');
+        console.log("Form submitted successfully:", data);
+        alert("Thank you! Your message has been sent.");
+        setFormSubmitted(true);
         // Reset form
         setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          goals: '',
-          constraints: '',
-          message: ''
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          goals: "",
+          constraints: "",
+          message: "",
         });
+        setFormStarted(false);
+        setFormSubmitted(false);
       }
     } catch (err) {
-      console.error('Error:', err);
-      alert('An error occurred. Please try again.');
+      console.error("Error:", err);
+      alert("An error occurred. Please try again.");
     }
   };
 
@@ -119,18 +150,53 @@ const Contact = () => {
           <h2>Lead Form</h2>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Name * <span className="hint-icon" title="Please enter your full name as it appears on official documents" onClick={() => showHint("Please enter your full name as it appears on official documents")}>?</span></label>
+              <label htmlFor="name">
+                Name *{" "}
+                <span
+                  className="hint-icon"
+                  title="Please enter your full name as it appears on official documents"
+                  onClick={() =>
+                    showHint(
+                      "Please enter your full name as it appears on official documents"
+                    )
+                  }
+                >
+                  ?
+                </span>
+              </label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
+                onFocus={() => {
+                  if (!formStarted) {
+                    ReactGA4.event({
+                      category: "lead_form",
+                      action: "form_start",
+                    });
+                    setFormStarted(true);
+                  }
+                }}
                 required
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email * <span className="hint-icon" title="Please provide a valid email address where we can reach you for project updates and communications" onClick={() => showHint("Please provide a valid email address where we can reach you for project updates and communications")}>?</span></label>
+              <label htmlFor="email">
+                Email *{" "}
+                <span
+                  className="hint-icon"
+                  title="Please provide a valid email address where we can reach you for project updates and communications"
+                  onClick={() =>
+                    showHint(
+                      "Please provide a valid email address where we can reach you for project updates and communications"
+                    )
+                  }
+                >
+                  ?
+                </span>
+              </label>
               <input
                 type="email"
                 id="email"
@@ -141,7 +207,20 @@ const Contact = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="phone">Phone <span className="hint-icon" title="Please enter your phone number - it will automatically format as you type (e.g., (705) 123-4567)" onClick={() => showHint("Please enter your phone number - it will automatically format as you type (e.g., (705) 123-4567)")}>?</span></label>
+              <label htmlFor="phone">
+                Phone{" "}
+                <span
+                  className="hint-icon"
+                  title="Please enter your phone number - it will automatically format as you type (e.g., (705) 123-4567)"
+                  onClick={() =>
+                    showHint(
+                      "Please enter your phone number - it will automatically format as you type (e.g., (705) 123-4567)"
+                    )
+                  }
+                >
+                  ?
+                </span>
+              </label>
               <input
                 type="tel"
                 id="phone"
@@ -151,7 +230,20 @@ const Contact = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="company">Company/Organization <span className="hint-icon" title="Please enter your company or organization name, or 'Individual' if this is a personal project" onClick={() => showHint("Please enter your company or organization name, or 'Individual' if this is a personal project")}>?</span></label>
+              <label htmlFor="company">
+                Company/Organization{" "}
+                <span
+                  className="hint-icon"
+                  title="Please enter your company or organization name, or 'Individual' if this is a personal project"
+                  onClick={() =>
+                    showHint(
+                      "Please enter your company or organization name, or 'Individual' if this is a personal project"
+                    )
+                  }
+                >
+                  ?
+                </span>
+              </label>
               <input
                 type="text"
                 id="company"
@@ -161,7 +253,20 @@ const Contact = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="goals">Project Goals <span className="hint-icon" title="Please describe your project objectives, target audience, key features, and any specific requirements" onClick={() => showHint("Please describe your project objectives, target audience, key features, and any specific requirements")}>?</span></label>
+              <label htmlFor="goals">
+                Project Goals{" "}
+                <span
+                  className="hint-icon"
+                  title="Please describe your project objectives, target audience, key features, and any specific requirements"
+                  onClick={() =>
+                    showHint(
+                      "Please describe your project objectives, target audience, key features, and any specific requirements"
+                    )
+                  }
+                >
+                  ?
+                </span>
+              </label>
               <textarea
                 id="goals"
                 name="goals"
@@ -171,7 +276,20 @@ const Contact = () => {
               ></textarea>
             </div>
             <div className="form-group">
-              <label htmlFor="constraints">Timeline/Budget Constraints <span className="hint-icon" title="Please share your preferred timeline for completion and any budget considerations or limitations" onClick={() => showHint("Please share your preferred timeline for completion and any budget considerations or limitations")}>?</span></label>
+              <label htmlFor="constraints">
+                Timeline/Budget Constraints{" "}
+                <span
+                  className="hint-icon"
+                  title="Please share your preferred timeline for completion and any budget considerations or limitations"
+                  onClick={() =>
+                    showHint(
+                      "Please share your preferred timeline for completion and any budget considerations or limitations"
+                    )
+                  }
+                >
+                  ?
+                </span>
+              </label>
               <textarea
                 id="constraints"
                 name="constraints"
@@ -181,7 +299,20 @@ const Contact = () => {
               ></textarea>
             </div>
             <div className="form-group">
-              <label htmlFor="message">Additional Message <span className="hint-icon" title="Any other details, questions, or specific requirements you'd like to share about your project" onClick={() => showHint("Any other details, questions, or specific requirements you'd like to share about your project")}>?</span></label>
+              <label htmlFor="message">
+                Additional Message{" "}
+                <span
+                  className="hint-icon"
+                  title="Any other details, questions, or specific requirements you'd like to share about your project"
+                  onClick={() =>
+                    showHint(
+                      "Any other details, questions, or specific requirements you'd like to share about your project"
+                    )
+                  }
+                >
+                  ?
+                </span>
+              </label>
               <textarea
                 id="message"
                 name="message"
@@ -190,14 +321,18 @@ const Contact = () => {
                 rows="4"
               ></textarea>
             </div>
-            <button type="submit" className="submit-btn">Submit</button>
+            <button type="submit" className="submit-btn">
+              Submit
+            </button>
           </form>
         </div>
 
         <div className="contact-info">
           <div className="info-card">
             <h3>Contact Information</h3>
-            <p><strong>Ian Cunningham</strong></p>
+            <p>
+              <strong>Ian Cunningham</strong>
+            </p>
             <p>(705) 768-2636</p>
             <p>support@ironleaftechnology.com</p>
             <p>https://iancunningham.dev/</p>
@@ -205,13 +340,15 @@ const Contact = () => {
 
           <div className="booking-calendar">
             <h3>Book a Discovery Call</h3>
-            <p>Schedule a free 30-minute consultation to discuss your project.</p>
+            <p>
+              Schedule a free 30-minute consultation to discuss your project.
+            </p>
             <div className="calendly-embed">
               {/* Calendly inline widget begin */}
-              <div 
-                className="calendly-inline-widget" 
-                data-url="https://calendly.com/ian_cunningham/30min?hide_event_type_details=1&hide_gdpr_banner=1" 
-                style={{ minWidth: '320px', height: '600px' }}
+              <div
+                className="calendly-inline-widget"
+                data-url="https://calendly.com/ian_cunningham/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+                style={{ minWidth: "320px", height: "600px" }}
               ></div>
               {/* Calendly inline widget end */}
             </div>
