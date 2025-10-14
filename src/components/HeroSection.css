@@ -16,7 +16,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--bg-url) center/cover;
+  background: url('/public/projects/background.webp') center/cover;
   opacity: 0.3;
   z-index: 0;
 }
@@ -182,6 +182,78 @@
   animation: bounce2 12s ease-in-out infinite;
 }
 
+.circle13 {
+  width: 80px;
+  height: 80px;
+  background: rgba(74, 124, 89, 0.15);
+  top: 10%;
+  left: 5%;
+  animation: bounce1 10s ease-in-out infinite;
+}
+
+.circle14 {
+  width: 60px;
+  height: 60px;
+  background: rgba(45, 80, 22, 0.2);
+  top: 30%;
+  right: 10%;
+  animation: bounce2 12s ease-in-out infinite;
+}
+
+.circle15 {
+  width: 40px;
+  height: 40px;
+  background: rgba(107, 142, 90, 0.18);
+  bottom: 20%;
+  left: 15%;
+  animation: bounce3 8s ease-in-out infinite;
+}
+
+.circle16 {
+  width: 50px;
+  height: 50px;
+  background: rgba(58, 100, 48, 0.12);
+  top: 50%;
+  right: 20%;
+  animation: bounce4 14s ease-in-out infinite;
+}
+
+.circle17 {
+  width: 88px;
+  height: 88px;
+  background: rgba(90, 130, 70, 0.16);
+  bottom: 10%;
+  left: 50%;
+  animation: bounce5 9s ease-in-out infinite;
+}
+
+.circle18 {
+  width: 55px;
+  height: 55px;
+  background: rgba(74, 124, 89, 0.14);
+  top: 15%;
+  left: 20%;
+  animation: bounce1 10s ease-in-out infinite;
+}
+
+.circle19 {
+  width: 65px;
+  height: 65px;
+  background: rgba(45, 80, 22, 0.18);
+  top: 35%;
+  right: 5%;
+  animation: bounce2 12s ease-in-out infinite;
+}
+
+.circle20 {
+  width: 45px;
+  height: 45px;
+  background: rgba(107, 142, 90, 0.16);
+  bottom: 25%;
+  left: 25%;
+  animation: bounce3 8s ease-in-out infinite;
+}
+
 @keyframes bounce1 {
   0%, 100% {
     transform: translateY(0) translateX(0) rotate(0deg);
@@ -261,6 +333,9 @@
 }
 
 @media (max-width: 768px) {
+  .hero-overlay {
+    background: url('/public/projects/background-mobile.webp') center/cover;
+  }
   .hero-content h1 {
     font-size: 2.5rem;
   }
