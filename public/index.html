@@ -48,6 +48,16 @@
       href="%PUBLIC_URL%/projects/background-mobile.webp"
       as="image"
     />
+    <style>
+      :root {
+        --bg-url: url(%PUBLIC_URL%/projects/background.webp);
+      }
+      @media (max-width: 768px) {
+        :root {
+          --bg-url: url(%PUBLIC_URL%/projects/background-mobile.webp);
+        }
+      }
+    </style>
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
