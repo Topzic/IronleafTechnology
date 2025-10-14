@@ -174,6 +174,35 @@ const BlogPost = () => {
       `,
     },
     {
+      id: 5,
+      title: "Why PageSpeed Scores Matter: Making Your Website Lightning Fast",
+      excerpt:
+        "Learn how good PageSpeed scores can improve user experience, SEO, and business success.",
+      date: "October 12, 2025",
+      readTime: "6 min read",
+      fullContent: `
+        <h3>The Importance of PageSpeed</h3>
+        <p>PageSpeed scores are crucial for website performance. A fast-loading site improves user experience, boosts SEO rankings, and increases conversion rates.</p>
+
+        <h3>What is PageSpeed?</h3>
+        <p>PageSpeed measures how quickly your website loads and renders content. Google's PageSpeed Insights provides scores from 0-100 for both mobile and desktop.</p>
+
+        <h3>Why It Matters</h3>
+        <ul>
+          <li><strong>User Experience:</strong> Fast sites keep visitors engaged</li>
+          <li><strong>SEO:</strong> Google favors fast websites in search rankings</li>
+          <li><strong>Conversion Rates:</strong> Slow sites lose potential customers</li>
+          <li><strong>Mobile Performance:</strong> Critical for mobile users</li>
+        </ul>
+
+        <h3>How to Improve PageSpeed</h3>
+        <p>Optimize images, minify code, use caching, and leverage CDNs to boost your scores.</p>
+
+        <h3>Conclusion</h3>
+        <p>Investing in PageSpeed optimization pays off with better user satisfaction and business results.</p>
+      `,
+    },
+    {
       id: 6,
       title:
         "Why Professional Website Development Beats DIY: Save Time, Avoid Headaches, and Grow Your Business",
@@ -302,7 +331,9 @@ const BlogPost = () => {
       <div className="blog-page">
         <section className="hero-section">
           <h1>Article Not Found</h1>
-          <p>The requested article could not be found.</p>
+          <p style={{ marginBottom: "20px" }}>
+            The requested article could not be found.
+          </p>
           <Link to="/blog" className="back-to-blog">
             ← Back to Blog
           </Link>
