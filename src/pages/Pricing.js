@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./Pricing.css";
@@ -6,9 +6,6 @@ import "./Pricing.css";
 const Pricing = () => {
   const navigate = useNavigate();
   const [billingCycle, setBillingCycle] = useState("one-time");
-
-  // Theme configuration
-  const isHalloweenTheme = false; // Set to true for Halloween theme
 
   const packages = [
     {
@@ -27,7 +24,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "optimization",
-      icon: "fas fa-clock",
+      icon: "fa-solid fa-hourglass",
     },
     {
       name: "Website Optimization Tune-Up",
@@ -50,7 +47,7 @@ const Pricing = () => {
       icon: "fas fa-cogs",
     },
     {
-      name: "One-Page Website",
+      name: "Standard",
       description:
         billingCycle === "one-time"
           ? "Simple, effective single-page website for businesses needing a strong online presence"
@@ -69,7 +66,7 @@ const Pricing = () => {
       icon: "fas fa-file-alt",
     },
     {
-      name: "Web Development Starter",
+      name: "Premium",
       description:
         billingCycle === "one-time"
           ? "Perfect for small businesses launching their first professional website"
@@ -85,10 +82,10 @@ const Pricing = () => {
       ],
       popular: true,
       category: "web",
-      icon: "fas fa-rocket",
+      icon: "fas fa-crown",
     },
     {
-      name: "Web Development Growth",
+      name: "Advanced",
       description:
         billingCycle === "one-time"
           ? "Advanced solutions for growing businesses with complex needs"
@@ -96,7 +93,7 @@ const Pricing = () => {
       price: billingCycle === "one-time" ? "5000-7500" : 400,
       originalPrice: billingCycle === "one-time" ? null : 500,
       features: [
-        "Everything in Starter, plus:",
+        "Everything in Premium, plus:",
         "E-commerce integration",
         "CMS for content management",
         "Advanced SEO & analytics",
@@ -108,7 +105,7 @@ const Pricing = () => {
       icon: "fas fa-chart-line",
     },
     {
-      name: "Web Development Enterprise",
+      name: "Enterprise",
       description:
         billingCycle === "one-time"
           ? "Full-scale solutions for established businesses and organizations"
@@ -116,7 +113,7 @@ const Pricing = () => {
       price: billingCycle === "one-time" ? "8000-15000" : 750,
       originalPrice: billingCycle === "one-time" ? null : 1000,
       features: [
-        "Everything in Growth, plus:",
+        "Everything in Advanced, plus:",
         "Multi-vendor marketplace",
         "Advanced integrations",
         "Performance optimization",
@@ -125,7 +122,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "web",
-      icon: "fas fa-building",
+      icon: "fa-solid fa-globe",
     },
     {
       name: "Microsoft 365 Optimization",
@@ -144,7 +141,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "optimization",
-      icon: "fas fa-windows",
+      icon: "fa-solid fa-gauge-simple-high",
     },
     // {
     //   name: 'Security Camera Bronze',
@@ -197,106 +194,9 @@ const Pricing = () => {
     // }
   ];
 
-  const addOns = [
-    {
-      name: "Care Plans",
-      description: "Ongoing support and maintenance",
-      options: [
-        {
-          name: "Basic Care",
-          price: "$150/month",
-          features: ["Monthly updates", "Security monitoring", "Basic support"],
-        },
-        {
-          name: "Premium Care",
-          price: "$300/month",
-          features: [
-            "Everything in Basic",
-            "Priority support",
-            "Performance optimization",
-            "Content updates",
-          ],
-        },
-      ],
-    },
-    {
-      name: "Support Retainers",
-      description: "Direct priority access to the owner",
-      options: [
-        {
-          name: "5 Hours/Month",
-          price: "$375/month",
-          features: [
-            "Priority response",
-            "Dedicated support channel",
-            "Quarterly reviews",
-          ],
-        },
-        {
-          name: "10 Hours/Month",
-          price: "$700/month",
-          features: [
-            "Everything in 5 Hours",
-            "Emergency support",
-            "Monthly strategy calls",
-          ],
-        },
-      ],
-    },
-  ];
-
-  const faqs = [
-    {
-      question: "What's included in the one-time setup fee?",
-      answer:
-        "My one-time fees cover complete implementation, testing, training, and initial support. This includes all development work, integrations, and getting your solution fully operational.",
-    },
-    {
-      question: "Can I upgrade or modify my package later?",
-      answer:
-        "Absolutely! I offer flexible upgrade paths. Contact us to discuss adding features or scaling your solution as your business grows.",
-    },
-    {
-      question: "Do you offer payment plans?",
-      answer:
-        "Yes, I offer flexible payment terms for larger projects. Monthly care plans and retainers can also help spread costs over time.",
-    },
-    {
-      question: "What kind of support do you provide?",
-      answer:
-        "I provide comprehensive support including technical assistance, training, updates, and optimization. Care plans include proactive monitoring and maintenance.",
-    },
-    {
-      question: "Are there any hidden fees?",
-      answer:
-        "No hidden fees! My pricing is transparent. I clearly outline all costs upfront, including any optional add-ons or ongoing support!",
-    },
-    {
-      question:
-        "What's the difference between One-Time Setup and Monthly Care Plans?",
-      answer:
-        "One-Time Setup is a single payment for the initial website development or optimization. Monthly Care Plans provide ongoing support, updates, and maintenance with recurring payments.",
-    },
-    {
-      question: "Can I switch from one-time to monthly later?",
-      answer:
-        "Yes, you can upgrade to a monthly care plan at any time. Contact me to discuss options.",
-    },
-    {
-      question: "Are monthly plans the same as add-on care plans?",
-      answer:
-        "Monthly plans include integrated care and support. Add-on care plans are optional extras for additional services beyond the main package.",
-    },
-  ];
-
   const filteredPackages = packages.filter((pkg) => {
     if (billingCycle === "one-time") return true;
-    return (
-      (pkg.category !== "web" ||
-        pkg.name.includes("Starter") ||
-        pkg.name.includes("Growth")) &&
-      pkg.name !== "Hourly Development Services"
-    );
+    return pkg.name !== "Hourly Development Services";
   });
 
   const handleBookCall = () => {
@@ -308,169 +208,6 @@ const Pricing = () => {
     navigate("/contact");
   };
 
-  const handleCustomQuote = () => {
-    // eslint-disable-next-line no-undef
-    gtag("event", "click", {
-      event_category: "engagement",
-      event_label: "custom_quote_pricing",
-    });
-    navigate("/contact");
-  };
-
-  useEffect(() => {
-    const allCirclesContainers = document.querySelectorAll(".card-circles");
-    const cleanupFunctions = [];
-
-    allCirclesContainers.forEach((container) => {
-      if (!container) return;
-      const rect = container.getBoundingClientRect();
-      const circles = Array.from(container.querySelectorAll(".card-circle"));
-
-      // Store circle data
-      const circleData = circles.map((circle) => ({
-        element: circle,
-        x: (parseFloat(circle.style.left) / 100) * rect.width,
-        y: (parseFloat(circle.style.top) / 100) * rect.height,
-        vx: (Math.random() > 0.5 ? 1 : -1) * 3,
-        vy: (Math.random() > 0.5 ? 1 : -1) * 3,
-        radius: circle.offsetWidth / 2,
-      }));
-
-      // Mouse interaction
-      let mouseX = null;
-      let mouseY = null;
-      const handleMouseMove = (e) => {
-        const containerRect = container.getBoundingClientRect();
-        mouseX = e.clientX - containerRect.left;
-        mouseY = e.clientY - containerRect.top;
-      };
-      const handleMouseLeave = () => {
-        mouseX = null;
-        mouseY = null;
-      };
-      container.addEventListener("mousemove", handleMouseMove);
-      container.addEventListener("mouseleave", handleMouseLeave);
-
-      let animationId;
-      const animate = () => {
-        // Update circle positions and handle wall collisions
-        circleData.forEach((circle) => {
-          circle.x += circle.vx;
-          circle.y += circle.vy;
-
-          // Wall collisions
-          if (
-            circle.x <= circle.radius ||
-            circle.x >= rect.width - circle.radius
-          ) {
-            circle.vx = -circle.vx;
-            circle.x = Math.max(
-              circle.radius,
-              Math.min(rect.width - circle.radius, circle.x)
-            );
-          }
-          if (
-            circle.y <= circle.radius ||
-            circle.y >= rect.height - circle.radius
-          ) {
-            circle.vy = -circle.vy;
-            circle.y = Math.max(
-              circle.radius,
-              Math.min(rect.height - circle.radius, circle.y)
-            );
-          }
-        });
-
-        // Circle-to-circle collisions
-        for (let i = 0; i < circleData.length; i++) {
-          for (let j = i + 1; j < circleData.length; j++) {
-            const c1 = circleData[i];
-            const c2 = circleData[j];
-            const dx = c2.x - c1.x;
-            const dy = c2.y - c1.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            const minDistance = c1.radius + c2.radius;
-
-            if (distance < minDistance) {
-              // Collision detected - simple elastic collision
-              const angle = Math.atan2(dy, dx);
-              const sin = Math.sin(angle);
-              const cos = Math.cos(angle);
-
-              // Rotate velocities
-              const v1x = c1.vx * cos + c1.vy * sin;
-              const v1y = c1.vy * cos - c1.vx * sin;
-              const v2x = c2.vx * cos + c2.vy * sin;
-              const v2y = c2.vy * cos - c2.vx * sin;
-
-              // Swap the x velocities (elastic collision)
-              const temp = v1x;
-              c1.vx = v2x * cos - v1y * sin;
-              c1.vy = v1y * cos + v2x * sin;
-              c2.vx = temp * cos - v2y * sin;
-              c2.vy = v2y * cos + temp * sin;
-
-              // Separate overlapping circles
-              const overlap = minDistance - distance;
-              const separationX = (dx / distance) * overlap * 0.5;
-              const separationY = (dy / distance) * overlap * 0.5;
-              c1.x -= separationX;
-              c1.y -= separationY;
-              c2.x += separationX;
-              c2.y += separationY;
-            }
-          }
-        }
-
-        // Mouse interaction
-        if (mouseX !== null && mouseY !== null) {
-          circleData.forEach((circle) => {
-            const dx = mouseX - circle.x;
-            const dy = mouseY - circle.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            const maxDistance = 50; // Interaction radius
-
-            if (distance < maxDistance) {
-              const force = (maxDistance - distance) / maxDistance;
-              const angle = Math.atan2(dy, dx);
-              circle.vx -= Math.cos(angle) * force * 0.5;
-              circle.vy -= Math.sin(angle) * force * 0.5;
-            }
-          });
-        }
-
-        // Apply friction to prevent infinite acceleration
-        circleData.forEach((circle) => {
-          circle.vx *= 0.999;
-          circle.vy *= 0.999;
-        });
-
-        // Update DOM positions
-        circleData.forEach((circle) => {
-          circle.element.style.left = `${(circle.x / rect.width) * 100}%`;
-          circle.element.style.top = `${(circle.y / rect.height) * 100}%`;
-        });
-
-        animationId = requestAnimationFrame(animate);
-      };
-      animate();
-
-      // Store cleanup function
-      cleanupFunctions.push(() => {
-        container.removeEventListener("mousemove", handleMouseMove);
-        container.removeEventListener("mouseleave", handleMouseLeave);
-        if (animationId) {
-          cancelAnimationFrame(animationId);
-        }
-      });
-    });
-
-    // Return cleanup function
-    return () => {
-      cleanupFunctions.forEach((cleanup) => cleanup());
-    };
-  }, [billingCycle]);
-
   return (
     <div className="pricing-page">
       <Helmet>
@@ -481,7 +218,7 @@ const Pricing = () => {
         />
         <meta
           name="keywords"
-          content="IT pricing, web development costs, Microsoft 365 pricing, Power BI analytics pricing, custom software pricing"
+          content="IT pricing Peterborough, web development costs Ontario, Microsoft 365 pricing, Power BI analytics pricing, custom software pricing, website development quotes, IT service rates Peterborough, affordable web design Ontario, Microsoft 365 setup costs, Power Platform development pricing, data analytics pricing, custom software development costs, website maintenance pricing, IT support packages, monthly IT services pricing, one-time setup fees, web development packages, Microsoft 365 migration costs, Power BI consulting rates, software development pricing, IT budget planning, cost-effective web development, peterborough web design pricing, ontario it service costs, veteran-owned pricing, transparent IT pricing, web development quotes Peterborough, affordable IT services Ontario"
         />
       </Helmet>
       <section className="pricing-hero">
@@ -498,9 +235,6 @@ const Pricing = () => {
           <span className="circle circle10"></span>
           <span className="circle circle11"></span>
           <span className="circle circle12"></span>
-          <span className="circle circle13"></span>
-          <span className="circle circle14"></span>
-          <span className="circle circle15"></span>
         </div>
         <h1>Services & Pricing</h1>
         <p>
@@ -565,8 +299,8 @@ const Pricing = () => {
               <div
                 key={index}
                 className={`pricing-card ${pkg.popular ? "popular" : ""} ${
-                  pkg.name === "Web Development Enterprise"
-                    ? "color-3"
+                  pkg.name === "Enterprise"
+                    ? "enterprise"
                     : `color-${index % 3}`
                 }`}
               >
@@ -574,53 +308,6 @@ const Pricing = () => {
                   <span className="popular-badge">Most Popular</span>
                 )}
                 <div className="card-top">
-                  <div className="card-circles">
-                    {Array.from(
-                      { length: 3 + Math.floor(Math.random() * 3) },
-                      (_, i) => {
-                        if (isHalloweenTheme) {
-                          const emojis = ["👻", "🦇", "🎃", "🦃"];
-                          const randomEmoji =
-                            emojis[Math.floor(Math.random() * emojis.length)];
-                          return (
-                            <span
-                              key={i}
-                              className="card-circle"
-                              style={{
-                                top: `${20 + Math.random() * 40}%`,
-                                left: `${20 + Math.random() * 40}%`,
-                                width: `${30 + Math.random() * 30}px`,
-                                height: `${30 + Math.random() * 30}px`,
-                                fontSize: `${30 + Math.random() * 30}px`,
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                backgroundColor: "transparent",
-                              }}
-                            >
-                              {randomEmoji}
-                            </span>
-                          );
-                        } else {
-                          return (
-                            <span
-                              key={i}
-                              className="card-circle"
-                              style={{
-                                top: `${20 + Math.random() * 40}%`,
-                                left: `${20 + Math.random() * 40}%`,
-                                width: `${30 + Math.random() * 30}px`,
-                                height: `${30 + Math.random() * 30}px`,
-                                borderRadius: "50%",
-                                backgroundColor: "rgba(255, 255, 255, 0.1)",
-                                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
-                              }}
-                            ></span>
-                          );
-                        }
-                      }
-                    )}
-                  </div>
                   <i className={`${pkg.icon} card-icon`}></i>
                   <h3 className="plan-name">{pkg.name}</h3>
                   <div className="price-block">
@@ -629,12 +316,11 @@ const Pricing = () => {
                       ? pkg.price.toLocaleString()
                       : pkg.price}
                     <span className="period">
-                      /
                       {pkg.name === "Hourly Development Services"
-                        ? "hour"
+                        ? "/hour"
                         : billingCycle === "one-time"
-                        ? "project"
-                        : "month"}
+                        ? ""
+                        : "/month"}
                     </span>
                   </div>
                   {pkg.originalPrice && (
@@ -673,62 +359,13 @@ const Pricing = () => {
               <div
                 key={index}
                 className={`pricing-card ${pkg.popular ? "popular" : ""} ${
-                  pkg.name === "Web Development Enterprise"
-                    ? "color-3"
-                    : `color-${index % 3}`
+                  pkg.name === "Enterprise" ? "color-3" : `color-${index % 3}`
                 }`}
               >
                 {pkg.popular && (
                   <span className="popular-badge">Most Popular</span>
                 )}
                 <div className="card-top">
-                  <div className="card-circles">
-                    {Array.from(
-                      { length: 3 + Math.floor(Math.random() * 3) },
-                      (_, i) => {
-                        if (isHalloweenTheme) {
-                          const emojis = ["👻", "🦇", "🎃"];
-                          const randomEmoji =
-                            emojis[Math.floor(Math.random() * emojis.length)];
-                          return (
-                            <span
-                              key={i}
-                              className="card-circle"
-                              style={{
-                                top: `${20 + Math.random() * 40}%`,
-                                left: `${20 + Math.random() * 40}%`,
-                                width: `${30 + Math.random() * 30}px`,
-                                height: `${30 + Math.random() * 30}px`,
-                                fontSize: `${30 + Math.random() * 30}px`,
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                backgroundColor: "transparent",
-                              }}
-                            >
-                              {randomEmoji}
-                            </span>
-                          );
-                        } else {
-                          return (
-                            <span
-                              key={i}
-                              className="card-circle"
-                              style={{
-                                top: `${20 + Math.random() * 40}%`,
-                                left: `${20 + Math.random() * 40}%`,
-                                width: `${30 + Math.random() * 30}px`,
-                                height: `${30 + Math.random() * 30}px`,
-                                borderRadius: "50%",
-                                backgroundColor: "rgba(255, 255, 255, 0.1)",
-                                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
-                              }}
-                            ></span>
-                          );
-                        }
-                      }
-                    )}
-                  </div>
                   <i className={`${pkg.icon} card-icon`}></i>
                   <h3 className="plan-name">{pkg.name}</h3>
                   <div className="price-block">
@@ -737,12 +374,11 @@ const Pricing = () => {
                       ? pkg.price.toLocaleString()
                       : pkg.price}
                     <span className="period">
-                      /
                       {pkg.name === "Hourly Development Services"
-                        ? "hour"
+                        ? "/hour"
                         : billingCycle === "one-time"
-                        ? "project"
-                        : "month"}
+                        ? ""
+                        : "/month"}
                     </span>
                   </div>
                   {pkg.originalPrice && (
@@ -772,83 +408,16 @@ const Pricing = () => {
         </div>
       </section>
 
-      <section className="add-ons-section">
-        <h2>Add-On Services & Support</h2>
-        <p>
-          Enhance your solution with ongoing support and additional features.
-          These add-on services are separate from our monthly care plans and
-          provide flexible, à la carte support options for businesses that
-          prefer customized, pay-as-you-go assistance rather than comprehensive
-          monthly packages.
-        </p>
-
-        <div className="add-ons-grid">
-          {addOns.map((addOn, index) => (
-            <div key={index} className="add-on-card">
-              <h3>{addOn.name}</h3>
-              <p>{addOn.description}</p>
-
-              <div className="add-on-options">
-                {addOn.options.map((option, optIndex) => (
-                  <div key={optIndex} className="option">
-                    <div className="option-header">
-                      <h4>{option.name}</h4>
-                      <span className="option-price">{option.price}</span>
-                    </div>
-                    <ul>
-                      {option.features.map((feature, fIndex) => (
-                        <li key={fIndex}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="discounts-section">
-        <div className="discounts-container">
-          <h2>Special Discounts</h2>
-          <div className="discount-cards">
-            <div className="discount-card">
-              <div className="discount-badge">20% OFF</div>
-              <h3>Veterans & First Responders</h3>
-              <p>
-                Thank you for your service. I offer special pricing for
-                veterans, military families, and first responders.
-              </p>
-            </div>
-            <div className="discount-card">
-              <div className="discount-badge">25% OFF</div>
-              <h3>Nonprofits & Charities</h3>
-              <p>
-                Supporting our community. Special rates for registered nonprofit
-                organizations and charitable causes.
-              </p>
-            </div>
-            <div className="discount-card">
-              <div className="discount-badge">15% OFF</div>
-              <h3>Local Businesses</h3>
-              <p>
-                Proud to serve Peterborough businesses. Special introductory
-                pricing for local companies.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="faqs-section">
-        <h2>Frequently Asked Questions</h2>
-        <div className="faqs-container">
-          {faqs.map((faq, index) => (
-            <details key={index} className="faq-item">
-              <summary>{faq.question}</summary>
-              <p>{faq.answer}</p>
-            </details>
-          ))}
+      <section className="special-discounts-banner">
+        <div className="discounts-banner-container">
+          <h3>Special Discounts Available</h3>
+          <p>
+            Check out our special pricing for veterans, nonprofits, and local
+            businesses.
+          </p>
+          <a href="#/faq" className="discounts-banner-link">
+            View Special Discounts →
+          </a>
         </div>
       </section>
 
@@ -862,14 +431,22 @@ const Pricing = () => {
           <button className="primary-cta" onClick={handleBookCall}>
             Book a Discovery Call
           </button>
-          <button className="secondary-cta" onClick={handleCustomQuote}>
-            Get a Custom Quote
+          <button
+            className="secondary-cta"
+            onClick={() => (window.location.href = "#/services")}
+          >
+            View Additional Services
           </button>
-          <button className="secondary-cta">View Our Portfolio</button>
+          <button
+            className="secondary-cta"
+            onClick={() => (window.location.href = "#/faq")}
+          >
+            View FAQ
+          </button>
         </div>
         <p className="terms-link">
           By proceeding, you agree to our{" "}
-          <a href="/terms" target="_blank" rel="noopener noreferrer">
+          <a href="#/terms" target="_blank" rel="noopener noreferrer">
             Terms of Service
           </a>
           .

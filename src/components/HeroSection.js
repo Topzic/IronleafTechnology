@@ -17,7 +17,7 @@ const HeroSection = () => {
   return (
     <section className="hero">
       <div className="hero-overlay"></div>
-      <div className="animated-circles">
+      {/* <div className="animated-circles">
         <span className="circle circle1"></span>
         <span className="circle circle2"></span>
         <span className="circle circle3"></span>
@@ -30,15 +30,7 @@ const HeroSection = () => {
         <span className="circle circle10"></span>
         <span className="circle circle11"></span>
         <span className="circle circle12"></span>
-        <span className="circle circle13"></span>
-        <span className="circle circle14"></span>
-        <span className="circle circle15"></span>
-        <span className="circle circle16"></span>
-        <span className="circle circle17"></span>
-        <span className="circle circle18"></span>
-        <span className="circle circle19"></span>
-        <span className="circle circle20"></span>
-      </div>
+      </div> */}
       <div className="hero-content">
         <h1>Empowering Businesses with Veteran-Driven Technology</h1>
         <p>

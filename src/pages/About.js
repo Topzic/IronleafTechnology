@@ -15,7 +15,7 @@ const About = () => {
         />
         <meta
           name="keywords"
-          content="about Ironleaf Technology, veteran-owned business, Ian Cunningham, IT services Peterborough"
+          content="about Ironleaf Technology, veteran-owned IT company Peterborough, Ian Cunningham biography, military veteran entrepreneur, IT services Ontario, veteran-driven business solutions, Peterborough technology company, Ontario veteran business, military veteran IT support, veteran-owned web development, about us Ironleaf, company history Peterborough, veteran business owner, Ontario IT veteran, military veteran technology, veteran-owned software development, Peterborough veteran entrepreneur, Ontario veteran IT services"
         />
       </Helmet>
       <section className="hero-section">
@@ -33,7 +33,7 @@ const About = () => {
           <span className="circle circle11"></span>
           <span className="circle circle12"></span>
         </div>
-        <h1>About Ironleaf Technology</h1>
+        <h1>About Me</h1>
         <p>
           Driven by integrity, reliability, security, service, sustainability,
           and clear communication.
@@ -48,17 +48,17 @@ const About = () => {
             <h3>Ian Cunningham</h3>
             <p>Veteran, Software Engineer, Entrepreneur</p>
             <p>
-              Ian brings over a decade of experience in technology and military
+              I bring over a decade of experience in technology and military
               service. As a former infantry specialist with the Canadian Armed
-              Forces, he understands discipline, teamwork, and mission-critical
-              operations. His background in software engineering, combined with
-              his passion for nature and community, drives my commitment to
+              Forces, I understand discipline, teamwork, and mission-critical
+              operations. My background in software engineering, combined with
+              my passion for nature and community, drives my commitment to
               sustainable, reliable tech solutions.
             </p>
             <p>
-              Based in Peterborough, Ontario, Ian is dedicated to supporting
-              local businesses and organizations with technology that empowers
-              growth and efficiency.
+              Based in Peterborough, Ontario, I am dedicated to supporting local
+              businesses and organizations with technology that empowers growth
+              and efficiency.
             </p>
           </div>
         </div>

@@ -84,7 +84,7 @@
   line-height: 1.6;
 }
 
-.service-link {
+/* .service-link {
   display: inline-block;
   background: #4a7c59;
   color: #fff;
@@ -100,4 +100,4 @@
 .service-link:hover {
   background: #2d5016;
   transform: translateY(-2px);
-}
+} */

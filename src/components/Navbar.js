@@ -48,11 +48,25 @@ const Navbar = () => {
             About
           </Link>
           <Link
+            to="/services"
+            className={isActive("/services") ? "active" : ""}
+            onClick={closeMenu}
+          >
+            Services
+          </Link>
+          <Link
             to="/pricing"
             className={isActive("/pricing") ? "active" : ""}
             onClick={closeMenu}
           >
-            Services & Pricing
+            Pricing
+          </Link>
+          <Link
+            to="/faq"
+            className={isActive("/faq") ? "active" : ""}
+            onClick={closeMenu}
+          >
+            FAQ
           </Link>
           <Link
             to="/portfolio"

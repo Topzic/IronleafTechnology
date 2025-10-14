@@ -10,6 +10,8 @@ import ScrollToTop from "./components/ScrollToTop";
 const Home = React.lazy(() => import("./pages/Home"));
 const About = React.lazy(() => import("./pages/About"));
 const Pricing = React.lazy(() => import("./pages/Pricing"));
+const Services = React.lazy(() => import("./pages/Services"));
+const FAQ = React.lazy(() => import("./pages/FAQ"));
 const Portfolio = React.lazy(() => import("./pages/Portfolio"));
 const Contact = React.lazy(() => import("./pages/Contact"));
 const Blog = React.lazy(() => import("./pages/Blog"));
@@ -29,6 +31,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/pricing" element={<Pricing />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/faq" element={<FAQ />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/blog" element={<Blog />} />

@@ -22,11 +22,14 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Services</h4>
           <ul>
+            <li>Web Design & UI/UX</li>
             <li>Web Development</li>
-            <li>Microsoft 365 Optimization</li>
-            <li>Power BI Analytics</li>
-            {/* <li>Security Cameras</li> */}
-            <li>Custom Software</li>
+            <li>AI-Powered Solutions</li>
+            <li>Branding & Logo Design</li>
+            <li>E-Commerce Solutions</li>
+            <li>SEO & Digital Marketing</li>
+            <li>Consulting & Strategy</li>
+            <li>Maintenance & Support</li>
           </ul>
         </div>
         <div className="footer-section">
@@ -39,7 +42,13 @@ const Footer = () => {
               <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/pricing">Services & Pricing</Link>
+              <Link to="/services">Services</Link>
+            </li>
+            <li>
+              <Link to="/pricing">Pricing</Link>
+            </li>
+            <li>
+              <Link to="/faq">FAQ</Link>
             </li>
             <li>
               <Link to="/portfolio">Portfolio</Link>
@@ -53,7 +62,6 @@ const Footer = () => {
             <li>
               <Link to="/terms">Terms of Service</Link>
             </li>
-            {/* <li><a href="/support">Support</a></li> */}
           </ul>
         </div>
         <div className="footer-section">
