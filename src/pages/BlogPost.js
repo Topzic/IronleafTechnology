@@ -1,6 +1,6 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import './Blog.css';
+import React from "react";
+import { useParams, Link } from "react-router-dom";
+import "./Blog.css";
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -8,10 +8,11 @@ const BlogPost = () => {
   const articles = [
     {
       id: 1,
-      title: '10 Tech Tips for Small Businesses in Peterborough',
-      excerpt: 'Essential technology strategies to boost productivity and security.',
-      date: 'October 10, 2025',
-      readTime: '5 min read',
+      title: "10 Tech Tips for Small Businesses in Peterborough",
+      excerpt:
+        "Essential technology strategies to boost productivity and security.",
+      date: "October 10, 2025",
+      readTime: "5 min read",
       fullContent: `
         <h3>Introduction</h3>
         <p>In today's digital age, small businesses in Peterborough need to leverage technology to stay competitive. Here are 10 essential tech tips tailored for local entrepreneurs.</p>
@@ -48,14 +49,15 @@ const BlogPost = () => {
 
         <h3>Conclusion</h3>
         <p>By implementing these tech tips, Peterborough small businesses can improve efficiency, security, and customer engagement. Start small and gradually adopt these technologies for long-term success.</p>
-      `
+      `,
     },
     {
       id: 2,
-      title: 'Automating Workflows with Microsoft Power Platform',
-      excerpt: 'How to streamline operations using Power Apps and Power Automate.',
-      date: 'October 5, 2025',
-      readTime: '7 min read',
+      title: "Automating Workflows with Microsoft Power Platform",
+      excerpt:
+        "How to streamline operations using Power Apps and Power Automate.",
+      date: "October 5, 2025",
+      readTime: "7 min read",
       fullContent: `
         <h3>The Power of Automation</h3>
         <p>Microsoft Power Platform offers powerful tools to automate business processes without extensive coding knowledge. Let's explore how Power Apps and Power Automate can transform your operations.</p>
@@ -87,14 +89,14 @@ const BlogPost = () => {
 
         <h3>Conclusion</h3>
         <p>Microsoft Power Platform empowers businesses to become more efficient and agile. By automating workflows, you can focus on strategic activities that drive growth.</p>
-      `
+      `,
     },
     {
       id: 3,
-      title: 'Security Best Practices for Remote Teams',
-      excerpt: 'Protecting your business data in the modern work environment.',
-      date: 'September 28, 2025',
-      readTime: '6 min read',
+      title: "Security Best Practices for Remote Teams",
+      excerpt: "Protecting your business data in the modern work environment.",
+      date: "September 28, 2025",
+      readTime: "6 min read",
       fullContent: `
         <h3>The Remote Work Security Challenge</h3>
         <p>With the rise of remote work, businesses face new security challenges. Protecting sensitive data while enabling productivity is crucial for modern organizations.</p>
@@ -131,14 +133,14 @@ const BlogPost = () => {
 
         <h3>Conclusion</h3>
         <p>Remote work security requires a comprehensive approach combining technology, policies, and user education. By implementing these best practices, you can protect your business while embracing flexible work arrangements.</p>
-      `
+      `,
     },
     {
       id: 4,
-      title: 'Local Tech Trends: Peterborough 2025',
-      excerpt: 'What\'s happening in our community\'s technology landscape.',
-      date: 'September 20, 2025',
-      readTime: '4 min read',
+      title: "Local Tech Trends: Peterborough 2025",
+      excerpt: "What's happening in our community's technology landscape.",
+      date: "September 20, 2025",
+      readTime: "4 min read",
       fullContent: `
         <h3>Peterborough's Tech Evolution</h3>
         <p>Peterborough is experiencing significant growth in its technology sector. From startups to established businesses, our community is embracing digital transformation.</p>
@@ -169,14 +171,16 @@ const BlogPost = () => {
 
         <h3>Conclusion</h3>
         <p>Peterborough's technology landscape is dynamic and promising. By staying informed about these trends, businesses and individuals can position themselves for success in our evolving digital economy.</p>
-      `
+      `,
     },
     {
       id: 6,
-      title: 'Why Professional Website Development Beats DIY: Save Time, Avoid Headaches, and Grow Your Business',
-      excerpt: 'Discover why hiring a professional developer like me can save you countless hours and deliver results that DIY website builders simply can\'t match.',
-      date: 'October 15, 2025',
-      readTime: '8 min read',
+      title:
+        "Why Professional Website Development Beats DIY: Save Time, Avoid Headaches, and Grow Your Business",
+      excerpt:
+        "Discover why hiring a professional developer like me can save you countless hours and deliver results that DIY website builders simply can't match.",
+      date: "October 15, 2025",
+      readTime: "8 min read",
       fullContent: `
         <h3>The Hidden Costs of "Easy" Website Builders</h3>
         <p>Picture this: You're a busy business owner with a million things on your plate. You need a website, and you've heard that platforms like Wix, Squarespace, or WordPress make it "easy" to build one yourself. Sounds perfect, right? You can just drag and drop elements, choose a template, and boom – you're online!</p>
@@ -287,11 +291,11 @@ const BlogPost = () => {
         <p>In today's digital world, your website is often the first impression customers have of your business. Don't settle for "good enough" when you can have a website that actually drives results.</p>
 
         <p>If you're ready to stop struggling with complicated website builders and start getting the results you deserve, <a href="/contact" class="cta-link">reach out today</a>. Let's create something amazing together.</p>
-      `
-    }
+      `,
+    },
   ];
 
-  const article = articles.find(a => a.id === parseInt(id));
+  const article = articles.find((a) => a.id === parseInt(id));
 
   if (!article) {
     return (
@@ -299,7 +303,9 @@ const BlogPost = () => {
         <section className="hero-section">
           <h1>Article Not Found</h1>
           <p>The requested article could not be found.</p>
-          <Link to="/blog" className="back-to-blog">← Back to Blog</Link>
+          <Link to="/blog" className="back-to-blog">
+            ← Back to Blog
+          </Link>
         </section>
       </div>
     );
@@ -308,19 +314,35 @@ const BlogPost = () => {
   return (
     <div className="blog-page">
       <section className="blog-post-hero">
+        <div className="animated-circles">
+          <span className="circle circle1"></span>
+          <span className="circle circle2"></span>
+          <span className="circle circle3"></span>
+          <span className="circle circle4"></span>
+          <span className="circle circle5"></span>
+          <span className="circle circle6"></span>
+          <span className="circle circle7"></span>
+          <span className="circle circle8"></span>
+          <span className="circle circle9"></span>
+          <span className="circle circle10"></span>
+          <span className="circle circle11"></span>
+          <span className="circle circle12"></span>
+        </div>
         <div className="blog-post-container">
           <h1>{article.title}</h1>
           <div className="article-meta">
             <span>{article.date}</span>
             <span>{article.readTime}</span>
           </div>
-          <Link to="/blog" className="back-to-blog">← Back to Blog</Link>
+          <Link to="/blog" className="back-to-blog">
+            ← Back to Blog
+          </Link>
         </div>
       </section>
 
       <section className="blog-content">
         <div className="blog-post-container">
-          <div 
+          <div
             className="full-article-content"
             dangerouslySetInnerHTML={{ __html: article.fullContent }}
           />
