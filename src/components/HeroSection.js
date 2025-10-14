@@ -6,9 +6,6 @@ import { trackEvent } from "../utils/analytics";
 const HeroSection = () => {
   const navigate = useNavigate();
 
-  const backgroundDesktop = `${process.env.PUBLIC_URL}/projects/background.webp`;
-  const backgroundMobile = `${process.env.PUBLIC_URL}/projects/background-mobile.webp`;
-
   const handleBookCall = () => {
     trackEvent({
       category: "engagement",
@@ -19,16 +16,6 @@ const HeroSection = () => {
   };
   return (
     <section className="hero">
-      <picture className="hero-media">
-        <source media="(max-width: 768px)" srcSet={backgroundMobile} />
-        <img
-          src={backgroundDesktop}
-          alt=""
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-        />
-      </picture>
       <div className="hero-overlay" aria-hidden="true"></div>
       <div className="animated-circles">
         <span className="circle circle1"></span>
@@ -42,14 +29,7 @@ const HeroSection = () => {
         <span className="circle circle9"></span>
         <span className="circle circle10"></span>
         <span className="circle circle11"></span>
-        <span className="circle circle13"></span>
-        <span className="circle circle14"></span>
-        <span className="circle circle15"></span>
-        <span className="circle circle16"></span>
-        <span className="circle circle17"></span>
-        <span className="circle circle18"></span>
-        <span className="circle circle19"></span>
-        <span className="circle circle20"></span>
+        <span className="circle circle12"></span>
       </div>
       <div className="hero-content">
         <h1>Empowering Businesses with Veteran-Driven Technology</h1>

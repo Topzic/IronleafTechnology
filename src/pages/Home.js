@@ -12,18 +12,6 @@ const Home = () => {
         <title>
           Ironleaf Technology - Veteran-Owned IT Solutions in Peterborough
         </title>
-        <link
-          rel="preload"
-          href="/projects/background-mobile.webp"
-          as="image"
-          media="(max-width: 768px)"
-        />
-        <link
-          rel="preload"
-          href="/projects/background.webp"
-          as="image"
-          media="(min-width: 769px)"
-        />
         <meta
           name="description"
           content="Ironleaf Technology offers veteran-owned IT solutions in Peterborough, Ontario. Full-stack web development, Microsoft 365 optimization, Power BI analytics, and custom software for businesses."
