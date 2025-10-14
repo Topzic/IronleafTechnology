@@ -1,16 +1,10 @@
-import React, { Suspense, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import React, { Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LoadingSpinner from "./components/LoadingSpinner";
-import { trackPageView } from "./utils/analytics";
 
 const Home = React.lazy(() => import("./pages/Home"));
 const About = React.lazy(() => import("./pages/About"));
@@ -22,21 +16,10 @@ const BlogPost = React.lazy(() => import("./pages/BlogPost"));
 const Terms = React.lazy(() => import("./pages/Terms"));
 // import Support from './pages/Support';
 
-const RouteChangeTracker = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    trackPageView(location.pathname + location.search);
-  }, [location]);
-
-  return null;
-};
-
 function App() {
   return (
     <HelmetProvider>
       <Router>
-        <RouteChangeTracker />
         <div className="App">
           <Navbar />
           <Suspense fallback={<LoadingSpinner />}>
