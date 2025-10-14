@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./Pricing.css";
-import { trackEvent } from "../utils/analytics";
 
 const Pricing = () => {
   const navigate = useNavigate();
@@ -301,19 +300,19 @@ const Pricing = () => {
   });
 
   const handleBookCall = () => {
-    trackEvent({
-      category: "engagement",
-      action: "click",
-      label: "book_call_pricing",
+    // eslint-disable-next-line no-undef
+    gtag("event", "click", {
+      event_category: "engagement",
+      event_label: "book_call_pricing",
     });
     navigate("/contact");
   };
 
   const handleCustomQuote = () => {
-    trackEvent({
-      category: "engagement",
-      action: "click",
-      label: "custom_quote_pricing",
+    // eslint-disable-next-line no-undef
+    gtag("event", "click", {
+      event_category: "engagement",
+      event_label: "custom_quote_pricing",
     });
     navigate("/contact");
   };

@@ -6,6 +6,11 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   const handleBookCall = () => {
+    // eslint-disable-next-line no-undef
+    gtag("event", "click", {
+      event_category: "engagement",
+      event_label: "book_call_hero",
+    });
     navigate("/contact");
   };
 
