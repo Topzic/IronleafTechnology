@@ -17,20 +17,6 @@ const HeroSection = () => {
   return (
     <section className="hero">
       <div className="hero-overlay" aria-hidden="true"></div>
-      <div className="animated-circles">
-        <span className="circle circle1"></span>
-        <span className="circle circle2"></span>
-        <span className="circle circle3"></span>
-        <span className="circle circle4"></span>
-        <span className="circle circle5"></span>
-        <span className="circle circle6"></span>
-        <span className="circle circle7"></span>
-        <span className="circle circle8"></span>
-        <span className="circle circle9"></span>
-        <span className="circle circle10"></span>
-        <span className="circle circle11"></span>
-        <span className="circle circle12"></span>
-      </div>
       <div className="hero-content">
         <h1>Empowering Businesses with Veteran-Driven Technology</h1>
         <p>
