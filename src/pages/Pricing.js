@@ -1,6 +1,19 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHourglass,
+  faCogs,
+  faFileAlt,
+  faCrown,
+  faChartLine,
+  faGlobe,
+  faGaugeSimpleHigh,
+  faShieldAlt,
+  faStar,
+  faBullseye,
+} from "@fortawesome/free-solid-svg-icons";
 import "./Pricing.css";
 
 const Pricing = () => {
@@ -24,7 +37,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "optimization",
-      icon: "fa-solid fa-hourglass",
+      icon: faHourglass,
     },
     {
       name: "Website Optimization Tune-Up",
@@ -44,7 +57,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "optimization",
-      icon: "fas fa-cogs",
+      icon: faCogs,
     },
     {
       name: "Standard",
@@ -63,7 +76,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "web",
-      icon: "fas fa-file-alt",
+      icon: faFileAlt,
     },
     {
       name: "Premium",
@@ -82,7 +95,7 @@ const Pricing = () => {
       ],
       popular: true,
       category: "web",
-      icon: "fas fa-crown",
+      icon: faCrown,
     },
     {
       name: "Advanced",
@@ -102,7 +115,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "web",
-      icon: "fas fa-chart-line",
+      icon: faChartLine,
     },
     {
       name: "Enterprise",
@@ -122,7 +135,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "web",
-      icon: "fa-solid fa-globe",
+      icon: faGlobe,
     },
     {
       name: "Microsoft 365 Optimization",
@@ -141,7 +154,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "optimization",
-      icon: "fa-solid fa-gauge-simple-high",
+      icon: faGaugeSimpleHigh,
     },
     // {
     //   name: 'Security Camera Bronze',
@@ -261,7 +274,7 @@ const Pricing = () => {
         <div className="pricing-highlights">
           <div className="highlight">
             <span className="icon">
-              <i className="fas fa-shield-alt"></i>
+            <FontAwesomeIcon icon={faShieldAlt} />
             </span>
             <span>Veteran-Owned & Operated</span>
           </div>
@@ -308,7 +321,7 @@ const Pricing = () => {
                   <span className="popular-badge">Most Popular</span>
                 )}
                 <div className="card-top">
-                  {/* <i className={`${pkg.icon} card-icon`}></i> */}
+                  <i className={`${pkg.icon} card-icon`}></i>
                   <h3 className="plan-name">{pkg.name}</h3>
                   <div className="price-block">
                     <span className="currency">$</span>
@@ -366,7 +379,7 @@ const Pricing = () => {
                   <span className="popular-badge">Most Popular</span>
                 )}
                 <div className="card-top">
-                  {/* <i className={`${pkg.icon} card-icon`}></i> */}
+                  <i className={`${pkg.icon} card-icon`}></i>
                   <h3 className="plan-name">{pkg.name}</h3>
                   <div className="price-block">
                     <span className="currency">$</span>
