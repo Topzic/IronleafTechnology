@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./Pricing.css";
-import ReactGA4 from "react-ga4";
+import { trackEvent } from "../utils/analytics";
 
 const Pricing = () => {
   const navigate = useNavigate();
@@ -301,7 +301,7 @@ const Pricing = () => {
   });
 
   const handleBookCall = () => {
-    ReactGA4.event({
+    trackEvent({
       category: "engagement",
       action: "click",
       label: "book_call_pricing",
@@ -310,7 +310,7 @@ const Pricing = () => {
   };
 
   const handleCustomQuote = () => {
-    ReactGA4.event({
+    trackEvent({
       category: "engagement",
       action: "click",
       label: "custom_quote_pricing",

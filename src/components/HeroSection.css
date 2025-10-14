@@ -16,9 +16,16 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('/public/projects/background.webp') center/cover;
-  opacity: 0.3;
+  background: linear-gradient(135deg, rgba(45, 80, 22, 0.9), rgba(74, 124, 89, 0.6));
+  opacity: 0.8;
+  transition: opacity 0.6s ease;
   z-index: 0;
+}
+
+.hero-overlay--image {
+  background-position: center;
+  background-size: cover;
+  opacity: 0.35;
 }
 
 .hero-content {
@@ -261,8 +268,9 @@
 }
 
 @media (max-width: 768px) {
-  .hero-overlay {
-    background: url('/public/projects/background-mobile.webp') center/cover;
+  .hero-overlay--image {
+    background-position: center;
+    background-size: cover;
   }
   .hero-content h1 {
     font-size: 2.5rem;

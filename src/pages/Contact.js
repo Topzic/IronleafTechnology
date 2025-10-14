@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { Helmet } from "react-helmet-async";
 import "./Contact.css";
-import ReactGA4 from "react-ga4";
+import { trackEvent } from "../utils/analytics";
 
 const supabase = createClient(
   process.env.REACT_APP_SUPABASE_URL,
@@ -69,7 +69,7 @@ const Contact = () => {
   useEffect(() => {
     const handleBeforeUnload = () => {
       if (formStarted && !formSubmitted) {
-        ReactGA4.event({
+        trackEvent({
           category: "lead_form",
           action: "form_abandon",
         });
@@ -184,7 +184,7 @@ const Contact = () => {
                 onChange={handleChange}
                 onFocus={() => {
                   if (!formStarted) {
-                    ReactGA4.event({
+                    trackEvent({
                       category: "lead_form",
                       action: "form_start",
                     });
