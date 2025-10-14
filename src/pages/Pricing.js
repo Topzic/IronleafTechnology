@@ -1,19 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHourglass,
-  faCogs,
-  faFileAlt,
-  faCrown,
-  faChartLine,
-  faGlobe,
-  faGaugeSimpleHigh,
-  faShieldAlt,
-  faStar,
-  faBullseye,
-} from "@fortawesome/free-solid-svg-icons";
 import "./Pricing.css";
 
 const Pricing = () => {
@@ -37,7 +24,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "optimization",
-      icon: faHourglass,
+      icon: "fas fa-hourglass",
     },
     {
       name: "Website Optimization Tune-Up",
@@ -57,7 +44,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "optimization",
-      icon: faCogs,
+      icon: "fas fa-cogs",
     },
     {
       name: "Standard",
@@ -76,7 +63,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "web",
-      icon: faFileAlt,
+      icon: "fas fa-file-alt",
     },
     {
       name: "Premium",
@@ -95,7 +82,7 @@ const Pricing = () => {
       ],
       popular: true,
       category: "web",
-      icon: faCrown,
+      icon: "fas fa-crown",
     },
     {
       name: "Advanced",
@@ -115,7 +102,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "web",
-      icon: faChartLine,
+      icon: "fas fa-chart-line",
     },
     {
       name: "Enterprise",
@@ -135,7 +122,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "web",
-      icon: faGlobe,
+      icon: "fas fa-globe",
     },
     {
       name: "Microsoft 365 Optimization",
@@ -154,7 +141,7 @@ const Pricing = () => {
       ],
       popular: false,
       category: "optimization",
-      icon: faGaugeSimpleHigh,
+      icon: "fas fa-gauge-simple-high",
     },
     // {
     //   name: 'Security Camera Bronze',
@@ -274,7 +261,7 @@ const Pricing = () => {
         <div className="pricing-highlights">
           <div className="highlight">
             <span className="icon">
-            <FontAwesomeIcon icon={faShieldAlt} />
+              <i className="fas fa-shield-alt"></i>
             </span>
             <span>Veteran-Owned & Operated</span>
           </div>
