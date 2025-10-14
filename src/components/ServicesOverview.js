@@ -1,6 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ServicesOverview.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCode,
+  faChartLine,
+  faCogs,
+  faSearch,
+  faClock,
+  faShoppingCart,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ServicesOverview = () => {
   const services = [
@@ -8,41 +17,41 @@ const ServicesOverview = () => {
       title: "Full-Stack Web Development",
       description:
         "Custom websites and applications built with modern technologies.",
-      icon: <i className="fas fa-code"></i>,
+      icon: faCode,
       link: "#/pricing",
     },
     {
       title: "Microsoft 365 Optimization",
       description:
         "Streamline your business processes with Power Platform tools.",
-      icon: <i className="fas fa-chart-line"></i>,
+      icon: faChartLine,
       link: "#/pricing",
     },
     {
       title: "Custom Software Solutions",
       description: "Tailored solutions for your unique business needs.",
-      icon: <i className="fas fa-cogs"></i>,
+      icon: faCogs,
       link: "#/pricing",
     },
     {
       title: "Website Optimization & Audit",
       description:
         "Comprehensive website audits, SEO improvements, and performance optimization.",
-      icon: <i className="fas fa-search"></i>,
+      icon: faSearch,
       link: "#/pricing",
     },
     {
       title: "Hourly Development Services",
       description:
         "Flexible hourly development and consulting for ongoing projects and maintenance.",
-      icon: <i className="fas fa-clock"></i>,
+      icon: faClock,
       link: "#/pricing",
     },
     {
       title: "E-commerce Solutions",
       description:
         "Online stores and marketplace platforms with secure payment integration.",
-      icon: <i className="fas fa-shopping-cart"></i>,
+      icon: faShoppingCart,
       link: "#/pricing",
     },
   ];
@@ -54,7 +63,9 @@ const ServicesOverview = () => {
         <div className="services-grid">
           {services.map((service, index) => (
             <div key={index} className="service-card">
-              <div className="service-icon">{service.icon}</div>
+              <div className="service-icon">
+                <FontAwesomeIcon icon={service.icon} />
+              </div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
               <Link to={service.link} className="service-link">

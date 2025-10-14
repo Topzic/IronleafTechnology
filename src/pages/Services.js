@@ -1,6 +1,17 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import "./Services.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPalette,
+  faCode,
+  faRobot,
+  faStar,
+  faShoppingCart,
+  faChartLine,
+  faBullseye,
+  faWrench,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Services = () => {
   const coreServices = [
@@ -8,56 +19,56 @@ const Services = () => {
       title: "Web Design & UI/UX",
       description:
         "Create stunning, user-friendly websites that engage visitors and drive conversions. Our design process focuses on intuitive interfaces and exceptional user experiences.",
-      icon: "fas fa-palette",
+      icon: faPalette,
       link: "#/contact",
     },
     {
       title: "Web Development",
       description:
         "Build robust, scalable websites using modern technologies. From responsive designs to custom functionality, we bring your vision to life with clean, efficient code.",
-      icon: "fas fa-code",
+      icon: faCode,
       link: "#/contact",
     },
     {
       title: "AI-Powered Solutions",
       description:
         "Leverage artificial intelligence to create smarter, more interactive websites. Enhance user engagement with AI-driven features and automation.",
-      icon: "fas fa-robot",
+      icon: faRobot,
       link: "#/contact",
     },
     {
       title: "Branding & Logo Design",
       description:
         "Develop a strong brand identity that resonates with your audience. Professional logo design and branding services to help your business stand out.",
-      icon: "fas fa-star",
+      icon: faStar,
       link: "#/contact",
     },
     {
       title: "E-Commerce Solutions",
       description:
         "Launch and optimize online stores with secure payment processing, inventory management, and seamless shopping experiences.",
-      icon: "fas fa-shopping-cart",
+      icon: faShoppingCart,
       link: "#/contact",
     },
     {
       title: "SEO & Digital Marketing",
       description:
         "Improve your online visibility and drive targeted traffic to your website. Comprehensive SEO strategies and digital marketing solutions.",
-      icon: "fas fa-chart-line",
+      icon: faChartLine,
       link: "#/contact",
     },
     {
       title: "Consulting & Strategy",
       description:
         "Strategic guidance to help your business succeed online. From project planning to technology recommendations, we provide expert advice.",
-      icon: "fas fa-bullseye",
+      icon: faBullseye,
       link: "#/contact",
     },
     {
       title: "Maintenance & Support",
       description:
         "Ongoing website maintenance, security monitoring, and technical support to keep your site running smoothly and securely.",
-      icon: "fas fa-wrench",
+      icon: faWrench,
       link: "#/contact",
     },
   ];
@@ -176,7 +187,7 @@ const Services = () => {
             {coreServices.map((service, index) => (
               <div key={index} className="service-card">
                 <div className="service-icon">
-                  <i className={service.icon}></i>
+                  <FontAwesomeIcon icon={service.icon} />
                 </div>
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
