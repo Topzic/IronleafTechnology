@@ -1,35 +1,49 @@
-import React from 'react';
-import './Portfolio.css';
+import React from "react";
+import "./Portfolio.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Portfolio = () => {
   const projects = [
     {
-      title: 'United Property Experts Website',
-      description: 'Professional real estate website featuring property listings, agent profiles, and comprehensive contact systems for a leading property management company.',
-      technologies: ['WordPress', 'Plugins', 'SEO Optimization', 'Google Analytics'],
-      outcomes: 'Responsive design, fast performance, mobile-optimized, enhanced lead generation',
-      image: '/projects/united-property-experts.png',
-      quote: '"Outstanding website that perfectly represents our brand and drives business." - United Property Experts Team'
+      title: "United Property Experts Website",
+      description:
+        "Professional real estate website featuring property listings, agent profiles, and comprehensive contact systems for a leading property management company.",
+      technologies: [
+        "WordPress",
+        "Plugins",
+        "SEO Optimization",
+        "Google Analytics",
+      ],
+      outcomes:
+        "Responsive design, fast performance, mobile-optimized, enhanced lead generation",
+      image: "/projects/united-property-experts.png",
+      quote:
+        '"Outstanding website that perfectly represents our brand and drives business." - United Property Experts Team',
     },
 
     {
-      title: 'NatureGo Mobile App',
-      description: 'A cross-platform mobile app for discovering and sharing nature points of interest. Features include species identification, geospatial markers, and gamification.',
-      technologies: ['React Native', 'Supabase', 'PostGIS', 'Google Maps API'],
-      outcomes: '5,800+ species database, real-time updates, secure authentication',
-      image: '/projects/naturego.png',
-      quote: '"Transformed how we connect with nature." - User Testimonial'
+      title: "NatureGo Mobile App",
+      description:
+        "A cross-platform mobile app for discovering and sharing nature points of interest. Features include species identification, geospatial markers, and gamification.",
+      technologies: ["React Native", "Supabase", "PostGIS", "Google Maps API"],
+      outcomes:
+        "5,800+ species database, real-time updates, secure authentication",
+      image: "/projects/naturego.png",
+      quote: '"Transformed how we connect with nature." - User Testimonial',
     },
 
     {
-      title: 'Cottage Country Marine POS System',
-      description: 'Full-stack e-commerce and inventory management system for marine retail.',
-      technologies: ['React', 'Node.js', 'Supabase', 'Barcode Integration'],
-      outcomes: 'Automated checkout, real-time inventory, customer order management',
-      image: '/projects/marine.png',
-      quote: '"Revolutionized our operations." - Business Owner'
+      title: "Cottage Country Marine POS System",
+      description:
+        "Full-stack e-commerce and inventory management system for marine retail.",
+      technologies: ["React", "Node.js", "Supabase", "Barcode Integration"],
+      outcomes:
+        "Automated checkout, real-time inventory, customer order management",
+      image: "/projects/marine.png",
+      quote: '"Revolutionized our operations." - Business Owner',
     },
-    
+
     // {
     //   title: 'Namanta Enterprises Website',
     //   description: 'Professional website for Namanta, showcasing their services, portfolio, and contact information with modern design and responsive layout.',
@@ -40,23 +54,34 @@ const Portfolio = () => {
     // },
 
     {
-      title: 'Restaurant Website Template',
-      description: 'A modern, full-featured restaurant website template built with React, featuring an admin panel, reservation system, analytics dashboard, and email newsletter functionality. This template provides everything needed to launch a professional restaurant website quickly.',
-      technologies: ['React 19', 'Express.js', 'Supabase', 'Nodemailer', 'i18next'],
-      outcomes: 'Responsive design, multi-language support, admin panel, reservation calendar, analytics dashboard, email newsletter, PWA ready, SEO optimized',
-      image: '/projects/gourmet-haven.png',
-      quote: '"Perfect for launching professional restaurant websites quickly." - Restaurant Owner'
+      title: "Restaurant Website Template",
+      description:
+        "A modern, full-featured restaurant website template built with React, featuring an admin panel, reservation system, analytics dashboard, and email newsletter functionality. This template provides everything needed to launch a professional restaurant website quickly.",
+      technologies: [
+        "React 19",
+        "Express.js",
+        "Supabase",
+        "Nodemailer",
+        "i18next",
+      ],
+      outcomes:
+        "Responsive design, multi-language support, admin panel, reservation calendar, analytics dashboard, email newsletter, PWA ready, SEO optimized",
+      image: "/projects/gourmet-haven.png",
+      quote:
+        '"Perfect for launching professional restaurant websites quickly." - Restaurant Owner',
     },
 
     {
-      title: 'Ontario Parks Information Management',
-      description: 'Custom SharePoint sites and Power BI dashboards for provincial park operations.',
-      technologies: ['SharePoint Online', 'Power BI', 'Power Automate'],
-      outcomes: 'Streamlined operations, improved data accuracy by 20,000 records',
-      image: '/projects/ontario-parks-logo.png',
-      quote: '"Enhanced our reporting reliability significantly." - Ontario Parks Team'
+      title: "Ontario Parks Information Management",
+      description:
+        "Custom SharePoint sites and Power BI dashboards for provincial park operations.",
+      technologies: ["SharePoint Online", "Power BI", "Power Automate"],
+      outcomes:
+        "Streamlined operations, improved data accuracy by 20,000 records",
+      image: "/projects/ontario-parks-logo.png",
+      quote:
+        '"Enhanced our reporting reliability significantly." - Ontario Parks Team',
     },
-
   ];
 
   return (
@@ -83,7 +108,11 @@ const Portfolio = () => {
       <section className="portfolio-content">
         {projects.map((project, index) => (
           <div key={index} className="project-card">
-            <img src={project.image} alt={project.title} />
+            <LazyLoadImage
+              src={project.image}
+              alt={project.title}
+              effect="blur"
+            />
             <div className="project-info">
               <h2>{project.title}</h2>
               <p>{project.description}</p>
@@ -106,7 +135,6 @@ const Portfolio = () => {
       </section>
     </div>
   );
-
 };
 
 export default Portfolio;
