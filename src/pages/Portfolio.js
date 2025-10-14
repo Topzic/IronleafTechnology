@@ -43,16 +43,6 @@ const Portfolio = () => {
       image: "/projects/marine.png",
       quote: '"Revolutionized our operations." - Business Owner',
     },
-
-    // {
-    //   title: 'Namanta Enterprises Website',
-    //   description: 'Professional website for Namanta, showcasing their services, portfolio, and contact information with modern design and responsive layout.',
-    //   technologies: ['React', 'Node.js', 'Supabase', 'SEO Optimization'],
-    //   outcomes: 'Clean design, fast loading, mobile-responsive, improved online presence',
-    //   image: '/projects/namanta.png',
-    //   quote: '"Excellent website that captures our brand perfectly." - Namanta Team'
-    // },
-
     {
       title: "Restaurant Website Template",
       description:

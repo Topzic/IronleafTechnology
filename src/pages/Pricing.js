@@ -308,7 +308,7 @@ const Pricing = () => {
                   <span className="popular-badge">Most Popular</span>
                 )}
                 <div className="card-top">
-                  <i className={`${pkg.icon} card-icon`}></i>
+                  {/* <i className={`${pkg.icon} card-icon`}></i> */}
                   <h3 className="plan-name">{pkg.name}</h3>
                   <div className="price-block">
                     <span className="currency">$</span>
@@ -366,7 +366,7 @@ const Pricing = () => {
                   <span className="popular-badge">Most Popular</span>
                 )}
                 <div className="card-top">
-                  <i className={`${pkg.icon} card-icon`}></i>
+                  {/* <i className={`${pkg.icon} card-icon`}></i> */}
                   <h3 className="plan-name">{pkg.name}</h3>
                   <div className="price-block">
                     <span className="currency">$</span>
