@@ -5,6 +5,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LoadingSpinner from "./components/LoadingSpinner";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Home = React.lazy(() => import("./pages/Home"));
 const About = React.lazy(() => import("./pages/About"));
@@ -20,6 +21,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ScrollToTop />
         <div className="App">
           <Navbar />
           <Suspense fallback={<LoadingSpinner />}>
