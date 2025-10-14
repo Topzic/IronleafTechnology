@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HeroSection.css";
 import { trackEvent } from "../utils/analytics";
 
 const HeroSection = () => {
   const navigate = useNavigate();
+  const [backgroundImage, setBackgroundImage] = useState("");
+
+  useEffect(() => {
+    const updateBackground = () => {
+      const isMobile = window.innerWidth <= 768;
+      setBackgroundImage(
+        `url(${process.env.PUBLIC_URL}/projects/${
+          isMobile ? "background-mobile.webp" : "background.webp"
+        })`
+      );
+    };
+    updateBackground();
+    window.addEventListener("resize", updateBackground);
+    return () => window.removeEventListener("resize", updateBackground);
+  }, []);
 
   const handleBookCall = () => {
     trackEvent({
@@ -16,7 +31,11 @@ const HeroSection = () => {
   };
   return (
     <section className="hero">
-      <div className="hero-overlay" aria-hidden="true"></div>
+      <div
+        className="hero-overlay"
+        style={{ backgroundImage }}
+        aria-hidden="true"
+      ></div>
       <div className="animated-circles">
         <span className="circle circle1"></span>
         <span className="circle circle2"></span>

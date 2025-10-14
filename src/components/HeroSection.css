@@ -16,7 +16,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('/public/projects/background.webp') center/cover;
   opacity: 0.3;
   z-index: 0;
 }
@@ -261,9 +260,6 @@
 }
 
 @media (max-width: 768px) {
-  .hero-overlay {
-    background: url('/public/projects/background-mobile.webp') center/cover;
-  }
   .hero-content h1 {
     font-size: 2.5rem;
   }
