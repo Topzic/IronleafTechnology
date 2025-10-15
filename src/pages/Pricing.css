@@ -229,7 +229,7 @@
   border: 2px solid rgba(255, 255, 255, 0.3);
   background: transparent;
   color: #fff;
-  border-radius: 50px;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
   font-size: 1rem;
@@ -336,6 +336,7 @@
   flex-direction: column;
   min-height: 450px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
 }
 
 .pricing-page .pricing-card:hover {
@@ -401,6 +402,11 @@
   display: block;
   position: relative;
   z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.pricing-page .pricing-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .pricing-page .plan-name {
@@ -470,13 +476,14 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   border-radius: 8px;
   padding-left: 0.5rem;
 }
 
 .pricing-page .features-list li:hover {
   background: rgba(0, 200, 83, 0.05);
+  transform: translateX(5px);
 }
 
 .pricing-page .checkmark {
@@ -527,73 +534,221 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Color Themes */
-.pricing-page .color-0 .card-top {
-  background: linear-gradient(135deg, #00C853 0%, #00A848 50%, #4CAF50 100%);
-  border: 2px solid #00C853;
-  box-shadow: inset 0 0 20px rgba(0, 200, 83, 0.3);
+/* Enhanced Card Hover Effects */
+.pricing-page .pricing-card {
+  transition: all 0.3s ease;
+  transform: translateY(0);
 }
 
-.pricing-page .color-0 .cta-button {
-  background: linear-gradient(135deg, #00C853 0%, #00A848 100%);
-  border: 2px solid #00C853;
+.pricing-page .pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.pricing-page .color-1 .card-top {
-  background: linear-gradient(135deg, #FFEB3B 0%, #FFD700 50%, #FFC107 100%);
-  color: #000;
-  border: 2px solid #FFD700;
-  box-shadow: inset 0 0 20px rgba(255, 235, 59, 0.3);
+.pricing-page .pricing-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
-.pricing-page .color-1 .cta-button {
-  background: linear-gradient(135deg, #FFEB3B 0%, #FFD700 100%);
-  color: #000;
-  border: 2px solid #FFD700;
+.pricing-page .pricing-card:hover .features-list li {
+  transform: translateX(5px);
 }
 
-.pricing-page .color-1 .period {
-  color: rgba(0, 0, 0, 0.8);
+.pricing-page .pricing-card:hover .cta-button {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.pricing-page .color-1 .original-price {
-  color: rgba(0, 0, 0, 0.7);
+/* Unified Card Styling */
+.pricing-page .pricing-card {
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 450px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,0.9) 100%);
 }
 
-.pricing-page .color-2 .card-top {
-  background: linear-gradient(135deg, #FF5252 0%, #E53935 50%, #F44336 100%);
-  border: 2px solid #FF5252;
-  box-shadow: inset 0 0 20px rgba(255, 82, 82, 0.3);
+.pricing-page .pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(74, 124, 89, 0.3);
+  background: linear-gradient(135deg, rgba(248,249,250,0.95) 0%, rgba(255,255,255,0.9) 100%);
 }
 
-.pricing-page .color-2 .cta-button {
-  background: linear-gradient(135deg, #FF5252 0%, #E53935 100%);
-  border: 2px solid #FF5252;
+.pricing-page .card-top {
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: white;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 360px;
+  transition: all 0.3s ease;
+  background: #4a7c59;
 }
 
-/* Enterprise Theme */
-.pricing-page .color-3 .card-top {
-  background: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #3f51b5 100%);
-  border: 2px solid #3949ab;
-  box-shadow: inset 0 0 20px rgba(26, 35, 126, 0.3);
+.pricing-page .card-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+  z-index: -1;
 }
 
-.pricing-page .color-3 .cta-button {
-  background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
-  border: 2px solid #3949ab;
+.pricing-page .card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  color: #fff;
 }
 
-.pricing-page .enterprise .card-top {
-  background: linear-gradient(135deg, #d4af37 0%, #ffd700 50%, #ffed4e 100%);
-  color: #000;
-  border: 2px solid #ffd700;
-  box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.3);
+.pricing-page .pricing-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
-.pricing-page .enterprise .cta-button {
-  background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
-  color: #000;
-  border: 2px solid #ffd700;
+.pricing-page .cta-button {
+  width: 100%;
+  height: 70px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 0 20px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  padding: 0;
+  background: #4a7c59;
+}
+
+.pricing-page .cta-button:hover {
+  background: #2d5016;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Monochromatic Green Variations for Package Cards */
+.pricing-page .pricing-card.mono-1 .card-top {
+  background: linear-gradient(135deg, #2d5016 0%, #3a6b2a 50%, #4a7c59 100%);
+}
+
+.pricing-page .pricing-card.mono-1 .cta-button {
+  background: linear-gradient(135deg, #2d5016 0%, #3a6b2a 100%);
+}
+
+.pricing-page .pricing-card.mono-1 .cta-button:hover {
+  background: linear-gradient(135deg, #1a3a0f 0%, #2d5016 100%);
+}
+
+.pricing-page .pricing-card.mono-2 .card-top {
+  background: linear-gradient(135deg, #4a7c59 0%, #5a8f6a 50%, #6b9e78 100%);
+}
+
+.pricing-page .pricing-card.mono-2 .cta-button {
+  background: linear-gradient(135deg, #4a7c59 0%, #5a8f6a 100%);
+}
+
+.pricing-page .pricing-card.mono-2 .cta-button:hover {
+  background: linear-gradient(135deg, #3a6b2a 0%, #4a7c59 100%);
+}
+
+.pricing-page .pricing-card.mono-3 .card-top {
+  background: linear-gradient(135deg, #5a8f6a 0%, #6b9e78 50%, #7ab18a 100%);
+}
+
+.pricing-page .pricing-card.mono-3 .cta-button {
+  background: linear-gradient(135deg, #5a8f6a 0%, #6b9e78 100%);
+}
+
+.pricing-page .pricing-card.mono-3 .cta-button:hover {
+  background: linear-gradient(135deg, #4a7c59 0%, #5a8f6a 100%);
+}
+
+.pricing-page .pricing-card.mono-4 .card-top {
+  background: linear-gradient(135deg, #6b9e78 0%, #7ab18a 50%, #8ac49c 100%);
+}
+
+.pricing-page .pricing-card.mono-4 .cta-button {
+  background: linear-gradient(135deg, #6b9e78 0%, #7ab18a 100%);
+}
+
+.pricing-page .pricing-card.mono-4 .cta-button:hover {
+  background: linear-gradient(135deg, #5a8f6a 0%, #6b9e78 100%);
+}
+
+.pricing-page .pricing-card.mono-5 .card-top {
+  background: linear-gradient(135deg, #7ab18a 0%, #8ac49c 50%, #9ad6ae 100%);
+}
+
+.pricing-page .pricing-card.mono-5 .cta-button {
+  background: linear-gradient(135deg, #7ab18a 0%, #8ac49c 100%);
+}
+
+.pricing-page .pricing-card.mono-5 .cta-button:hover {
+  background: linear-gradient(135deg, #6b9e78 0%, #7ab18a 100%);
+}
+
+/* Additional Button Variations for Visual Variety */
+.pricing-page .cta-button-outline {
+  background: transparent;
+  color: #4a7c59;
+  border: 2px solid #4a7c59;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.pricing-page .cta-button-outline:hover {
+  background: #4a7c59;
+  color: #fff;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 3px 12px rgba(74, 124, 89, 0.25);
+}
+
+.pricing-page .cta-button-ghost {
+  background: rgba(74, 124, 89, 0.1);
+  color: #4a7c59;
+  border: 1px solid rgba(74, 124, 89, 0.2);
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.pricing-page .cta-button-ghost:hover {
+  background: #4a7c59;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(74, 124, 89, 0.2);
 }
 
 /* Add-ons Section */
@@ -627,11 +782,19 @@
 }
 
 .pricing-page .add-on-card {
-  background: #fff;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,0.9) 100%);
   padding: 2.5rem;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   text-align: left;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.pricing-page .add-on-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, rgba(248,249,250,0.95) 0%, rgba(255,255,255,0.9) 100%);
 }
 
 .pricing-page .add-on-card h3 {
@@ -652,10 +815,17 @@
 }
 
 .pricing-page .option {
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f0f0f0 100%);
   padding: 1.5rem;
   border-radius: 10px;
   border-left: 4px solid #a8d5ba;
+  transition: all 0.3s ease;
+}
+
+.pricing-page .option:hover {
+  transform: translateX(5px);
+  background: linear-gradient(135deg, #f0f0f0 0%, #f8f9fa 100%);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .pricing-page .option-header {
@@ -736,7 +906,7 @@
 }
 
 .pricing-page .discount-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) rotate(-0.5deg);
   background: rgba(255, 255, 255, 0.15);
 }
 
@@ -781,11 +951,19 @@
 }
 
 .pricing-page .faq-item {
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   border-radius: 10px;
   margin-bottom: 1rem;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.pricing-page .faq-item:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
 }
 
 .pricing-page .faq-item summary {
@@ -856,20 +1034,20 @@
 
 .pricing-page .primary-cta {
   background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-  color: #fff;
+  color: white;
   border: none;
-  padding: 1.25rem 2.5rem;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  padding: 1.5rem 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 32px rgba(255, 107, 107, 0.3);
 }
 
 .pricing-page .primary-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 12px 40px rgba(255, 107, 107, 0.4);
 }
 
 .pricing-page .secondary-cta {
@@ -877,7 +1055,7 @@
   color: #fff;
   border: 2px solid rgba(255, 255, 255, 0.3);
   padding: 1.25rem 2.5rem;
-  border-radius: 50px;
+  border-radius: 5px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -921,20 +1099,21 @@
 }
 
 .pricing-page .discounts-banner-link {
-  background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+  background: #4a7c59;
   color: #fff;
   padding: 0.75rem 1.5rem;
-  border-radius: 6px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(45, 80, 22, 0.2);
+  box-shadow: 0 2px 8px rgba(74, 124, 89, 0.2);
 }
 
 .pricing-page .discounts-banner-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.3);
+  box-shadow: 0 4px 12px rgba(74, 124, 89, 0.3);
+  background: #2d5016;
 }
 
 /* Responsive Design */
@@ -1089,7 +1268,7 @@
 }
 
 .pricing-page .custom-solution-section .primary-cta {
-  background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+  background: #4a7c59;
   color: #fff;
   border: none;
   padding: 1rem 2rem;
@@ -1101,6 +1280,7 @@
 }
 
 .pricing-page .custom-solution-section .primary-cta:hover {
+  background: #2d5016;
   box-shadow: 0 5px 15px rgba(45, 80, 22, 0.3);
 }
 

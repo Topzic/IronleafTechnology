@@ -1,5 +1,4 @@
 import React from 'react';
-import './Testimonials.css';
 
 const Testimonials = () => {
   const testimonials = [
@@ -14,14 +13,21 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="testimonials">
-      <div className="container">
-        <h2>Client Success Stories</h2>
-        <div className="testimonials-grid">
+    <section className="py-20 bg-light animate-fade-in">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-center text-primary mb-12 animate-slide-up">
+          Client Success Stories
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="testimonial-card">
-              <p>"{testimonial.text}"</p>
-              <span>{testimonial.company}</span>
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 relative animate-slide-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="text-secondary text-6xl absolute top-4 left-4 opacity-10">"</div>
+              <p className="text-dark italic leading-relaxed mb-6 pl-8">{testimonial.text}</p>
+              <span className="text-secondary font-semibold text-lg block text-right">— {testimonial.company}</span>
             </div>
           ))}
         </div>

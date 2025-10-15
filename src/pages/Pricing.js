@@ -310,11 +310,7 @@ const Pricing = () => {
             .map((pkg, index) => (
               <div
                 key={index}
-                className={`pricing-card ${pkg.popular ? "popular" : ""} ${
-                  pkg.name === "Enterprise"
-                    ? "enterprise"
-                    : `color-${index % 3}`
-                }`}
+                className={`pricing-card ${pkg.popular ? "popular" : ""} mono-${(index % 5) + 1}`}
               >
                 {pkg.popular && (
                   <span className="popular-badge">Most Popular</span>
@@ -370,9 +366,7 @@ const Pricing = () => {
             .map((pkg, index) => (
               <div
                 key={index}
-                className={`pricing-card ${pkg.popular ? "popular" : ""} ${
-                  pkg.name === "Enterprise" ? "color-3" : `color-${index % 3}`
-                }`}
+                className={`pricing-card ${pkg.popular ? "popular" : ""} mono-${(index % 5) + 1}`}
               >
                 {pkg.popular && (
                   <span className="popular-badge">Most Popular</span>
@@ -427,7 +421,7 @@ const Pricing = () => {
             Check out our special pricing for veterans, nonprofits, and local
             businesses.
           </p>
-          <a href="#/faq" className="discounts-banner-link">
+          <a href="/faq" className="discounts-banner-link">
             View Special Discounts →
           </a>
         </div>
@@ -445,20 +439,20 @@ const Pricing = () => {
           </button>
           <button
             className="secondary-cta"
-            onClick={() => (window.location.href = "#/services")}
+            onClick={() => (window.location.href = "/services")}
           >
             View Additional Services
           </button>
           <button
             className="secondary-cta"
-            onClick={() => (window.location.href = "#/faq")}
+            onClick={() => (window.location.href = "/faq")}
           >
             View FAQ
           </button>
         </div>
         <p className="terms-link">
           By proceeding, you agree to our{" "}
-          <a href="#/terms" target="_blank" rel="noopener noreferrer">
+          <a href="/terms" target="_blank" rel="noopener noreferrer">
             Terms of Service
           </a>
           .

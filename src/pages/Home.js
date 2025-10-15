@@ -3,7 +3,8 @@ import { Helmet } from "react-helmet-async";
 import HeroSection from "../components/HeroSection";
 import ServicesOverview from "../components/ServicesOverview";
 import Testimonials from "../components/Testimonials";
-import VeteranBadge from "../components/VeteranBadge";
+import CallToAction from "../components/CallToAction";
+import PortfolioHighlights from "../components/PortfolioHighlights";
 
 const Home = () => {
   return (
@@ -44,7 +45,8 @@ const Home = () => {
       <HeroSection />
       <ServicesOverview />
       <Testimonials />
-      <VeteranBadge />
+      <PortfolioHighlights />
+      <CallToAction />
     </div>
   );
 };

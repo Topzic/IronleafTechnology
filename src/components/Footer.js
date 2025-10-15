@@ -62,6 +62,9 @@ const Footer = () => {
             <li>
               <Link to="/terms">Terms of Service</Link>
             </li>
+            <li>
+              <Link to="/web-developer-peterborough">Web Developer Peterborough</Link>
+            </li>
           </ul>
         </div>
         <div className="footer-section">

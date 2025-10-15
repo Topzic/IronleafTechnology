@@ -144,7 +144,7 @@ const FAQ = () => {
           </button>
           <button
             className="secondary-cta"
-            onClick={() => (window.location.href = "#/pricing")}
+            onClick={() => (window.location.href = "/pricing")}
           >
             View Pricing
           </button>

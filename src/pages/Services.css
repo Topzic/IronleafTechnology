@@ -169,11 +169,11 @@
 .services-page .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  gap: 3.5rem;
 }
 
 .services-page .service-card {
-  background: #fff;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,0.9) 100%);
   padding: 2.5rem;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
@@ -181,7 +181,12 @@
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
+}
+
+.services-page .service-card:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, rgba(248,249,250,0.95) 0%, rgba(255,255,255,0.9) 100%);
 }
 
 .services-page .service-card::before {
@@ -191,7 +196,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+  background: #4a7c59;
 }
 
 .services-page .service-card:hover {
@@ -200,9 +205,26 @@
 }
 
 .services-page .service-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: #fff;
+  background: #4a7c59;
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(74, 124, 89, 0.3);
+}
+
+.services-page .service-card:hover .service-icon {
+  transform: translateX(-50%) scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 20px rgba(74, 124, 89, 0.4);
 }
 
 .services-page .service-title {
@@ -210,6 +232,7 @@
   font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
 .services-page .service-description {
@@ -262,11 +285,18 @@
 }
 
 .services-page .add-on-card {
-  background: #fff;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,0.9) 100%);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border: 1px solid #e0e0e0;
+  /* transition: all 0.3s ease; */
+}
+
+.services-page .add-on-card:hover {
+  /* transform: translateY(-5px) scale(1.02); */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, rgba(248,249,250,0.95) 0%, rgba(255,255,255,0.9) 100%);
 }
 
 .services-page .add-on-card h3 {
@@ -290,7 +320,15 @@
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 1rem;
-  background: #fafafa;
+  background: linear-gradient(135deg, rgba(250,250,250,0.95) 0%, rgba(240,240,240,0.9) 100%);
+  transition: all 0.3s ease;
+}
+
+.services-page .option:hover {
+  transform: translateX(8px) scale(1.01);
+  background: linear-gradient(135deg, rgba(240,240,240,0.95) 0%, rgba(250,250,250,0.9) 100%);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-color: rgba(74, 124, 89, 0.3);
 }
 
 .services-page .option-header {
@@ -354,16 +392,23 @@
 }
 
 .services-page .discount-card {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e8 100%);
+  background: linear-gradient(135deg, rgba(248,249,250,0.95) 0%, rgba(232,245,232,0.9) 100%);
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
   border: 1px solid #e0e0e0;
   position: relative;
+  transition: all 0.3s ease;
+}
+
+.services-page .discount-card:hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, rgba(232,245,232,0.95) 0%, rgba(248,249,250,0.9) 100%);
 }
 
 .services-page .discount-badge {
-  background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+  background: #4a7c59;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -417,7 +462,7 @@
 }
 
 .services-page .discounts-banner-link {
-  background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+  background: #4a7c59;
   color: #fff;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
@@ -425,12 +470,13 @@
   font-weight: 600;
   display: inline-block;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(45, 80, 22, 0.2);
+  box-shadow: 0 2px 8px rgba(74, 124, 89, 0.2);
 }
 
 .services-page .discounts-banner-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.3);
+  box-shadow: 0 4px 12px rgba(74, 124, 89, 0.3);
+  background: #2d5016;
 }
 
 /* Custom Solution Section */
@@ -457,7 +503,7 @@
 }
 
 .services-page .custom-solution-section .primary-cta {
-  background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+  background: #4a7c59;
   color: #fff;
   border: none;
   padding: 1rem 2rem;
@@ -466,12 +512,13 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(74, 124, 89, 0.2);
 }
 
 .services-page .custom-solution-section .primary-cta:hover {
   transform: translateY(-2px);
-    background: linear-gradient(135deg, #629d3b 0%, #599a6c 100%);
-  box-shadow: 0 5px 15px rgba(84, 147, 41, 0.3);
+  background: #2d5016;
+  box-shadow: 0 5px 15px rgba(45, 80, 22, 0.3);
 }
 
 .services-page .no-commitment {
@@ -511,26 +558,27 @@
 }
 
 .services-page .primary-cta {
-  background: #fff;
-  color: #2d5016;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
   border: none;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
+  padding: 1.5rem 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 32px rgba(255, 107, 107, 0.3);
 }
 
 .services-page .primary-cta:hover {
-  background: #e8f5e8;
   transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(255, 107, 107, 0.4);
 }
 
 .services-page .secondary-cta {
   background: transparent;
   color: #fff;
-  border: 2px solid #fff;
+  border: 2px solid #4a7c59;
   padding: 1rem 2rem;
   font-size: 1.1rem;
   border-radius: 5px;
@@ -539,8 +587,49 @@
 }
 
 .services-page .secondary-cta:hover {
-  background: #fff;
-  color: #2d5016;
+  background: #4a7c59;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(74, 124, 89, 0.3);
+}
+
+/* Additional Button Variations for Visual Variety */
+.services-page .cta-button-outline {
+  background: transparent;
+  color: #4a7c59;
+  border: 2px solid #4a7c59;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.services-page .cta-button-outline:hover {
+  background: #4a7c59;
+  color: #fff;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 3px 12px rgba(74, 124, 89, 0.25);
+}
+
+.services-page .cta-button-ghost {
+  background: rgba(74, 124, 89, 0.1);
+  color: #4a7c59;
+  border: 1px solid rgba(74, 124, 89, 0.2);
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.services-page .cta-button-ghost:hover {
+  background: #4a7c59;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(74, 124, 89, 0.2);
 }
 
 .services-page .terms-link {

@@ -23,56 +23,56 @@ const Services = () => {
       description:
         "Create stunning, user-friendly websites that engage visitors and drive conversions. Our design process focuses on intuitive interfaces and exceptional user experiences.",
       icon: faPalette,
-      link: "#/contact",
+  link: "/contact",
     },
     {
       title: "Web Development",
       description:
         "Build robust, scalable websites using modern technologies. From responsive designs to custom functionality, we bring your vision to life with clean, efficient code.",
       icon: faCode,
-      link: "#/contact",
+  link: "/contact",
     },
     {
       title: "AI-Powered Solutions",
       description:
         "Leverage artificial intelligence to create smarter, more interactive websites. Enhance user engagement with AI-driven features and automation.",
       icon: faRobot,
-      link: "#/contact",
+  link: "/contact",
     },
     {
       title: "Branding & Logo Design",
       description:
         "Develop a strong brand identity that resonates with your audience. Professional logo design and branding services to help your business stand out.",
       icon: faStar,
-      link: "#/contact",
+  link: "/contact",
     },
     {
       title: "E-Commerce Solutions",
       description:
         "Launch and optimize online stores with secure payment processing, inventory management, and seamless shopping experiences.",
       icon: faShoppingCart,
-      link: "#/contact",
+  link: "/contact",
     },
     {
       title: "SEO & Digital Marketing",
       description:
         "Improve your online visibility and drive targeted traffic to your website. Comprehensive SEO strategies and digital marketing solutions.",
       icon: faChartLine,
-      link: "#/contact",
+  link: "/contact",
     },
     {
       title: "Consulting & Strategy",
       description:
         "Strategic guidance to help your business succeed online. From project planning to technology recommendations, we provide expert advice.",
       icon: faBullseye,
-      link: "#/contact",
+  link: "/contact",
     },
     {
       title: "Maintenance & Support",
       description:
         "Ongoing website maintenance, security monitoring, and technical support to keep your site running smoothly and securely.",
       icon: faWrench,
-      link: "#/contact",
+  link: "/contact",
     },
   ];
 
@@ -194,7 +194,7 @@ const Services = () => {
           <div className="services-grid">
             {coreServices.map((service, index) => (
               <div key={index} className="service-card">
-                <div className="service-icon">
+                <div className="service-icon" style={{ color: "white" }}>
                   <FontAwesomeIcon icon={service.icon} />
                 </div>
                 <h3 className="service-title">{service.title}</h3>
@@ -251,7 +251,7 @@ const Services = () => {
             Check out our special pricing for veterans, nonprofits, and local
             businesses.
           </p>
-          <a href="#/faq" className="discounts-banner-link">
+          <a href="/faq" className="discounts-banner-link">
             View Special Discounts →
           </a>
         </div>
@@ -285,14 +285,14 @@ const Services = () => {
           </button>
           <button
             className="secondary-cta"
-            onClick={() => (window.location.href = "#/pricing")}
+            onClick={() => (window.location.href = "/pricing")}
           >
             View Pricing
           </button>
         </div>
         <p className="terms-link">
           By proceeding, you agree to our{" "}
-          <a href="#/terms" target="_blank" rel="noopener noreferrer">
+          <a href="/terms" target="_blank" rel="noopener noreferrer">
             Terms of Service
           </a>
           .

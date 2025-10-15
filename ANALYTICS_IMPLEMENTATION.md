@@ -207,6 +207,51 @@ useEffect(() => {
 }, []);
 ```
 
+#### 7. WebDeveloperPeterborough Page
+
+**File:** `src/pages/WebDeveloperPeterborough.js`
+**Events:**
+
+- `peterborough_learn_more` - Learn More buttons in services section
+- `peterborough_contact_phone` - Phone number link clicks
+- `peterborough_contact_form` - Contact form link clicks
+- `peterborough_get_started` - Get Started Today button clicks
+
+**Parameters:**
+
+- `page_path` for all events
+- `service_title` for `peterborough_learn_more` events
+
+```javascript
+// Learn More button tracking
+const handleLearnMore = (serviceTitle) => {
+  ReactGA.event("peterborough_learn_more", {
+    page_path: window.location.pathname,
+    service_title: serviceTitle,
+  });
+};
+
+// Contact tracking
+const handleContactPhone = () => {
+  ReactGA.event("peterborough_contact_phone", {
+    page_path: window.location.pathname,
+  });
+};
+
+const handleContactForm = () => {
+  ReactGA.event("peterborough_contact_form", {
+    page_path: window.location.pathname,
+  });
+};
+
+// CTA button tracking
+const handleGetStarted = () => {
+  ReactGA.event("peterborough_get_started", {
+    page_path: window.location.pathname,
+  });
+};
+```
+
 ## GA4 Configuration and Privacy
 
 ### Enhanced Measurement

@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -18,6 +18,9 @@ const Contact = React.lazy(() => import("./pages/Contact"));
 const Blog = React.lazy(() => import("./pages/Blog"));
 const BlogPost = React.lazy(() => import("./pages/BlogPost"));
 const Terms = React.lazy(() => import("./pages/Terms"));
+const WebDeveloperPeterborough = React.lazy(() =>
+  import("./pages/WebDeveloperPeterborough")
+);
 // import Support from './pages/Support';
 
 function App() {
@@ -40,6 +43,10 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:id" element={<BlogPost />} />
               <Route path="/terms" element={<Terms />} />
+              <Route
+                path="/web-developer-peterborough"
+                element={<WebDeveloperPeterborough />}
+              />
               {/* <Route path="/support" element={<Support />} /> */}
             </Routes>
           </Suspense>

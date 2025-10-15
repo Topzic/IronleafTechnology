@@ -26,10 +26,18 @@
 }
 
 .contact-form {
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.contact-form:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
 }
 
 .contact-form h2 {
@@ -112,10 +120,18 @@
 }
 
 .info-card, .booking-calendar, .map-embed {
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover, .booking-calendar:hover, .map-embed:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
 }
 
 .info-card h3, .booking-calendar h3, .map-embed h3 {
