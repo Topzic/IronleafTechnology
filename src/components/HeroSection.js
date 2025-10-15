@@ -1,16 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import ReactGA from "react-ga4";
 import "./HeroSection.css";
 
 const HeroSection = () => {
   const navigate = useNavigate();
 
   const handleBookCall = () => {
-    // eslint-disable-next-line no-undef
-    gtag("event", "click", {
-      event_category: "engagement",
-      event_label: "book_call_hero",
-    });
+    ReactGA.event("home_book_call", { page_path: window.location.hash || "/" });
     navigate("/contact");
   };
 

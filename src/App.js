@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LoadingSpinner from "./components/LoadingSpinner";
 import ScrollToTop from "./components/ScrollToTop";
+import GATracker from "./components/GATracker";
 
 const Home = React.lazy(() => import("./pages/Home"));
 const About = React.lazy(() => import("./pages/About"));
@@ -24,6 +25,7 @@ function App() {
     <HelmetProvider>
       <Router>
         <ScrollToTop />
+        <GATracker />
         <div className="App">
           <Navbar />
           <Suspense fallback={<LoadingSpinner />}>

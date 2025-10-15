@@ -1,8 +1,11 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import "./FAQ.css";
+import { useNavigate } from "react-router-dom";
+import ReactGA from "react-ga4";
 
 const FAQ = () => {
+  const navigate = useNavigate();
   const faqs = [
     {
       question: "What's included in the one-time setup fee?",
@@ -48,12 +51,8 @@ const FAQ = () => {
   ];
 
   const handleBookCall = () => {
-    // eslint-disable-next-line no-undef
-    gtag("event", "click", {
-      event_category: "engagement",
-      event_label: "book_call_faq",
-    });
-    window.location.href = "#/contact";
+    ReactGA.event("faq_book_call", { page_path: window.location.hash || "/" });
+    navigate("/contact");
   };
 
   return (

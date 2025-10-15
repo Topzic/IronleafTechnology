@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import ReactGA from "react-ga4";
 import "./Pricing.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -213,10 +214,8 @@ const Pricing = () => {
   });
 
   const handleBookCall = () => {
-    // eslint-disable-next-line no-undef
-    gtag("event", "click", {
-      event_category: "engagement",
-      event_label: "book_call_pricing",
+    ReactGA.event("pricing_book_call", {
+      page_path: window.location.hash || "/",
     });
     navigate("/contact");
   };

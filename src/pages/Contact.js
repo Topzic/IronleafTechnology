@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { Helmet } from "react-helmet-async";
+import ReactGA from "react-ga4";
 import "./Contact.css";
 
 const supabase = createClient(
@@ -68,9 +69,8 @@ const Contact = () => {
   useEffect(() => {
     const handleBeforeUnload = () => {
       if (formStarted && !formSubmitted) {
-        // eslint-disable-next-line no-undef
-        gtag("event", "form_abandon", {
-          event_category: "lead_form",
+        ReactGA.event("contact_form_abandon", {
+          page_path: window.location.hash || "/",
         });
       }
     };
@@ -105,9 +105,8 @@ const Contact = () => {
         console.log("Form submitted successfully:", data);
         alert("Thank you! Your message has been sent.");
         setFormSubmitted(true);
-        // eslint-disable-next-line no-undef
-        gtag("event", "form_submit", {
-          event_category: "lead_form",
+        ReactGA.event("contact_form_submit", {
+          page_path: window.location.hash || "/",
         });
         // Reset form
         setFormData({
@@ -187,9 +186,8 @@ const Contact = () => {
                 onChange={handleChange}
                 onFocus={() => {
                   if (!formStarted) {
-                    // eslint-disable-next-line no-undef
-                    gtag("event", "form_start", {
-                      event_category: "lead_form",
+                    ReactGA.event("contact_form_start", {
+                      page_path: window.location.hash || "/",
                     });
                     setFormStarted(true);
                   }

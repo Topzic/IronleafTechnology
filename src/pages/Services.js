@@ -1,5 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import ReactGA from "react-ga4";
+import { useNavigate } from "react-router-dom";
 import "./Services.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,6 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Services = () => {
+  const navigate = useNavigate();
   const coreServices = [
     {
       title: "Web Design & UI/UX",
@@ -122,12 +125,17 @@ const Services = () => {
   ];
 
   const handleBookCall = () => {
-    // eslint-disable-next-line no-undef
-    gtag("event", "click", {
-      event_category: "engagement",
-      event_label: "book_call_services",
+    ReactGA.event("services_book_call", {
+      page_path: window.location.hash || "/",
     });
-    window.location.href = "#/contact";
+    navigate("/contact");
+  };
+
+  const handleScheduleConsultation = () => {
+    ReactGA.event("services_schedule_consultation", {
+      page_path: window.location.hash || "/",
+    });
+    navigate("/contact");
   };
 
   return (
@@ -258,7 +266,7 @@ const Services = () => {
           you. Let's discuss your specific needs and build something tailored to
           your business goals.
         </p>
-        <button className="primary-cta" onClick={handleBookCall}>
+        <button className="primary-cta" onClick={handleScheduleConsultation}>
           Schedule a Free Consultation
         </button>
         <p className="no-commitment">No obligation required.</p>

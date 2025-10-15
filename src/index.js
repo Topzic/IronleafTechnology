@@ -3,6 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import ReactGA from "react-ga4";
+
+// Initialize Google Analytics
+ReactGA.initialize("G-FQ9Z6HNXE1");
+ReactGA.initialize("AW-17649096539");
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

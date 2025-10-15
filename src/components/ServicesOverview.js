@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./ServicesOverview.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
+import ReactGA from "react-ga4";
 import {
   faCode,
   faChartLine,
@@ -12,47 +14,54 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const ServicesOverview = () => {
+  const handleViewPrices = (serviceTitle) => {
+    ReactGA.event("home_view_prices", {
+      page_path: window.location.hash || "/",
+      service_title: serviceTitle,
+    });
+  };
+
   const services = [
     {
       title: "Full-Stack Web Development",
       description:
         "Custom websites and applications built with modern technologies.",
       icon: faCode,
-      link: "#/pricing",
+      link: "/pricing",
     },
     {
       title: "Microsoft 365 Optimization",
       description:
         "Streamline your business processes with Power Platform tools.",
       icon: faChartLine,
-      link: "#/pricing",
+      link: "/pricing",
     },
     {
       title: "Custom Software Solutions",
       description: "Tailored solutions for your unique business needs.",
       icon: faCogs,
-      link: "#/pricing",
+      link: "/pricing",
     },
     {
       title: "Website Optimization & Audit",
       description:
         "Comprehensive website audits, SEO improvements, and performance optimization.",
       icon: faSearch,
-      link: "#/pricing",
+      link: "/pricing",
     },
     {
       title: "Hourly Development Services",
       description:
         "Flexible hourly development and consulting for ongoing projects and maintenance.",
       icon: faClock,
-      link: "#/pricing",
+      link: "/pricing",
     },
     {
       title: "E-commerce Solutions",
       description:
         "Online stores and marketplace platforms with secure payment integration.",
       icon: faShoppingCart,
-      link: "#/pricing",
+      link: "/pricing",
     },
   ];
 
@@ -68,7 +77,11 @@ const ServicesOverview = () => {
               </div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <Link to={service.link} className="service-link">
+              <Link
+                to={service.link}
+                className="service-link"
+                onClick={() => handleViewPrices(service.title)}
+              >
                 View Pricing
               </Link>
             </div>
