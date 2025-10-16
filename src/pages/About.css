@@ -32,6 +32,7 @@
 }
 
 .bio-content {
+  margin: 1rem;
   display: grid;
   grid-template-columns: 300px 1fr;
   gap: 2rem;
@@ -50,7 +51,6 @@
 }
 
 .bio-text p {
-  margin-bottom: 1rem;
   line-height: 1.6;
 }
 

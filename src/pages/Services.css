@@ -278,10 +278,15 @@
 
 .services-page .add-ons-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .services-page .add-ons-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
 }
 
 .services-page .add-on-card {
