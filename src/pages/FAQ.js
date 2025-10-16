@@ -65,7 +65,7 @@ const FAQ = () => {
         />
         <meta
           name="keywords"
-          content="FAQ Ironleaf Technology, frequently asked questions IT, web development questions, Microsoft 365 FAQ, Power BI help, custom software FAQ, IT support questions Peterborough, pricing questions Ontario, service details Ironleaf, how much does web development cost, Microsoft 365 setup questions, Power Platform FAQ, data analytics questions, software development process, website maintenance FAQ, IT consultation questions, veteran-owned business FAQ, Peterborough IT services questions, Ontario web design FAQ, Microsoft 365 migration questions, Power BI consulting FAQ, custom software development questions, IT support packages explained, web development timeline, Microsoft 365 training questions, technology consultation FAQ, business IT solutions questions"
+          content="FAQ Ironleaf Technology, frequently asked questions IT, web development questions, mobile app development FAQ, IT infrastructure help, custom software FAQ, IT support questions Peterborough, pricing questions Ontario, service details Ironleaf, how much does web development cost, server management questions, cloud storage FAQ, network configuration questions, data analytics questions, software development process, website maintenance FAQ, IT consultation questions, veteran-owned business FAQ, Peterborough IT services questions, Ontario web design FAQ, mobile app development questions, custom software development questions, IT support packages explained, web development timeline, technology consultation FAQ, business IT solutions questions"
         />
       </Helmet>
 

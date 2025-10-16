@@ -15,11 +15,11 @@ const Home = () => {
         </title>
         <meta
           name="description"
-          content="Ironleaf Technology offers veteran-owned IT solutions in Peterborough, Ontario. Full-stack web development, Microsoft 365 optimization, Power BI analytics, and custom software for businesses."
+          content="Ironleaf Technology offers veteran-owned IT solutions in Peterborough, Ontario. Full-stack web development, mobile app development, IT infrastructure support, and custom software for businesses."
         />
         <meta
           name="keywords"
-          content="IT support Peterborough, web development, Microsoft 365, Power BI, custom software, veteran-owned business, Peterborough IT services, Ontario IT company, web design Peterborough, Microsoft 365 consulting, Power BI consulting, cloud services Ontario, data analytics, custom software development, veteran-owned IT, cheap website development, peterborough web development, peterborough it support, veteran-driven IT solutions, custom websites Kawartha Lakes, software development Lindsay, digital systems Cobourg, analytics integration Oshawa, automation Whitby, SEO optimization Ajax, attract clients Toronto, streamline workflows, scale with confidence"
+          content="IT support Peterborough, web development, mobile app development, IT infrastructure, custom software, veteran-owned business, Peterborough IT services, Ontario IT company, web design Peterborough, server management, cloud storage, network configuration, data analytics, custom software development, veteran-owned IT, affordable website development, peterborough web development, peterborough it support, veteran-driven IT solutions, custom websites Kawartha Lakes, software development Lindsay, digital systems Cobourg, analytics integration Oshawa, automation Whitby, SEO optimization Ajax, attract clients Toronto, streamline workflows, scale with confidence"
         />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -27,7 +27,7 @@ const Home = () => {
             "@type": "LocalBusiness",
             name: "Ironleaf Technology",
             description:
-              "Veteran-owned IT solutions including web development, Microsoft 365 optimization, Power BI analytics, and custom software.",
+              "Veteran-owned IT solutions including web development, mobile app development, IT infrastructure support, and custom software.",
             url: "https://ironleaftechnology.com",
             address: {
               "@type": "PostalAddress",

@@ -29,7 +29,7 @@ const Terms = () => {
           <p>Welcome to Ironleaf Technology. These Terms of Service ("Terms") govern your use of our website development, optimization, and consulting services. By engaging our services, you agree to these Terms.</p>
 
           <h2>2. Services</h2>
-          <p>We provide web development, Microsoft 365 optimization, website audits, and ongoing support services. One-time setup fees cover complete implementation, testing, training, and initial support. Monthly care plans provide ongoing maintenance, updates, and support services.</p>
+          <p>We provide web development, mobile app development, IT infrastructure support, website audits, and ongoing support services. One-time setup fees cover complete implementation, testing, training, and initial support. Monthly care plans provide ongoing maintenance, updates, and support services.</p>
 
           <h2>3. Pricing and Billing</h2>
           <p>Prices are as quoted on our website and are subject to change. One-time payments are due upon project completion. Monthly subscriptions are billed in advance and auto-renew unless canceled. All fees are non-refundable once services are delivered.</p>

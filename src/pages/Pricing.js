@@ -138,25 +138,6 @@ const Pricing = () => {
       category: "web",
       icon: faGlobe,
     },
-    {
-      name: "Microsoft 365 Optimization",
-      description:
-        billingCycle === "one-time"
-          ? "Streamline your business processes with Power Platform tools"
-          : "Ongoing Microsoft 365 optimization and support services",
-      price: billingCycle === "one-time" ? 3000 : 200,
-      originalPrice: billingCycle === "one-time" ? null : 250,
-      features: [
-        "Complete M365 audit & setup",
-        "Custom Power Apps development",
-        "Workflow automation",
-        "Data integration solutions",
-        "Training & documentation",
-      ],
-      popular: false,
-      category: "optimization",
-      icon: faGaugeSimpleHigh,
-    },
     // {
     //   name: 'Security Camera Bronze',
     //   description: 'Essential surveillance for small businesses and homes',
@@ -226,11 +207,11 @@ const Pricing = () => {
         <title>Pricing - Ironleaf Technology | IT Services Packages</title>
         <meta
           name="description"
-          content="Explore Ironleaf Technology's pricing for IT services including web development, Microsoft 365, Power BI, and custom software solutions in Peterborough, Ontario."
+          content="Explore Ironleaf Technology's pricing for IT services including web development, mobile app development, IT infrastructure, and custom software solutions in Peterborough, Ontario."
         />
         <meta
           name="keywords"
-          content="IT pricing Peterborough, web development costs Ontario, Microsoft 365 pricing, Power BI analytics pricing, custom software pricing, website development quotes, IT service rates Peterborough, affordable web design Ontario, Microsoft 365 setup costs, Power Platform development pricing, data analytics pricing, custom software development costs, website maintenance pricing, IT support packages, monthly IT services pricing, one-time setup fees, web development packages, Microsoft 365 migration costs, Power BI consulting rates, software development pricing, IT budget planning, cost-effective web development, peterborough web design pricing, ontario it service costs, veteran-owned pricing, transparent IT pricing, web development quotes Peterborough, affordable IT services Ontario"
+          content="IT pricing Peterborough, web development costs Ontario, mobile app development pricing, IT infrastructure pricing, custom software pricing, website development quotes, IT service rates Peterborough, affordable web design Ontario, server management costs, cloud storage pricing, network configuration pricing, data analytics pricing, custom software development costs, website maintenance pricing, IT support packages, monthly IT services pricing, one-time setup fees, web development packages, mobile app development costs, software development pricing, IT budget planning, cost-effective web development, peterborough web design pricing, ontario it service costs, veteran-owned pricing, transparent IT pricing, web development quotes Peterborough, affordable IT services Ontario"
         />
       </Helmet>
       <section className="pricing-hero">
@@ -293,13 +274,11 @@ const Pricing = () => {
       </section>
 
       <section className="service-explanation">
-        <div className="container">
           <p>
             One-time setup fees cover complete implementation, testing,
             training, and initial support. Monthly care plans provide ongoing
             maintenance, updates, and support services.
           </p>
-        </div>
       </section>
 
       <section className="pricing-cards">

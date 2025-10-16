@@ -18,7 +18,7 @@ const BlogPost = () => {
         <p>In today's digital age, small businesses in Peterborough need to leverage technology to stay competitive. Here are 10 essential tech tips tailored for local entrepreneurs.</p>
 
         <h3>1. Implement Cloud Storage Solutions</h3>
-        <p>Move your data to the cloud with services like Microsoft OneDrive or Google Drive. This ensures your files are accessible from anywhere and automatically backed up.</p>
+        <p>Move your data to the cloud with services like Google Drive or Dropbox. This ensures your files are accessible from anywhere and automatically backed up.</p>
 
         <h3>2. Use Accounting Software</h3>
         <p>Switch from manual bookkeeping to automated systems like QuickBooks or Xero. These tools save time and reduce errors in financial management.</p>
@@ -33,7 +33,7 @@ const BlogPost = () => {
         <p>Upgrade to modern POS systems that integrate inventory management, customer data, and payment processing.</p>
 
         <h3>6. Adopt Project Management Tools</h3>
-        <p>Use tools like Trello, Asana, or Microsoft Teams to organize tasks, collaborate with team members, and track project progress.</p>
+        <p>Use tools like Trello, Asana, or Slack to organize tasks, collaborate with team members, and track project progress.</p>
 
         <h3>7. Implement Email Marketing</h3>
         <p>Build customer relationships with professional email campaigns using tools like Mailchimp or Constant Contact.</p>
@@ -53,33 +53,33 @@ const BlogPost = () => {
     },
     {
       id: 2,
-      title: "Automating Workflows with Microsoft Power Platform",
+      title: "Automating Workflows with Low-Code Platforms",
       excerpt:
-        "How to streamline operations using Power Apps and Power Automate.",
+        "How to streamline operations using automation tools and custom apps.",
       date: "October 5, 2025",
       readTime: "7 min read",
       fullContent: `
         <h3>The Power of Automation</h3>
-        <p>Microsoft Power Platform offers powerful tools to automate business processes without extensive coding knowledge. Let's explore how Power Apps and Power Automate can transform your operations.</p>
+        <p>Low-code platforms offer powerful tools to automate business processes without extensive coding knowledge. Let's explore how custom apps and automation can transform your operations.</p>
 
-        <h3>Understanding Power Apps</h3>
-        <p>Power Apps allows you to create custom business applications quickly. Whether you need a simple form or a complex workflow app, Power Apps provides a drag-and-drop interface to build solutions tailored to your needs.</p>
+        <h3>Understanding Custom Apps</h3>
+        <p>Low-code platforms allow you to create custom business applications quickly. Whether you need a simple form or a complex workflow app, these platforms provide intuitive interfaces to build solutions tailored to your needs.</p>
 
-        <h3>Leveraging Power Automate</h3>
-        <p>Power Automate enables you to create automated workflows between your favorite apps and services. Connect Microsoft 365, Dynamics 365, and hundreds of other services to automate repetitive tasks.</p>
+        <h3>Leveraging Automation Tools</h3>
+        <p>Automation platforms enable you to create automated workflows between your favorite apps and services. Connect various business tools to automate repetitive tasks and improve efficiency.</p>
 
         <h3>Real-World Applications</h3>
         <ul>
-          <li><strong>Expense Approval Process:</strong> Create a Power App for expense submissions and use Power Automate to route approvals automatically.</li>
+          <li><strong>Expense Approval Process:</strong> Create a custom app for expense submissions and automate approval routing.</li>
           <li><strong>Customer Onboarding:</strong> Automate the process of setting up new customer accounts across multiple systems.</li>
           <li><strong>Inventory Management:</strong> Set up alerts when stock levels are low and automatically reorder items.</li>
         </ul>
 
         <h3>Getting Started</h3>
-        <p>Begin with simple workflows and gradually expand. Microsoft provides extensive documentation and community resources to help you learn.</p>
+        <p>Begin with simple workflows and gradually expand. Many platforms provide extensive documentation and community resources to help you learn.</p>
 
         <h3>Integration with Existing Systems</h3>
-        <p>Power Platform integrates seamlessly with your existing Microsoft investments, making it easy to extend current tools rather than replace them.</p>
+        <p>Low-code platforms integrate seamlessly with your existing tools, making it easy to extend current systems rather than replace them.</p>
 
         <h3>Best Practices</h3>
         <p>Start with processes that are repetitive and time-consuming. Involve stakeholders early in the design process and test thoroughly before deployment.</p>
@@ -88,7 +88,7 @@ const BlogPost = () => {
         <p>Track metrics like time saved, error reduction, and user satisfaction to demonstrate the value of your automation initiatives.</p>
 
         <h3>Conclusion</h3>
-        <p>Microsoft Power Platform empowers businesses to become more efficient and agile. By automating workflows, you can focus on strategic activities that drive growth.</p>
+        <p>Low-code platforms empower businesses to become more efficient and agile. By automating workflows, you can focus on strategic activities that drive growth.</p>
       `,
     },
     {

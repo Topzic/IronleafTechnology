@@ -7,6 +7,7 @@ import {
   faCogs,
   faClock,
   faShoppingCart,
+  faServer,
 } from "@fortawesome/free-solid-svg-icons";
 
 const ServicesOverview = () => {
@@ -21,7 +22,7 @@ const ServicesOverview = () => {
     {
       title: "Full-Stack Web Development",
       description:
-        "Custom websites from single-page sites to advanced e-commerce platforms, built with modern technologies like React, Node.js, and secure databases.",
+        "Custom websites from simple landing pages to advanced online stores, designed to be responsive, accessible, and mobile-friendly. We create secure, user-focused sites that perform well and engage your audience.",
       icon: faCode,
       link: "/pricing",
     },
@@ -33,9 +34,10 @@ const ServicesOverview = () => {
       link: "/pricing",
     },
     {
-      title: "Custom Software Solutions",
-      description: "Tailored software solutions for your unique business needs, including data analytics, automation, and scalable applications.",
-      icon: faCogs,
+      title: "IT Support & Infrastructure",
+      description:
+        "Reliable IT infrastructure and support services to keep your business systems running smoothly, securely, and efficiently. From server management to network setup and ongoing technical assistance.",
+      icon: faServer,
       link: "/pricing",
     },
     {

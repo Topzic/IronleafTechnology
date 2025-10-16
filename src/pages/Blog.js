@@ -13,8 +13,8 @@ const Blog = () => {
     },
     {
       id: 2,
-      title: 'Automating Workflows with Microsoft Power Platform',
-      excerpt: 'How to streamline operations using Power Apps and Power Automate.',
+      title: 'Automating Workflows with Low-Code Platforms',
+      excerpt: 'How to streamline operations using automation tools and custom apps.',
       date: 'October 5, 2025',
       readTime: '7 min read'
     },

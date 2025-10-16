@@ -133,11 +133,11 @@ const Contact = () => {
         <title>Contact Us - Ironleaf Technology | Get in Touch</title>
         <meta
           name="description"
-          content="Contact Ironleaf Technology for IT solutions in Peterborough, Ontario. Reach out for web development, Microsoft 365 support, Power BI analytics, and custom software services."
+          content="Contact Ironleaf Technology for IT solutions in Peterborough, Ontario. Reach out for web development, mobile app development, IT infrastructure support, and custom software services."
         />
         <meta
           name="keywords"
-          content="contact Ironleaf Technology, IT support Peterborough, web development contact Ontario, Microsoft 365 help, Power BI consulting contact, custom software inquiry, get quote Peterborough, IT services contact Ontario, web design consultation, Microsoft 365 setup contact, Power Platform development inquiry, data analytics contact, software development quote, website development Peterborough, IT support phone number, email Ironleaf Technology, business address Peterborough, Ontario IT company contact, veteran-owned IT contact, free consultation Peterborough, IT assessment Ontario, technology consultation Kawartha Lakes, web development meeting, Microsoft 365 migration contact, custom software project inquiry, IT support request Peterborough"
+          content="contact Ironleaf Technology, IT support Peterborough, web development contact Ontario, mobile app development inquiry, IT infrastructure help, custom software inquiry, get quote Peterborough, IT services contact Ontario, web design consultation, server management contact, cloud storage setup, network configuration inquiry, data analytics contact, software development quote, website development Peterborough, IT support phone number, email Ironleaf Technology, business address Peterborough, Ontario IT company contact, veteran-owned IT contact, free consultation Peterborough, IT assessment Ontario, technology consultation Kawartha Lakes, web development meeting, mobile app project inquiry, custom software project inquiry, IT support request Peterborough"
         />
       </Helmet>
       <section className="hero-section">

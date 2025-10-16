@@ -13,6 +13,8 @@ import {
   faChartLine,
   faBullseye,
   faWrench,
+  faServer,
+  faMobileAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Services = () => {
@@ -28,7 +30,7 @@ const Services = () => {
     {
       title: "Web Development",
       description:
-        "Build robust, scalable websites using modern technologies. From responsive designs to custom functionality, we bring your vision to life with clean, efficient code.",
+        "Create professional, responsive websites that look great on all devices and provide an excellent user experience. From mobile-friendly designs to custom features, we build sites that engage your customers, improve accessibility, and drive business results.",
       icon: faCode,
   link: "/contact",
     },
@@ -40,10 +42,10 @@ const Services = () => {
   link: "/contact",
     },
     {
-      title: "Branding & Logo Design",
+      title: "Mobile App Development",
       description:
-        "Develop a strong brand identity that resonates with your audience. Professional logo design and branding services to help your business stand out.",
-      icon: faStar,
+        "Develop custom mobile apps for iOS and Android that provide seamless user experiences, increase customer engagement, and extend your business reach on mobile devices.",
+      icon: faMobileAlt,
   link: "/contact",
     },
     {
@@ -65,6 +67,13 @@ const Services = () => {
       description:
         "Strategic guidance to help your business succeed online. From project planning to technology recommendations, we provide expert advice.",
       icon: faBullseye,
+  link: "/contact",
+    },
+    {
+      title: "IT Support & Infrastructure",
+      description:
+        "Ensure your business technology works seamlessly with professional IT support and infrastructure services. We provide reliable server management, secure cloud storage, network configuration, and ongoing troubleshooting to keep your operations running smoothly and protect your data.",
+      icon: faServer,
   link: "/contact",
     },
     {
@@ -142,16 +151,15 @@ const Services = () => {
     <div className="services-page">
       <Helmet>
         <title>
-          Services - Ironleaf Technology | Web Design, Development & IT
-          Solutions
+          Services - Ironleaf Technology | Web Design, Development, IT & Digital Solutions
         </title>
         <meta
           name="description"
-          content="Comprehensive web design, development, and IT services from Ironleaf Technology. From AI-powered websites to branding and ongoing support, we deliver exceptional digital solutions."
+          content="Comprehensive web design, development, IT infrastructure, and digital services from Ironleaf Technology. From AI-powered websites to mobile apps, server setups, and ongoing support, we deliver exceptional digital and tech solutions."
         />
         <meta
           name="keywords"
-          content="web design Peterborough, web development Ontario, UI/UX design services, AI-powered websites, branding agency Peterborough, logo design Ontario, SEO optimization Kawartha Lakes, e-commerce development, IT support services, website maintenance Peterborough, responsive web design, custom website development, mobile app development, digital marketing Ontario, content management systems, website hosting Peterborough, domain registration Ontario, SSL certificates, website security, performance optimization, user experience design, graphic design services, brand identity Peterborough, social media integration, email marketing setup, website analytics, conversion optimization, custom web applications, API development, database design, cloud hosting solutions, website migration services"
+          content="web design Peterborough, web development Ontario, UI/UX design services, AI-powered websites, mobile app development, iOS app development, Android app development, SEO optimization Kawartha Lakes, e-commerce development, IT support services, Microsoft server setup, cloud storage solutions, system administration, network configuration, software installation, website maintenance Peterborough, responsive web design, custom website development, mobile app development, digital marketing Ontario, content management systems, website hosting Peterborough, domain registration Ontario, SSL certificates, website security, performance optimization, user experience design, social media integration, email marketing setup, website analytics, conversion optimization, custom web applications, API development, database design, cloud hosting solutions, website migration services"
         />
       </Helmet>
 
@@ -173,7 +181,7 @@ const Services = () => {
         <h1>Complete Digital Solutions</h1>
         <p>
           From concept to launch, we provide comprehensive web design,
-          development, and IT services to help your business thrive in the
+          development, IT infrastructure, and digital services to help your business thrive in the
           digital world.
         </p>
       </section>
@@ -184,9 +192,9 @@ const Services = () => {
           <div className="services-intro">
             <h2>Our Services</h2>
             <p>
-              We offer a complete range of digital services to bring your vision
+              We offer a complete range of digital and IT services to bring your vision
               to life. From website design and development to AI-powered
-              solutions and ongoing support, we're here to support your project
+              solutions, IT infrastructure setup, and ongoing support, we're here to support your project
               every step of the way.
             </p>
           </div>

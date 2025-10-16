@@ -6,10 +6,12 @@ const GATracker = () => {
   const location = useLocation();
 
   useEffect(() => {
-    ReactGA.send({
-      hitType: "pageview",
-      page: location.pathname + location.hash,
-    });
+    if (window.gtag) {
+      ReactGA.send({
+        hitType: "pageview",
+        page: location.pathname + location.hash,
+      });
+    }
   }, [location]);
 
   return null;
