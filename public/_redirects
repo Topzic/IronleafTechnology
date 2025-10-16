@@ -1,1 +1,23 @@
+# SPA fallback for client-side routing
 /*    /index.html   200
+
+# SEO-friendly redirects for common URL variations
+# Handle trailing slashes consistently (Next.js handles this automatically)
+
+# Redirect common misspellings or old URLs to correct pages
+/web-development    /services  301
+/website-design     /services  301
+/seo-services      /services  301
+/web-developer     /web-developer-peterborough  301
+
+# Redirect old blog URLs if they existed
+/blog/post/*        /blog/:splat  301
+
+# Temporary redirects for seasonal or promotional pages (uncomment when needed)
+# /black-friday      /pricing  302
+# /holiday-special   /contact  302
+
+# Redirect for case sensitivity issues (if needed)
+# /Services          /services  301
+# /Pricing           /pricing  301
+# /Contact           /contact  301

@@ -1,0 +1,183 @@
+.hero {
+  background: linear-gradient(135deg, #2d5016 0%, #4a7c59 50%, #2d5016 100%);
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/projects/background.webp') center/cover;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  padding: 1.5rem 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 32px rgba(255, 107, 107, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(255, 107, 107, 0.4);
+}
+
+.animated-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle1 {
+  width: 80px;
+  height: 80px;
+  background: rgba(74, 124, 89, 0.15);
+  top: 10%;
+  left: 5%;
+}
+
+.circle2 {
+  width: 60px;
+  height: 60px;
+  background: rgba(45, 80, 22, 0.2);
+  top: 30%;
+  right: 10%;
+}
+
+.circle3 {
+  width: 40px;
+  height: 40px;
+  background: rgba(107, 142, 90, 0.18);
+  bottom: 20%;
+  left: 15%;
+}
+
+.circle4 {
+  width: 50px;
+  height: 50px;
+  background: rgba(58, 100, 48, 0.12);
+  top: 50%;
+  right: 20%;
+}
+
+.circle5 {
+  width: 88px;
+  height: 88px;
+  background: rgba(90, 130, 70, 0.16);
+  bottom: 10%;
+  left: 50%;
+}
+
+.circle6 {
+  width: 55px;
+  height: 55px;
+  background: rgba(74, 124, 89, 0.14);
+  top: 15%;
+  left: 20%;
+}
+
+.circle7 {
+  width: 65px;
+  height: 65px;
+  background: rgba(45, 80, 22, 0.18);
+  top: 35%;
+  right: 5%;
+}
+
+.circle8 {
+  width: 45px;
+  height: 45px;
+  background: rgba(107, 142, 90, 0.16);
+  bottom: 25%;
+  left: 25%;
+}
+
+.circle9 {
+  width: 85px;
+  height: 85px;
+  background: rgba(58, 100, 48, 0.13);
+  top: 55%;
+  right: 25%;
+}
+
+.circle10 {
+  width: 95px;
+  height: 95px;
+  background: rgba(90, 130, 70, 0.17);
+  bottom: 5%;
+  left: 60%;
+}
+
+.circle11 {
+  width: 58px;
+  height: 58px;
+  background: rgba(74, 124, 89, 0.15);
+  top: 5%;
+  left: 70%;
+}
+
+.circle12 {
+  width: 72px;
+  height: 72px;
+  background: rgba(45, 80, 22, 0.19);
+  top: 45%;
+  left: 10%;
+}
+
+@media (max-width: 768px) {
+  .hero-overlay {
+    background: url('/projects/background-mobile.webp') center/cover;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
