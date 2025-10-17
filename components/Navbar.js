@@ -105,13 +105,13 @@ const Navbar = () => {
           >
             Blog
           </Link>
-          <Link
+          {/* <Link
             href="/support"
             className={isActive("/support") ? "active" : ""}
             onClick={closeMenu}
           >
             Support
-          </Link>
+          </Link> */}
         </div>
         <div
           className={`hamburger ${isOpen ? "active" : ""}`}
