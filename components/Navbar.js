@@ -5,12 +5,14 @@ import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const router = useRouter();
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-  };  const closeMenu = () => {
+  };
+  const closeMenu = () => {
     setIsOpen(false);
+    setDropdownOpen(false);
   };
 
   const isActive = (path) => {
@@ -48,20 +50,33 @@ const Navbar = () => {
           >
             About
           </Link>
-          <Link
-            href="/services"
-            className={isActive("/services") ? "active" : ""}
-            onClick={closeMenu}
+          <div
+            className="dropdown"
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
           >
-            Services
-          </Link>
-          <Link
-            href="/pricing"
-            className={isActive("/pricing") ? "active" : ""}
-            onClick={closeMenu}
-          >
-            Pricing
-          </Link>
+            <button
+              className="dropdown-toggle"
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+            >
+              Solutions
+            </button>
+            {dropdownOpen && (
+              <div className="dropdown-menu">
+                <Link href="/services" onClick={closeMenu}>
+                  Services
+                </Link>
+                {process.env.NEXT_PUBLIC_LEAD_AGENT_ENABLED === "true" && (
+                  <Link href="/lead-agent" onClick={closeMenu}>
+                    Lead Agent
+                  </Link>
+                )}
+                <Link href="/pricing" onClick={closeMenu}>
+                  Pricing
+                </Link>
+              </div>
+            )}
+          </div>
           <Link
             href="/faq"
             className={isActive("/faq") ? "active" : ""}
@@ -90,13 +105,13 @@ const Navbar = () => {
           >
             Blog
           </Link>
-          {/* <Link
+          <Link
             href="/support"
-            className={isActive('/support') ? 'active' : ''}
+            className={isActive("/support") ? "active" : ""}
             onClick={closeMenu}
           >
             Support
-          </Link> */}
+          </Link>
         </div>
         <div
           className={`hamburger ${isOpen ? "active" : ""}`}

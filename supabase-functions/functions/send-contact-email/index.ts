@@ -27,15 +27,71 @@ Deno.serve(async (req) => {
 
     // Format the email content
     const emailContent = `
-New Lead Form Submission:
-
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone || 'Not provided'}
-Company: ${formData.company || 'Not provided'}
-Goals: ${formData.goals || 'Not provided'}
-Constraints: ${formData.constraints || 'Not provided'}
-Message: ${formData.message || 'Not provided'}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    .header { background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
+    .header h2 { margin: 0; color: #2c3e50; }
+    .field { margin-bottom: 15px; }
+    .field-label { font-weight: bold; color: #34495e; }
+    .field-value { margin-left: 10px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>New Lead Form Submission</h2>
+    <p>A new contact form has been submitted. Here are the details:</p>
+  </div>
+  
+  <div class="field">
+    <span class="field-label">Name:</span>
+    <span class="field-value">${formData.name}</span>
+  </div>
+  
+  <div class="field">
+    <span class="field-label">Email:</span>
+    <span class="field-value">${formData.email}</span>
+  </div>
+  
+  <div class="field">
+    <span class="field-label">Phone:</span>
+    <span class="field-value">${formData.phone || 'Not provided'}</span>
+  </div>
+  
+  <div class="field">
+    <span class="field-label">Company:</span>
+    <span class="field-value">${formData.company || 'Not provided'}</span>
+  </div>
+  
+  <div class="field">
+    <span class="field-label">Project Type:</span>
+    <span class="field-value">${formData.projectType || 'Not provided'}</span>
+  </div>
+  
+  <div class="field">
+    <span class="field-label">Budget:</span>
+    <span class="field-value">${formData.budget || 'Not provided'}</span>
+  </div>
+  
+  <div class="field">
+    <span class="field-label">Timeline:</span>
+    <span class="field-value">${formData.timeline || 'Not provided'}</span>
+  </div>
+  
+  <div class="field">
+    <span class="field-label">Goals:</span>
+    <span class="field-value">${formData.goals || 'Not provided'}</span>
+  </div>
+  
+  <div class="field">
+    <span class="field-label">Message:</span>
+    <span class="field-value">${formData.message || 'Not provided'}</span>
+  </div>
+</body>
+</html>
     `.trim()
 
     // Send email using Resend
@@ -54,7 +110,7 @@ Message: ${formData.message || 'Not provided'}
         from: 'noreply@ironleaftechnology.com', // Replace with your verified domain
         to: 'support@ironleaftechnology.com',
         subject: 'New Lead Form Submission',
-        text: emailContent,
+        html: emailContent,
       }),
     })
 
